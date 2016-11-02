@@ -1,0 +1,62 @@
+---
+layout: post
+title: collectd
+date: '2015-06-15 19:28:15'
+tags:
+- influxdb
+- influxdb-0-9
+- collectd
+---
+
+Пощупал сегодня collectd наконец-то. УХ КАКАЯ КРУТАЯ ШТУКА.
+
+Позволяет не писать большое число велосипедов. С удовольствием заюзаю в будущем кое где. Буквально с полпинка подружилось с influxdb 0.8.8. Из коробки шлёт следующие данные (это вывод запроса 
+
+	list series
+
+очень пригодится, когда будете экспериментировать со своими плагинами):
+
+    $HOSTNAME/cpu-0/cpu-idle
+    $HOSTNAME/cpu-0/cpu-interrupt
+    $HOSTNAME/cpu-0/cpu-nice
+    $HOSTNAME/cpu-0/cpu-softirq
+    $HOSTNAME/cpu-0/cpu-steal
+    $HOSTNAME/cpu-0/cpu-system
+    $HOSTNAME/cpu-0/cpu-user
+    $HOSTNAME/cpu-0/cpu-wait
+    $HOSTNAME/cpu-1/cpu-idle
+    $HOSTNAME/cpu-1/cpu-interrupt
+    $HOSTNAME/cpu-1/cpu-nice
+    $HOSTNAME/cpu-1/cpu-softirq
+    $HOSTNAME/cpu-1/cpu-steal
+    $HOSTNAME/cpu-1/cpu-system
+    $HOSTNAME/cpu-1/cpu-user
+    $HOSTNAME/cpu-1/cpu-wait
+    $HOSTNAME/df/df-dev-shm
+    $HOSTNAME/df/df-root
+    $HOSTNAME/interface/if_errors-br0
+    $HOSTNAME/interface/if_errors-eth0
+    $HOSTNAME/interface/if_errors-eth1
+    $HOSTNAME/interface/if_errors-lo
+    $HOSTNAME/interface/if_octets-br0
+    $HOSTNAME/interface/if_octets-eth0
+    $HOSTNAME/interface/if_octets-eth1
+    $HOSTNAME/interface/if_octets-lo
+    $HOSTNAME/interface/if_packets-br0
+    $HOSTNAME/interface/if_packets-eth0
+    $HOSTNAME/interface/if_packets-eth1
+    $HOSTNAME/interface/if_packets-lo
+    $HOSTNAME/load/load
+    $HOSTNAME/memory/memory-buffered
+    $HOSTNAME/memory/memory-cached
+    $HOSTNAME/memory/memory-free
+    $HOSTNAME/memory/memory-used
+    
+Но в конфиге можно включить ещё добрую кучу плагинов. Шлёт информацию своим бинарным протоколом по UDP. [Список плагинов](https://collectd.org/documentation.shtml) радует безмерно. Завтра-послезавтра попробую написать пару своих плагинов.
+
+Кстати, вид в котором пишется информация в базеку просто прекрасен. Учитывая то, что influxdb умеет делать вот так:
+
+	SELECT mean(value) FROM /cpu*/ GROUP BY time(1h)
+
+пожалуй довольно удобно. Если поиграться, я думаю можно занятные запросы напридумывать, в духе "показывать датчик максимального заполненного диска из всех", если стал больше 90% - искать какой конкретно, но это уже упоротость, конечно.
+
