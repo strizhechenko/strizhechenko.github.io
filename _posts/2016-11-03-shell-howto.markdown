@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Руководство по разработке на bash"
+title: "Strizhechenko's bash development guideline (ru)"
 date: '2016-11-03 02:20:45'
 tags:
 - bash
