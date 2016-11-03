@@ -27,7 +27,6 @@ permalink: /about/
 - [vkontakte](https://vk.com/weirded)
 - [instagram](https://instagram.com/weirdedout)
 - [почта](mailto:oleg.strizhechenko+random@gmail.com)
-- телефон - +79068099069
 
 # Языки программирования и навыки
 
