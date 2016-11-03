@@ -46,3 +46,7 @@ date: '2016-05-27 10:39:04'
 - ipython
 - nosetests
 - cProfile
+
+# other
+- language-ansible
+- linter-ansible-linting
