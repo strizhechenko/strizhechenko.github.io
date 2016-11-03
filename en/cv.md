@@ -23,7 +23,6 @@ Salary expectation: about 45000-80000€
 
 ## Other
 - [e-mail](mailto:oleg.strizhechenko+random@gmail.com)
-- phone - +79068099069
 - [twitter](https://twitter.com/strizhechenko)
 
 # Education
