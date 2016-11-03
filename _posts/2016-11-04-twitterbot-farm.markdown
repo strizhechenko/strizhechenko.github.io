@@ -1,3 +1,22 @@
+---
+layout: post
+title: "My new pet project - twitterbot-farm"
+date: '2016-11-04 00:25:00'
+tags:
+- twitter
+- twitterbots
+- bots
+- everyword
+- redis
+- influxdb
+- grafana
+- python
+- linux
+- openvz
+- containers
+- ansible
+---
+
 # A new pet project
 
 Month ago I thought: why it is so hard to run many twitter-bots in Heroku? I had around 10-12 of them at that moment.
