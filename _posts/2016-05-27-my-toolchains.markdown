@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Мои тулчейны"
+title: "My toolchains for shell, python and C"
 date: '2016-05-27 10:39:04'
 ---
 
