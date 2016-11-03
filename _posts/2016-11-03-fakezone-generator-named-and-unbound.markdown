@@ -22,6 +22,48 @@ date: '2016-11-03 15:48:00'
 bind9 от таких доменов, оказавшихся в конфиге валится и не стартует, ругаясь. Одно из решений - заменять на дефис.
 
 unbound чувствует себя прекрасно, на запросы об этих доменах отвечает.
+# Как генерировались домены
+
+На коленке был накидан скрипт на python2, красоту наводить не стали, ибо скрипт одноразовый.
+
+``` python
+""" domain generator """
+from re import sub
+from sys import argv
+from random import shuffle
+from string import ascii_lowercase
+
+zones = [
+	'com', 'net', 'ru', 'org', 'uk', 'en', 'ss', 'cn',
+]
+
+x = list(ascii_lowercase) + ['1', '2', '3', '4', '.', '.', '.']
+
+for i in xrange(int(argv[1])):
+	shuffle(x)
+	print sub(r'^\.|\.$', '', "".join(x).replace('..', '.').replace('..', '.')) + '.' + zones[i % len(zones)]
+```
+
+На выходе даёт что-то вроде:
+
+```
+3zxkljdpytqwev4u1.mgconis2hbaf.r.net
+3.gxchap1zu4wt2rvejyqln.bodfms.ik.ru
+p2beiw4r.uzydlkhnq.jcf3.xto1gsvma.org
+r1ve.os2p.ilzdt4kj.baqycuwfmng3hx.uk
+snemj1d.of2huzqkxbcilvag.43ywrpt.en
+cbek1pmvlzhowg.st.iy2nx.jq4da3fru.ss
+rgct.jqop2l1n3zums.4bayxvkw.eihdf.cn
+xecabuy124sdgpqith.omw3.rjlznkvf.com
+4zr1mlx3howu.nciajkvb.gq.syptf2ed.net
+nh.iq1gxfclt.rpsd4z3j.aevu2bmwoky.ru
+ylr.fcvjzumk42q.ontx3g.easwbdp1hi.org
+bw4vzrkaenfj.lpsho.ug21.mctyxiq3d.uk
+n1gvqf4cwmjkrzphy.32ouxdtaei.bsl.en
+qwv.tpgknfjhi.ey.ozrmbx1c3u2ads4l.ss
+```
+
+Для тестов вполне подходящие данные, хоть таких доменов скорее всего на самом деле и не существует.
 
 # Потребление памяти
 
