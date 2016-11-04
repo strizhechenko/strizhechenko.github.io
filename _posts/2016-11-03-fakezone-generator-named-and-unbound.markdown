@@ -88,6 +88,25 @@ qwv.tpgknfjhi.ey.ozrmbx1c3u2ads4l.ss
 
 После 50000 доменов наступает существенная деградация в скорости рестарта у bind9.
 
+На 400000 доменов скорость полного рестарта (с downtime!) у unbound замедляется до ≈14 секунд, что тоже грустно:
+
+```shell
+# time /etc/init.d/unbound stop; time /etc/init.d/unbound start
+Stopping unbound:                                          [  OK  ]
+
+real	0m1.116s
+user	0m0.007s
+sys	0m0.003s
+Starting unbound: Nov 04 09:23:14 unbound[30785:0] warning: increased limit(open files) from 1024 to 8290
+[  OK  ]
+
+real	0m14.791s
+user	0m8.548s
+sys	0m3.865s
+```
+
+К счастью у unbound есть утилита unbound-control, позволяющая менять конфигурацию сервера на ходу, без downtime, а в named fakezone generator - поддержка заливки только изменений с её помощью.
+
 На 100000 без дополнительного тюнинга bind в openvz начал валиться с out of memory error прямо при старте, съев около 1гб памяти.
 
 Для одного пользователя, решившего опросить все добавленные домены с localhost потребление памяти ни unbound'ом ни bind'ом не менялось.
