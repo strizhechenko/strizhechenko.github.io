@@ -75,9 +75,9 @@ qwv.tpgknfjhi.ey.ozrmbx1c3u2ads4l.ss
     8500      |    210M     |     49M     |   357M    |   101M
     25000     |    346M     |    157M     |   970M    |   306M
     50000     |    556M     |    315M     |   1299M   |   646M
-   100000     |    979M     |    823M     | OOM error | OOM error
-   200000     |    1824M    |    1284M    | OOM error| OOM error
-   400000     |    3515M    |    2655M    | OOM error| OOM error
+   100000     |    979M     |    823M     | OOM | OOM
+   200000     |    1824M    |    1284M    | OOM | OOM
+   400000     |    3515M    |    2655M    | OOM | OOM
 
 # Что стоило ещё померять
 
