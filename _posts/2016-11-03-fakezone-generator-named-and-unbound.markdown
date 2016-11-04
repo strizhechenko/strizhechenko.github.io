@@ -83,6 +83,8 @@ qwv.tpgknfjhi.ey.ozrmbx1c3u2ads4l.ss
 
 - Деградация в скорости ответов
 - Замедление рестарта
+- PowerDNS и PowerDNS-Recursor
+- DNS-спуфер в Carbon Reductor
 
 # Выводы
 
