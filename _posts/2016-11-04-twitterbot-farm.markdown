@@ -70,7 +70,7 @@ _(Actually I just want to try to learn best practices of maintaining a python pa
 
 If all the data is stored in one place it's much more easy to get a statistic and visualize it. For example that's how my fresh influxdb + grafana installations look alike (number is all stored tweets count for readers and unprocessed tweets count in source for writers):
 
-![influxdb and grafana](images/influxdb_grafana_twitterbot_farm.img)
+![influxdb and grafana](/images/influxdb_grafana_twitterbot_farm.img)
 
 _(Actually, I just want to touch fresh grafana and influxdb versions and have experiments with alerting without upgrading my production servers with no reason.)_
 
