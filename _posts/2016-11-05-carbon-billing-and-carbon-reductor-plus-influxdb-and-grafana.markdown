@@ -14,6 +14,7 @@ tags:
 - reductor
 - radius
 - collectd
+- ansible
 ---
 
 # С чего всё началось
@@ -24,16 +25,86 @@ tags:
 
 Собственно стэк решил использовать привычный мне:
 
-- grafana для отображения графиков
-- influxdb как хранилище метрик
-- python как инструмент опроса биллинга и отправки метрик в influxdb
-- crond как пинатель питоновых скриптов
+- **grafana** для отображения графиков
+- **influxdb** как хранилище метрик
+- **python** как инструмент опроса биллинга и отправки метрик в influxdb
+- **crond** как пинатель питоновых скриптов
+- **collectd** - как основной инструмент сбора метрик. Возможно исключит необходимость в crond.
+- **ansible** - как инструмент для поддержания правильного состояния всех конфигураций на нескольких серверах и облегчения повторного развёртывания при необходимости.
 
 Disclaimer: Никаких алертеров или чего-то сверхумного, детекторов аномалий, больших данных и машинного обучения тут не будет. Просто приемлемая визуализация.
 
 # Установка
 
 Всё ставится на отдельную машину. Я втыкал в CentOS 6 внутри OpenVZ контейнера. Разворачивал всё с помощью ansible, есть правда косяк в плейбуке, надо вручную одно подтверждение сделать при установке grafana:
+
+файл files/influxdb.conf
+
+```
+reporting-disabled = false
+[meta]
+  dir = "/var/lib/influxdb/meta"
+  retention-autocreate = true
+  logging-enabled = true
+  pprof-enabled = false
+  lease-duration = "1m0s"
+[data]
+  enabled = true
+  dir = "/var/lib/influxdb/data"
+  wal-dir = "/var/lib/influxdb/wal"
+  wal-logging-enabled = true
+[coordinator]
+  write-timeout = "10s"
+  max-concurrent-queries = 0
+  query-timeout = "0"
+  log-queries-after = "0"
+  max-select-point = 0
+  max-select-series = 0
+  max-select-buckets = 0
+[retention]
+  enabled = true
+  check-interval = "30m"
+[shard-precreation]
+  enabled = true
+  check-interval = "10m"
+  advance-period = "30m"
+[monitor]
+  store-enabled = true # Whether to record statistics internally.
+  store-database = "_internal" # The destination database for recorded statistics
+  store-interval = "10s" # The interval at which to record statistics
+[admin]
+  enabled = true
+  bind-address = ":8083"
+  https-enabled = false
+  https-certificate = "/etc/ssl/influxdb.pem"
+[http]
+  enabled = true
+  bind-address = ":8086"
+  auth-enabled = false
+  log-enabled = true
+  write-tracing = false
+  pprof-enabled = false
+  https-enabled = false
+  https-certificate = "/etc/ssl/influxdb.pem"
+  max-row-limit = 10000
+  realm = "InfluxDB"
+[subscriber]
+  enabled = true
+[[graphite]]
+  enabled = false
+[[collectd]]
+  enabled = true
+  database = "softrouter"
+  typesdb = "/usr/share/collectd/types.db"
+[[opentsdb]]
+  enabled = false
+[[udp]]
+  enabled = false
+[continuous_queries]
+  log-enabled = true
+  enabled = true
+```
+Файл tasks/influxdb.yml
 
 ```yaml
 - hosts: [influxdb]
@@ -42,14 +113,20 @@ Disclaimer: Никаких алертеров или чего-то сверху�
     copy: src=../files/grafana.repo dest=/etc/yum.repos.d/grafana.repo
   - name: grafana
     yum: name=grafana state=present
+  - name: crond
+    yum: name=cronie state=present
   - name: grafana
     yum: name=cronie state=present
   - name: enable crond
     service: name=crond enabled=yes state=restarted
   - name: enable grafana
     service: name=grafana-server enabled=yes state=restarted
+  - name: collectd (for libs)
+    yum: name=collectd state=present
   - name: influxdb
     yum: name=https://dl.influxdata.com/influxdb/releases/influxdb-1.0.2.x86_64.rpm state=present
+  - name: configure influxdb
+    copy: src=../files/influxdb.conf dest=/etc/influxdb/influxdb.conf
   - name: enable influxdb
     service: name=influxdb enabled=yes state=restarted
 ```
@@ -91,37 +168,58 @@ CREATE RETENTION POLICY "limitations" ON "softrouter" DURATION 180d REPLICATION 
 
 Так как у нас под коробкой - Linux, собирать системные данные проще всего с помощью collectd. Там даже думать особо не надо, всё есть в репах.
 
-```shell
-yum -y install collectd
+Настройка: настраивать будем с помощью ansible, поскольку collectd нужно установить на все машины, которые мы хотим отслеживать.
+
+Создадим ansible-playbook для быстрого разворачивания collectd на других машинах и возможности менять конфигурацию в одном месте.
+
+Файл: tasks/collectd.yml:
+
+```ansible-playbook
+- hosts: [collectd]
+  tasks:
+    - name: install
+      yum: name=collectd state=present
+    - name: configure
+      template: src=../templates/collectd.conf.j2 dest=/etc/collectd.conf
+    - name: enabled
+      service: name=collectd enabled=yes state=restarted
 ```
 
-Поскольку машинка занимается сетью, раскомментируем в /etc/collectd.conf следующие плагины, а также поменяем пару параметров:
+Файл: templates/collectd.conf:
 
-```
-Interval 60
+```xml
+FQDNLookup false
+Interval   60
+LoadPlugin syslog
 LoadPlugin conntrack
+LoadPlugin cpu
 LoadPlugin disk
+LoadPlugin interface
 LoadPlugin iptables
 LoadPlugin irq
+LoadPlugin load
+LoadPlugin memory
 LoadPlugin network
 LoadPlugin swap
 LoadPlugin tcpconns
 LoadPlugin uptime
-
-<Plugin network>
-        <Server "ip influxdb">
-        </Server>
+<Plugin disk>
+	Disk "/^sda[0-9]$/"
+	IgnoreSelected false
 </Plugin>
+<Plugin network>
+Server "10.50.140.131"
+</Plugin>
+Include "/etc/collectd.d"
 ```
 
-Ну, не надо нам реалтайм статистику. Как по мне и 60 секунд интервал - черезчур много. Где-нибудь 300 - самое оно, если не делаем никакого алертинга и всё для "пост-проблемного" анализа, а не превентивного.
+По красивому IP адрес сервера с collectd надо вынести в переменные группы в файле inventory, но я отложу это на потом.
 
-Делаем:
-
+Запускаем:
 ```
-service collectd restart
+ansible-playbook tasks/collectd.yml -l IP-второй-машины
 ```
-Когда-нибудь я разберусь как лучше мониторить запущенный в чруте nginx, он тут тоже полезен.
+По сути изменяется здесь только
 
 На стороне сервера с influxdb делаем:
 
@@ -179,6 +277,8 @@ SELECT non_negative_derivative(mean("value"), 1s) FROM "interface_rx" WHERE "hos
 
 Вообще много графиков которые находятся рядом имеют очень похожие запросы в основе, меняется как правило одна переменная. Чтобы не менять постоянно в куче мест запросы, можно использовать settings -> templating.
 
+##### Шаблонизируем uptime load
+
 Сперва добавляем новую переменную, назовём её uptime_kind, type = custom. Values:
 
 load_longterm, load_middleterm, load_shortterm
@@ -188,6 +288,17 @@ Multivalue: +
 Сохраняем, теперь вверху можно выбирать. Выбираем все. В настройках графика с uptime выбираем from default /^uptime_kind$/ (не забываем указывать host, который кстати тоже можно использовать в шаблонизации).
 
 Теперь идём в general -> repeat panel -> uptime_kind. Ставим span=4, minimal span=4, сохраняем и обновляем страницу. Кстати, переменные можно подставлять куда угодно => темплейтить можно всё что угодно, даже функции.
+
+##### Шаблонизируем несколько хостов
+
+Так как настраивать и использовать целую дэшбордину только ради одного хоста глупо, попробуем воспользоваться ей для других продуктов.
+
+В templating в grafana добавим переменную Host:
+
+type = query, multivalue отключаем, обновлять только при загрузке dashboard, сам query:
+```sql
+SHOW TAG VALUES FROM "cpu_value" WITH KEY = "host"
+```
 
 #### Ещё примеры данных для сбора
 
@@ -199,64 +310,6 @@ Multivalue: +
 SELECT non_negative_derivative(mean("value"), 1s) FROM "irq_value" WHERE "host" = 'Gate' AND "type" = 'irq' AND "type_instance" = '26' AND $timeFilter GROUP BY time($interval) fill(null)
 ```
 
-Так как настраивать и использовать целую дэшбордину только ради одного хоста глупо, попробуем воспользоваться ей для других продуктов.
-
-Создадим ansible-playbook для быстрого разворачивания collectd на других машинах и возможности менять конфигурацию в одном месте.
-
-Файл: tasks/collectd.yml:
-
-```ansible-playbook
-- hosts: [collectd]
-  tasks:
-    - name: install
-      yum: name=collectd state=present
-    - name: configure
-      template: src=../templates/collectd.conf.j2 dest=/etc/collectd.conf
-    - name: enabled
-      service: name=collectd enabled=yes state=restarted
-```
-
-Файл: templates/collectd.conf:
-
-```xml
-FQDNLookup false
-Interval   60
-LoadPlugin syslog
-LoadPlugin conntrack
-LoadPlugin cpu
-LoadPlugin disk
-LoadPlugin interface
-LoadPlugin iptables
-LoadPlugin irq
-LoadPlugin load
-LoadPlugin memory
-LoadPlugin network
-LoadPlugin swap
-LoadPlugin tcpconns
-LoadPlugin uptime
-<Plugin disk>
-	Disk "/^sda[0-9]$/"
-	IgnoreSelected false
-</Plugin>
-<Plugin network>
-Server "10.50.140.131"
-</Plugin>
-Include "/etc/collectd.d"
-```
-
-По красивому IP адрес сервера с collectd надо вынести в переменные группы в файле inventory, но я отложу это на потом.
-
-Запускаем:
-```
-ansible-playbook tasks/collectd.yml -l IP-второй-машины
-```
-
-В templating в grafana добавим переменную Host:
-
-type = query, multivalue отключаем, обновлять только при загрузке dashboard, сам query:
-```sql
-SHOW TAG VALUES FROM "cpu_value" WITH KEY = "host"
-```
 
 Единственная проблема которая при такой схеме будет - это отслеживание IRQ сетевых карт. Но в принципе можно отнести это к бизнес-логике, а не техническим данным и захардкодить для каждого хоста (прости господи) или вынести на сторону какого-то своего плагина к collectd.
 
