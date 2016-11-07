@@ -1,20 +1,20 @@
 ---
 layout: post
-title: "Carbon Billing Softrouter 5 + Grafana + InfluxDB"
+title: Carbon Billing Softrouter 5 + Grafana + InfluxDB
 date: '2016-11-05 04:19:00'
 tags:
-- carbonsoft
-- billing
-- telecom
-- ISP
-- Grafana
-- InfluxDB
-- time-series
-- DPI
-- reductor
-- radius
-- collectd
-- ansible
+  - carbonsoft
+  - billing
+  - telecom
+  - ISP
+  - Grafana
+  - InfluxDB
+  - time-series
+  - DPI
+  - reductor
+  - radius
+  - collectd
+  - ansible
 ---
 
 # С чего всё началось
@@ -104,6 +104,7 @@ reporting-disabled = false
   log-enabled = true
   enabled = true
 ```
+
 Файл tasks/influxdb.yml
 
 ```yaml
@@ -131,7 +132,7 @@ reporting-disabled = false
     service: name=influxdb enabled=yes state=restarted
 ```
 
-Поскольку раз уж всё равно экспериментирую в своё свободное время, решил использовать python3.4. Вообще я на нём особо не пишу, так что возможно будет много косяков ниже в статье в примерах кода.
+Поскольку раз уж всё равно экспериментирую в своё свободное время, решил использовать python3.4\. Вообще я на нём особо не пишу, так что возможно будет много косяков ниже в статье в примерах кода.
 
 # Пробуем юзать
 
@@ -204,8 +205,8 @@ LoadPlugin swap
 LoadPlugin tcpconns
 LoadPlugin uptime
 <Plugin disk>
-	Disk "/^sda[0-9]$/"
-	IgnoreSelected false
+    Disk "/^sda[0-9]$/"
+    IgnoreSelected false
 </Plugin>
 <Plugin network>
 Server "10.50.140.131"
@@ -216,6 +217,7 @@ Include "/etc/collectd.d"
 По красивому IP адрес сервера с collectd надо вынести в переменные группы в файле inventory, но я отложу это на потом.
 
 Запускаем:
+
 ```
 ansible-playbook tasks/collectd.yml -l IP-второй-машины
 ```
@@ -274,6 +276,7 @@ Multivalue: +
 В templating в grafana добавим переменную Host:
 
 type = query, multivalue отключаем, обновлять только при загрузке dashboard, сам query:
+
 ```sql
 SHOW TAG VALUES FROM "cpu_value" WITH KEY = "host"
 ```
@@ -288,9 +291,7 @@ SHOW TAG VALUES FROM "cpu_value" WITH KEY = "host"
 SELECT non_negative_derivative(mean("value"), 1s) FROM "irq_value" WHERE "host" = 'Gate' AND "type" = 'irq' AND "type_instance" = '26' AND $timeFilter GROUP BY time($interval) fill(null)
 ```
 
-
 Единственная проблема которая при такой схеме будет - это отслеживание IRQ сетевых карт. Но в принципе можно отнести это к бизнес-логике, а не техническим данным и захардкодить для каждого хоста (прости господи) или вынести на сторону какого-то своего плагина к collectd.
-
 
 #### CPU Usage
 
