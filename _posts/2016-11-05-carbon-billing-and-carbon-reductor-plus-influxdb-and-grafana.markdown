@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Carbon Billing Softrouter 5 + Grafana + InfluxDB
+title: Мониторим продукты Carbon Soft с помощью Grafana + InfluxDB
 date: '2016-11-05 04:19:00'
 tags:
   - carbonsoft
