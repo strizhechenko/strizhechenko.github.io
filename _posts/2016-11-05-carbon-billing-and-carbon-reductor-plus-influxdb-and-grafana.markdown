@@ -159,13 +159,13 @@ CREATE RETENTION POLICY "limitations" ON "softrouter" DURATION 180d REPLICATION 
 
 Дальше Dashboards -> Create New -> Зелёная херня сбоку -> Add Panel -> Graph. Теперь временно забываем про графики и начинаем думать что бы нам такого пособирать из данных.
 
-## Собираем данные
+# Собираем данные
 
 Вообще данные в нашем случае делятся два вида - технические и бизнес.
 
 Поскольку я обкатываю всё на нашем тестовом софтроутере, который служит нам на работе гейтом в инет, то начну с технических.
 
-### Технические
+## Технические
 
 Так как у нас под коробкой - Linux, собирать системные данные проще всего с помощью collectd. Там даже думать особо не надо, всё есть в репах.
 
@@ -245,19 +245,57 @@ show measurements
 - tcpconns_value
 - uptime_value
 
+### PPS сетевых карт
+
 В случае с шлюзом и DPI очень важными являются interface_rx и interface_tx. С них и начнём.
 
 Вот пример запроса про входящий pps на eth0 для grafana:
 
 ```sql
-SELECT non_negative_derivative(mean("value"), 1s) FROM "interface_rx" WHERE "host" = 'Gate' AND "type" = 'if_packets' AND "type_instance" = 'eth0' AND $timeFilter GROUP BY time($interval) fill(null)
+SELECT
+    non_negative_derivative(mean("value"), 1s)
+FROM
+    "interface_rx"
+WHERE
+    "host" = 'Gate'
+    AND "type" = 'if_packets'
+    AND "type_instance" = 'eth0'
+    AND $timeFilter
+GROUP BY
+    time($interval) fill(null)
 ```
 
-#### Шаблонизирование в grafana
+
+### IRQ сетевой карты
+Можно следить за ростом прерываний на сетевых картах.
+
+У нас используется не очень крутая карта, крутится с одной очередью на 26 прерывании.
+
+```sql
+SELECT
+    non_negative_derivative(mean("value"), 1s)
+FROM
+    "irq_value"
+WHERE
+    "host" = 'Gate'
+    AND "type" = 'irq'
+    AND "type_instance" = '26'
+    AND $timeFilter
+GROUP BY
+    time($interval) fill(null)
+```
+
+Единственная проблема которая при такой схеме будет - это отслеживание IRQ сетевых карт. Но в принципе можно отнести это к бизнес-логике, а не техническим данным и захардкодить для каждого хоста (прости господи) или вынести на сторону какого-то своего плагина к collectd.
+
+### CPU Usage
+
+### Memory Usage
+
+# Шаблонизирование в grafana
 
 Вообще много графиков которые находятся рядом имеют очень похожие запросы в основе, меняется как правило одна переменная. Чтобы не менять постоянно в куче мест запросы, можно использовать settings -> templating.
 
-##### Шаблонизируем uptime load
+## Шаблонизируем uptime load
 
 Сперва добавляем новую переменную, назовём её uptime_kind, type = custom. Values:
 
@@ -269,7 +307,7 @@ Multivalue: +
 
 Теперь идём в general -> repeat panel -> uptime_kind. Ставим span=4, minimal span=4, сохраняем и обновляем страницу. Кстати, переменные можно подставлять куда угодно => темплейтить можно всё что угодно, даже функции.
 
-##### Шаблонизируем несколько хостов
+## Шаблонизируем несколько хостов
 
 Так как настраивать и использовать целую дэшбордину только ради одного хоста глупо, попробуем воспользоваться ей для других продуктов.
 
@@ -281,28 +319,214 @@ type = query, multivalue отключаем, обновлять только п�
 SHOW TAG VALUES FROM "cpu_value" WITH KEY = "host"
 ```
 
-#### Ещё примеры данных для сбора
-
-Можно следить за ростом прерываний на сетевых картах.
-
-У нас используется не очень крутая карта, крутится с одной очередью на 26 прерывании.
-
-```sql
-SELECT non_negative_derivative(mean("value"), 1s) FROM "irq_value" WHERE "host" = 'Gate' AND "type" = 'irq' AND "type_instance" = '26' AND $timeFilter GROUP BY time($interval) fill(null)
-```
-
-Единственная проблема которая при такой схеме будет - это отслеживание IRQ сетевых карт. Но в принципе можно отнести это к бизнес-логике, а не техническим данным и захардкодить для каждого хоста (прости господи) или вынести на сторону какого-то своего плагина к collectd.
-
-#### CPU Usage
-
-#### Memory Usage
-
-### Бизнес-данные
+# Собираем бизнес-данные
 
 Итак, переходим к самому интересному. Если технические данные, описанные выше, можно отслеживать любой системой мониторинга из коробки, то с специфическими для биллинга - придётся немного повозиться. Собственно, чтобы облегчить жизнь возящимся эта статья и пишется. Я попробую сделать кое что новое для меня - оформить всё в виде плагинов для collectd вместо дёрганья питона по крону. Но возможно к питону всё равно придётся обратиться за помощью, так как некоторые данные не так легко просто так взять и собрать.
 
-#### Число radius событий за час
+## Биллинг
 
-#### Число авторизованных абонентов с распределением по NAS-серверам
+### Число radius событий за час
 
-#### Данные о работе технической поддержки (заявки в хелпдеске)
+### Число авторизованных абонентов с распределением по NAS-серверам
+
+### Данные о работе технической поддержки (заявки в хелпдеске)
+
+## Carbon Reductor
+
+### NET_RX
+
+### Модули фильтрации
+
+В collectd можно также создавать свои плагины. Поэтому всякий custom редуктора туда отлично вписывается. Проблема одна - collectd под рутом скрипты запускать не любит. Так что создаём группу и юзера ему:
+
+``` shell
+groupadd collectd
+adduser collectd -s '/bin/bash' -c 'statistic gatherer' -d '/' -g 'collectd' -G 'wheel'
+```
+
+В целом плагины в итоге выглядят довольно шаблонно:
+
+#### xt_reductor
+
+/etc/collectd.d/reductor.conf
+
+```
+LoadPlugin exec
+<Plugin exec>
+  Exec "collectd" "/usr/lib64/collectd/plugins/xt_reductor.sh"
+</Plugin>
+```
+
+/usr/lib64/collectd/plugins/xt_reductor.sh
+
+``` shell
+#!/usr/bin/env bash
+
+PLUGIN_NAME='xt_reductor'
+HOSTNAME="${COLLECTD_HOSTNAME:-$(hostname)}"
+INTERVAL="${COLLECTD_INTERVAL:-10}"
+FILE=/proc/net/${PLUGIN_NAME/xt/ipt}/block_list
+
+replace_regex="s/Registration statement:/gauge-activated /;
+	 s/URL count in database:/gauge-entries_load/;
+	 s/Matched packets:/gauge-matched/;
+	 s/Total packets checked:/gauge-checked/;
+	 s/Elements count:/gauge-db_elements/;
+"
+while sleep $INTERVAL; do
+	egrep -v 'Install number|Dont match counter' $FILE | sed -E "$replace_regex" > /tmp/$PLUGIN_NAME
+	current_date=$(date +%s)
+       	while read var val; do
+		echo PUTVAL $HOSTNAME/$PLUGIN_NAME/$var $current_date:$val
+	done < /tmp/$PLUGIN_NAME
+	rm -f /tmp/$PLUGIN_NAME
+done
+
+```
+
+#### xt_dnsmatch
+
+/etc/collectd.d/dnsmatch.conf
+
+```
+LoadPlugin exec
+<Plugin exec>
+  Exec "collectd" "/usr/lib64/collectd/plugins/xt_dnsmatch.sh"
+</Plugin>
+```
+/usr/lib64/collectd/plugins/xt_dnsmatch.sh
+
+``` shell
+#!/usr/bin/env bash
+
+PLUGIN_NAME='xt_dnsmatch'
+HOSTNAME="${COLLECTD_HOSTNAME:-$(hostname)}"
+INTERVAL="${COLLECTD_INTERVAL:-10}"
+FILE=/proc/net/${PLUGIN_NAME/xt/ipt}/block_list
+
+replace_regex="s/Registration statement:/gauge-activated /;
+	 s/URL count in database:/gauge-entries_load/;
+	 s/Matched packets:/gauge-matched/;
+	 s/Total packets checked:/gauge-checked/;
+	 s/Elements count:/gauge-db_elements/;
+"
+while sleep $INTERVAL; do
+	egrep -v 'Install number|Dont match counter' $FILE | sed -E "$replace_regex" > /tmp/$PLUGIN_NAME
+	current_date=$(date +%s)
+       	while read var val; do
+		echo PUTVAL $HOSTNAME/$PLUGIN_NAME/$var $current_date:$val
+	done < /tmp/$PLUGIN_NAME
+	rm -f /tmp/$PLUGIN_NAME
+done
+```
+
+#### xt_snimatch
+
+/etc/collectd.d/dnsmatch.conf
+
+```
+LoadPlugin exec
+<Plugin exec>
+  Exec "collectd" "/usr/lib64/collectd/plugins/xt_snimatch.sh"
+</Plugin>
+```
+
+/usr/lib64/collectd/plugins/xt_snimatch.sh
+
+``` shell
+#!/usr/bin/env bash
+
+PLUGIN_NAME='xt_snimatch'
+HOSTNAME="${COLLECTD_HOSTNAME:-localhost}"
+INTERVAL="${COLLECTD_INTERVAL:-10}"
+FILE=/proc/net/${PLUGIN_NAME/xt/ipt}/block_list
+
+replace_regex="s/Registration statement:/gauge-activated /;
+	 s/URL count in database:/gauge-entries_load/;
+	 s/Matched packets:/gauge-matched/;
+	 s/Total packets checked:/gauge-checked/;
+	 s/Elements count:/gauge-db_elements/;
+"
+while sleep $INTERVAL; do
+	egrep -v 'Install number|Dont match counter' $FILE | sed -E "$replace_regex" > /tmp/$PLUGIN_NAME
+	current_date=$(date +%s)
+       	while read var val; do
+		echo PUTVAL $HOSTNAME/$PLUGIN_NAME/$var $current_date:$val
+	done < /tmp/$PLUGIN_NAME
+	rm -f /tmp/$PLUGIN_NAME
+done
+```
+
+#### Настройки графиков в Grafana
+
+Выглядеть это будет как-то так:
+
+![influxdb, grafana & reductor](/images/influxdb_grafana_reductor.png)
+
+Создадим новую дэшборду, в ней новый ряд, в него в первый график с названием Packet Processing добавим два запроса. Нас интересует их прирост за минуту, так что используем non_negative_derivative(x, 1m).
+
+Проверенные пакеты:
+
+``` sql
+SELECT
+    non_negative_derivative(last("value"), 1m)
+FROM
+    /^$module$/
+WHERE
+    "host" =~ /^$host$/
+    AND "type_instance" = 'checked'
+    AND $timeFilter
+GROUP BY
+    time($interval)
+    fill(null)
+```
+
+Число срабатываний:
+
+``` sql
+SELECT
+    non_negative_derivative(last("value"), 1m)
+FROM
+    /^$module$/
+WHERE
+    "host" =~ /^$host$/
+    AND "type_instance" = 'matched'
+    AND $timeFilter
+GROUP BY
+    time($interval)
+    fill(null)
+```
+
+Создадим второй график, DB Stats, в него тоже два запроса:
+
+Число загруженных URL/доменов
+
+``` sql
+SELECT
+    last("value")
+FROM
+    /^$module$/
+WHERE
+    "host" =~ /^$host$/
+    AND "type_instance" = 'entries_load'
+    AND $timeFilter
+GROUP BY
+    time($interval)
+    fill(null)
+```
+
+и число элементов в базе данных (реально влияющая на производительность величина)
+
+``` sql
+SELECT
+    last("value")
+FROM
+    /^$module$/
+WHERE
+    "host" =~ /^$host$/
+    AND "type_instance" = 'db_elements'
+    AND $timeFilter
+GROUP BY
+    time($interval)
+    fill(null)
+```
