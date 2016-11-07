@@ -109,7 +109,7 @@ LoadPlugin tcpconns
 LoadPlugin uptime
 
 <Plugin network>
-        <Server "ip influxdb" "25826">
+        <Server "ip influxdb">
         </Server>
 </Plugin>
 ```
@@ -199,12 +199,6 @@ Multivalue: +
 SELECT non_negative_derivative(mean("value"), 1s) FROM "irq_value" WHERE "host" = 'Gate' AND "type" = 'irq' AND "type_instance" = '26' AND $timeFilter GROUP BY time($interval) fill(null)
 ```
 
-#### CPU Usage
-
-#### Memory Usage
-
-#### Шаблонизируем для использования с несколькими хостами
-
 Так как настраивать и использовать целую дэшбордину только ради одного хоста глупо, попробуем воспользоваться ей для других продуктов.
 
 Создадим ansible-playbook для быстрого разворачивания collectd на других машинах и возможности менять конфигурацию в одном месте.
@@ -224,9 +218,9 @@ SELECT non_negative_derivative(mean("value"), 1s) FROM "irq_value" WHERE "host" 
 
 Файл: templates/collectd.conf:
 
-```
-FQDNLookup   false
-Interval     60
+```xml
+FQDNLookup false
+Interval   60
 LoadPlugin syslog
 LoadPlugin conntrack
 LoadPlugin cpu
@@ -260,11 +254,16 @@ ansible-playbook tasks/collectd.yml -l IP-второй-машины
 В templating в grafana добавим переменную Host:
 
 type = query, multivalue отключаем, обновлять только при загрузке dashboard, сам query:
-```
+```sql
 SHOW TAG VALUES FROM "cpu_value" WITH KEY = "host"
 ```
 
 Единственная проблема которая при такой схеме будет - это отслеживание IRQ сетевых карт. Но в принципе можно отнести это к бизнес-логике, а не техническим данным и захардкодить для каждого хоста (прости господи) или вынести на сторону какого-то своего плагина к collectd.
+
+
+#### CPU Usage
+
+#### Memory Usage
 
 ### Бизнес-данные
 
