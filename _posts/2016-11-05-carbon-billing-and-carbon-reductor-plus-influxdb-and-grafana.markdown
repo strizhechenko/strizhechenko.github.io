@@ -219,32 +219,10 @@ Include "/etc/collectd.d"
 ```
 ansible-playbook tasks/collectd.yml -l IP-второй-машины
 ```
-По сути изменяется здесь только
-
-На стороне сервера с influxdb делаем:
-
-```shell
-yum -y install collectd
-```
-
-Здесь он нужен только ради одного файла, types.db. В автостарт его можно не ставить. Плюс в конфиге influxdb правим секцию collectd:
-
-``` ini
-[[collectd]]
-  enabled = true
-  database = "softrouter"
-  typesdb = "/usr/share/collectd/types.db"
-```
-
-и
-
-```
-service influxdb restart
-```
 
 После чего по адресу :8083 можем наблюдать в выводе
 
-```
+```sql
 show measurements
 ```
 
