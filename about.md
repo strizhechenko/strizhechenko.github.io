@@ -8,16 +8,15 @@ permalink: /about/
 
 ## Кодинг
 
-- [twitter (основной)](https://twitter.com/strizhechenko)
-- [twitter (англоязычный)](https://twitter.com/acid_code)
-- [блог о Linux и смежном](http://acidkernel.com)
 - [codewars](https://www.codewars.com/users/strizhechenko)
 - [github](https://github.com/strizhechenko)
-- [habrahabr](http://habrahabr.ru/users/weirded)
-- [brainstorage](https://brainstorage.me/weirded)
 - [linkedin](https://linkedin.com/in/strizhechenko)
+- [habrahabr](http://habrahabr.ru/users/weirded)
+- [блог о Linux и смежном](http://strizhechenko.github.io)
 
 ## Прочее
+- [twitter (основной)](https://twitter.com/strizhechenko)
+- [twitter (англоязычный)](https://twitter.com/acid_code)
 - [twitter о книгах](https://twitter.com/acid_books)
 - [twitter о фильмах](https://twitter.com/acid_movies)
 - [bandcamp (acid house)](https://genacid.bandcamp.com)
