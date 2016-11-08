@@ -18,7 +18,7 @@ Salary expectation: about 45000-80000€
 - [codewars: ![codewars rating](https://www.codewars.com/users/strizhechenko/badges/micro)](https://www.codewars.com/users/strizhechenko) 
 - [github](https://github.com/strizhechenko)
 - [habrahabr](http://habrahabr.ru/users/weirded)
-- [linkedin](https://linkedin.com/profile/view?id=200405959)
+- [linkedin](https://linkedin.com/in/strizhechenko)
 - [blog about Linux](http://strizhechenko.github.io)
 
 ## Other
