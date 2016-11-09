@@ -1,3 +1,22 @@
+---
+layout: post
+title: Про использование виртуальных машин для Carbon Reductor в продакшне.
+date: '2016-11-09 18:19:00'
+tags:
+  - carbonsoft
+  - telecom
+  - ISP
+  - DPI
+  - reductor
+  - vm
+  - kvm
+  - vmware
+  - xen
+  - network
+  - latency
+  - throughput
+---
+
 # Про использование виртуальных машин для Carbon Reductor
 
 Добрый день, _$USERNAME_. Я процитирую несколько фраз из этой и предыдущей заявки и попробую подробно объяснить каждый пункт.
