@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Мониторим продукты Carbon Soft с помощью Grafana + InfluxDB
+title: ЧЕРНОВИК. Мониторим продукты Carbon Soft с помощью Grafana + InfluxDB
 date: '2016-11-05 04:19:00'
 tags:
   - carbonsoft
@@ -16,6 +16,8 @@ tags:
   - collectd
   - ansible
 ---
+
+**Эта статья на текущий момент является черновиком. Всё будет оформлено в виде ansible-репозитория, здесь будут только комментарии.**
 
 # С чего всё началось
 
