@@ -1,0 +1,71 @@
+- TCP
+    - Флаги
+        - SYN
+        - ACK
+        - PSH
+        - RST
+        - FIN
+    - MSS
+    - Фрагментация
+- IP
+    - IPv4 маски адресация маршрутизация
+    - Фрагментация
+    - IPv6
+- HTTP
+    - Виды запросов GET / POST / PUT / HEAD итд
+    - Коды ответов 302, итд
+    - HTTP/2.0
+    - Последовательность HTTP соединения с флагами
+- HTTPS
+    - TLS что такое
+    - Client Hello
+    - Server Hello
+    - Последовательность HTTPS соедиения с флагами
+- DNS
+    - DNSSec
+        - RRs
+    - Виды запросов
+        - A
+        - AAAA
+        - IN
+    - DNS-флаги
+        - recursion
+        - authority
+        - query / response
+    - DNS сервера
+        - unbound
+        - bind
+        - power dns
+- OSI
+- ARP, Link local, роутинг
+- Linux
+    - iptables
+        - DNAT / SNAT / Why no nat in ipv6
+    - ip6tables
+    - iproute2
+        - Link
+        - addr
+        - neigh
+        - route
+    - ebtables
+    - bridges
+    - procfs
+        - /proc/net/dev
+    - /proc/sys/net
+    - Найти большую картиночку Linux Debugging/Profiling/Troubleshooting Tools и всё пощупать
+- Bash
+    - advanced bash scripting guide
+    - https://strizhechenko.github.io/2016/11/03/shell-howto.html
+    - if
+    - for
+    - while
+    - && ||
+    - [ ] и [[ ]]
+    - коды возврата
+    - массивы
+    - подстановки
+    - утилиты
+        - grep
+        - awk
+        - cut
+        - sed
