@@ -131,6 +131,9 @@ digraph G {
 	ISP -> Radius;
 	ISP -> Netflow;
 	ISP -> DHCP;
+	ISP -> PPTP;
+	PPTP -> "Accel-pppd";
+	Linux -> "Accel-pppd";
 	DHCP -> Opt82;
 	Netflow -> v5;
 	Netflow -> v9;
