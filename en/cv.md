@@ -13,7 +13,7 @@ Salary expectation: about 45000-80000€
 # Contacts
 
 ## Coding related
-- [codewars: ![codewars rating](https://www.codewars.com/users/strizhechenko/badges/micro)](https://www.codewars.com/users/strizhechenko) 
+- [codewars: ![codewars rating](https://www.codewars.com/users/strizhechenko/badges/micro)](https://www.codewars.com/users/strizhechenko)
 - [github](https://github.com/strizhechenko)
 - [habrahabr](http://habrahabr.ru/users/weirded)
 - [linkedin](https://linkedin.com/in/strizhechenko)
