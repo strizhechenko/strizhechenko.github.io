@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About me
-permalink: /en/cv
 ---
 
 # Common info
