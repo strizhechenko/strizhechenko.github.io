@@ -19,6 +19,10 @@ digraph G {
 	Programming -> Debugging;
 	Programming -> ProgrammingTools;
 	Programming -> Frontend;
+	Programming -> Hobby;
+	Hobby -> API;
+	Hobby -> "Natural Language Processing";
+	"Natural Language Processing" -> Pymorphy2;
 	ProgrammingLanguages -> Python;
 	ProgrammingLanguages -> C;
 	ProgrammingLanguages -> Shell;
@@ -31,6 +35,7 @@ digraph G {
 	Python -> Ipython;
 	Python -> QDNS;
 	Python -> Tweepy;
+	Python -> Pymorphy2;
 	API -> Twitter;
 	API -> "Vk.com";
 	API -> Soundcloud;
