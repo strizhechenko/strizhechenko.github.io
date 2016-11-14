@@ -130,6 +130,8 @@ digraph G {
 	ISP -> QinQ;
 	ISP -> Radius;
 	ISP -> Netflow;
+	ISP -> DHCP;
+	DHCP -> Opt82;
 	Netflow -> v5;
 	Netflow -> v9;
 	Visualization -> Grafana;
