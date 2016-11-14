@@ -12,7 +12,7 @@ tags:
   - visualization
 ---
 
-![PNG](/images/my-skills.png)
+[![PNG](/images/my-skills.png)](/images/my-skills.png)
 
 I've been searching for some way to visualize my skills today, for fun mostly. At first I was trying to use GraphML and Gephi and it was: Hard, Slow, GUI and Ugly.
 
