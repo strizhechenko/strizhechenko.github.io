@@ -28,6 +28,7 @@ digraph G {
 	Python -> Flask;
 	Python -> cProfile;
 	Python -> Pylint;
+	Python -> Ipython;
 	Python -> QDNS;
 	Python -> Tweepy;
 	API -> Twitter;
