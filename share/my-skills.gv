@@ -71,6 +71,14 @@ digraph G {
 	Linux -> CentOS;
 	Linux -> Netfilter;
 	Linux -> Routing;
+	Linux -> LinuxNetworkStackPeformance;
+	LinuxNetworkStackPeformance -> RSS;
+	LinuxNetworkStackPeformance -> RPS;
+	LinuxNetworkStackPeformance -> Coalesce;
+	LinuxNetworkStackPeformance -> "Rx/Tx rings";
+	LinuxNetworkStackPeformance -> cpufreq;
+	LinuxNetworkStackPeformance -> "hardware choise";
+	LinuxNetworkStackPeformance -> scaling;
 	Netfilter -> Conntrack;
 	Netfilter -> "Custom Modules";
 	Networks -> Nat;
@@ -79,6 +87,7 @@ digraph G {
 	Networks -> UDP;
 	Networks -> DPI;
 	Networks -> Vlan;
+	Networks -> Mirroring;
 	Monitoring -> Zabbix;
 	Monitoring -> Metrics;
 	Metrics -> InfluxDB;
@@ -127,4 +136,8 @@ digraph G {
 	"Self-education" -> Codewars;
 	"Self-education" -> Hackerrank;
 	"Self-education" -> Books;
+	Virtualization -> KVM;
+	Virtualization -> VMWare;
+	Virtualization -> LXC;
+	Virtualization -> OpenVZ;
 }
