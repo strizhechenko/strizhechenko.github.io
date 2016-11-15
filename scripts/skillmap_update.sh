@@ -7,5 +7,7 @@ for format in png svg; do
 	sfdp -Goverlap=prism $input | \
 		gvmap -e | \
 		neato -Ecolor="#55555522" -n2 -T$format > $output
-	git add $output
+	if [ "$#" = '0' ]; then
+		git add $output
+	fi
 done

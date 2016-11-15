@@ -1,4 +1,22 @@
 digraph G {
+
+	ISP [fontsize=26];
+	Books [fontsize=26];
+	Documentation [fontsize=26];
+	Programming [fontsize=26]
+	ProgrammingTools [fontsize=26]
+	ProgrammingLanguages [fontsize=26]
+	C [fontsize=26]
+	Shell [fontsize=26]
+	ProductManagement [fontsize=26]
+	Python [fontsize=26]
+	Linux [fontsize=26]
+	Networks [fontsize=26]
+	Virtualization [fontsize=26]
+	Education [fontsize=26]
+	Monitoring [fontsize=26]
+	Troubleshooting [fontsize=26]
+
 	Documentation -> Markdown;
 	Documentation -> "Nice READMEs";
 	Documentation -> Confluence;
@@ -79,6 +97,7 @@ digraph G {
 	Linux -> Netfilter;
 	Linux -> Routing;
 	Linux -> "Linux network stack peformance";
+	Networks -> "Linux network stack peformance";
 	"Linux network stack peformance" -> RSS;
 	"Linux network stack peformance" -> RPS;
 	"Linux network stack peformance" -> Coalesce;
@@ -95,6 +114,7 @@ digraph G {
 	Networks -> DPI;
 	Networks -> Vlan;
 	Networks -> Mirroring;
+	Networks -> ISP;
 	Monitoring -> Zabbix;
 	Monitoring -> Metrics;
 	Metrics -> InfluxDB;
@@ -130,6 +150,7 @@ digraph G {
 	Troubleshooting -> Strace;
 	Troubleshooting -> Tcpdump;
 	Troubleshooting -> Wireshark;
+
 	ISP -> DPI;
 	ISP -> NAT;
 	ISP -> QinQ;
@@ -144,12 +165,40 @@ digraph G {
 	Netflow -> v9;
 	Visualization -> Grafana;
 	Visualization -> Graphviz;
+	Education -> "uisi.ru"
+	"uisi.ru" -> "Software, Computers and Automated Systems, techician"
+	Education -> "urfu.ru"
+	"urfu.ru" -> "Software Engineering, bachelor"
+	Education -> "Self-education"
 	"Self-education" -> Coursera;
 	"Self-education" -> Codewars;
+	Codewars -> "http://codewars.com/users/strizhechenko"
 	"Self-education" -> Hackerrank;
 	"Self-education" -> Books;
+
+	Books -> "The Mythical Man-Month"
+	Books -> "Agile technologies, Extreme Programming and RUP."
+	Books -> "Human factor. Successful projects and commands."
+	Books -> "Scrum and XP, notes from frontline"
+	Books -> "SRE. How google runs production software."
+	Books -> "An Introducion to programming on Go"
+	Books -> "C Programming language"
+	Books -> "Linux kernel primer"
+	Books -> "Dive into python"
+	Books -> "Advanced Bash Scripting Guide"
+	Books -> "The Pragmatic Programmer"
+	Books -> "Facts and Fallacies of Software Engineering"
+	Books -> "Clean Code"
+	Books -> "The main question of coding, refactoring and everything."
+	Books -> "Extreme programming"
+	Books -> "Linux Advanced Routing and Traffic Control"
+	Books -> "Unix in a nutshell"
+	Books -> "Art of the Unix programming"
+	Books -> "Advanced Linux programming"
+	Books -> "Network Performance Tuning (RHEL)"
 	Virtualization -> KVM;
 	Virtualization -> VMWare;
 	Virtualization -> LXC;
 	Virtualization -> OpenVZ;
+	Virtualization -> Libvirt;
 }
