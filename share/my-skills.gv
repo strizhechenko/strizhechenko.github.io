@@ -28,6 +28,12 @@ digraph G {
 	ProductManagement -> Jira;
 	ProductManagement -> Agile;
 	ProductManagement -> "Readable release notes";
+	Projects -> "Tandem University (Q/A)"
+	Projects -> "Ideco ASR (Q/A)"
+	Projects -> "Carbon Billing (Q/A, Dev.)"
+	Projects -> "Carbon Reductor (Lead Dev.)"
+	Projects -> "Carbon XGE Router (Lead Dev.)"
+
 	Programming -> Regexp;
 	Programming -> ProgrammingLanguages;
 	Programming -> Testing;
@@ -128,6 +134,8 @@ digraph G {
 	CSS -> MetroUI;
 	DPI -> HTTP;
 	DPI -> HTTPS;
+	HTTPS -> LetsEncrypt;
+	HTTPS -> OpenSSL;
 	DPI -> DNS;
 	DPI -> IPv6;
 	DPI -> MitM;
