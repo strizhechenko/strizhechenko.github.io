@@ -61,7 +61,7 @@ I just have some fun with graphviz recently so you can look at my "skill map": [
 - Tweepy - I like to make simple twitter-bots. Some time ago compiled common code in my wrapper  [github](https://github.com/strizhechenko/twitterbot_utils).
 - Pymorphy2 - twitterbots sometimes require to generate russian texts, and this library can inflect russian words perfectly.
 - Flask - the only thing I like to use in web development to minimize pain (I am not a web developer, but sometimes I need some small work with it). For example - mini-app that parse trolleybus arrival info: [bus.acidkernel.com](http://bus.acidkernel.com) ([github](http://github.com/strizhechenko/trolleybuses)).
-- Flask-api - I love it for being simple and clean. Have used it as proxy between postgres and influxdb, used for analytic purpose.
+- Flask-api - I love it for being simple and clean. Have used it as proxy between postgres and influxdb, used for analytic/monitoring purpose.
 - Qdns / dnspython - wrote multithreading dns resolver with smart cache + custom gethostsbyname call, that query every domain server used in system and sum up their resonses.
 - Have expirience about parsing web-pages and using API of social networks (XML/JSON) and services like vk / twitter / uber / soundcloud.
 - Toolchain: vim > atom > PyCharm CE, nosetests, pylint, ipython, cProfile.
