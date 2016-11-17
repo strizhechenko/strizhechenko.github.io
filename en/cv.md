@@ -6,9 +6,9 @@ layout: page
 
 Oleg Strizhechenko, 25 y.o. Developer: backend, linux, c, python, etc.
 
-Location: Russia, Yekaterinburg. Ready to relocation.
+Location: Russia, Yekaterinburg. Looking to relocation.
 
-Salary expectation: about 45000-80000€
+Salary expectation: about 45000-80000€, depends of where to work.
 
 # Contacts
 
@@ -43,6 +43,10 @@ Salary expectation: about 45000-80000€
 - Carbon Billing 5 - billing for ISP with up to 100000 abonents. Frequently helping to neighbor team with some system/linux/network problems. (developer)
 - Carbon XGE Router - linux based (2.6 kernel) softrouter with cool shapers, ipsets, easy to use with Carbon Billing 5 (main developer).
 - Carbon Reductor - DPI and MitM for russian ISPs. Lead developer. Now it used by more than 350 ISP with 1000-100000 users.
+
+# Skills
+
+I just have some fun with graphviz recently so you can look at my "skill map": [SVG](/images/my-skills.svg) or [PNG](/images/my-skills.png).
 
 ## Main
 
