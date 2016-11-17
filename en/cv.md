@@ -170,6 +170,11 @@ It\'s not about "solve 1-2 problems with stackoverflow", but about closely readi
 - Advanced Linux programming
 - Network Performance Tuning (Jamie Bainbridge and Jon Maxwell)
 
+## Programming books I'm reading now
+
+- SRE. How google runs production software.
+- Introduction to machine learning with Python.
+
 # OS I prefere:
 
 - Local development: OS X / Fedora 24
