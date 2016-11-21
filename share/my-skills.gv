@@ -159,6 +159,7 @@ digraph G {
 	Troubleshooting -> Strace;
 	Troubleshooting -> Tcpdump;
 	Troubleshooting -> Wireshark;
+	Troubleshooting -> nmap;
 
 	ISP -> DPI;
 	ISP -> NAT;
