@@ -125,6 +125,8 @@ digraph G {
 	Monitoring -> Zabbix;
 	Monitoring -> Metrics;
 	Metrics -> InfluxDB;
+	Metrics -> Telegraf;
+	Metrics -> Kapacitor;
 	Metrics -> Grafana;
 	Metrics -> Collectd;
 	Collectd -> CollectdPlugins;
