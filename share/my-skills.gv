@@ -24,6 +24,7 @@ digraph G {
 	Documentation -> RST;
 	Documentation -> ReadTheDocs;
 	SCM -> Ansible;
+	Ansible -> Jinja;
 	ProductManagement -> Scrum;
 	ProductManagement -> Jira;
 	ProductManagement -> Agile;
