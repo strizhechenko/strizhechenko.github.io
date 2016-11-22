@@ -94,7 +94,7 @@ digraph G {
 	Databases -> SQL;
 	Postgres -> Jsonb;
 	Linters -> Pylint;
-	Linters -> "Clang-check";
+	Linters -> "clang-check";
 	Linters -> Shellcheck;
 	Linux -> Iptables;
 	Linux -> Iproute2;
