@@ -2,6 +2,7 @@
 
 readonly input=share/my-skills.gv
 readonly books=share/books.gv
+readonly movies=share/movies.gv
 
 for format in png svg; do
 	output=images/my-skills.$format
@@ -14,6 +15,13 @@ for format in png svg; do
 
 	output=images/books.$format
 	sfdp -Goverlap=prism $books | \
+		gvmap -e | \
+		neato -Ecolor="#55555522" -n2 -T$format > $output
+	if [ "$#" = '0' ]; then
+		git add $output
+	fi
+	output=images/movies.$format
+	sfdp -Goverlap=prism $movies | \
 		gvmap -e | \
 		neato -Ecolor="#55555522" -n2 -T$format > $output
 	if [ "$#" = '0' ]; then
