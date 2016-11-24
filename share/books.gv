@@ -1,0 +1,25 @@
+digraph G {
+
+	Books [fontsize=26];
+
+	Books -> "The Mythical Man-Month"
+	Books -> "Agile technologies, Extreme Programming and RUP."
+	Books -> "Human factor. Successful projects and commands."
+	Books -> "Scrum and XP, notes from frontline"
+	Books -> "SRE. How google runs production software."
+	Books -> "An Introducion to programming on Go"
+	Books -> "C Programming language"
+	Books -> "Linux kernel primer"
+	Books -> "Dive into python"
+	Books -> "Advanced Bash Scripting Guide"
+	Books -> "The Pragmatic Programmer"
+	Books -> "Facts and Fallacies of Software Engineering"
+	Books -> "Clean Code"
+	Books -> "The main question of coding, refactoring and everything."
+	Books -> "Extreme programming"
+	Books -> "Linux Advanced Routing and Traffic Control"
+	Books -> "Unix in a nutshell"
+	Books -> "Art of the Unix programming"
+	Books -> "Advanced Linux programming"
+	Books -> "Network Performance Tuning (RHEL)"
+}
