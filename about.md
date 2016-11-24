@@ -264,6 +264,8 @@ permalink: /about/
 
 # Фильмы
 
+[SVG](/images/movies.svg) [PNG](/images/movies.png)
+
 ## Нормальные
 - 500 дней лета (2009)
 - Безумный Макс (1979)
