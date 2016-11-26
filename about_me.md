@@ -324,6 +324,10 @@ permalink: /about_me/
 
 - Край
 
+# Музыка
+
+[![Music](/images/music.svg)](/images/music.svg)
+
 # Игры
 
 [![Games](/images/games.svg)](/images/games.svg)
