@@ -1,0 +1,73 @@
+digraph G {
+    "New Beat" [fontsize=26];
+    "New Beat" -> "X-Commando";
+    "New Beat" -> Amnesia";
+    "New Beat" -> "Dirty Harry";
+    "New Beat" -> "The Beat Pirate";
+    "New Beat" -> Indicate";
+
+    "Acid House" [fontsize=26];
+    "Acid House" -> "BX-8017";
+    "Acid House" -> "Jarvic 7";
+    "Acid House" -> "Mike Dred";
+    "Acid House" -> "RaTaXeS SA FreeSysTeM";
+
+    "Electropunk / Anhalt EBM" [fontsize=26];
+    "Electropunk / Anhalt EBM" -> "Container 90";
+    "Electropunk / Anhalt EBM" -> "Kommando XY";
+    "Electropunk / Anhalt EBM" -> "Kropp";
+    "Electropunk / Anhalt EBM" -> "EM:KO";
+    "Electropunk / Anhalt EBM" -> "Jaeger 90";
+
+    "Neue Deutsche Welle" [fontsize=26];
+     "Neue Deutsche Welle" -> "Malaria";
+     "Neue Deutsche Welle" -> "Palais Schaumburg";
+     "Neue Deutsche Welle" -> "Frl. Menke";
+     "Neue Deutsche Welle" -> "Christoph Kreutzer";
+     "Neue Deutsche Welle" -> "Polar Pop";
+     "Neue Deutsche Welle" -> "Christiane F.";
+
+    "EBM" [fontsize=26];
+     "EBM" -> "Leæther Strip";
+     "EBM" -> "Engelteck-7";
+     "EBM" -> "Schakt Neun";
+     "EBM" -> "Gruppe Borsik";
+     "EBM" -> "Escalator";
+     "EBM" -> "Noise Unit";
+     "EBM" -> "Klinik";
+
+    "Minimal synth / Coldwave" [fontsize=26];
+    "Minimal synth / Coldwave" -> "Blackie";
+    "Minimal synth / Coldwave" -> "Kap Bambino";
+
+    "Retrowave / Synthwave" [fontsize=26];
+    "Retrowave / Synthwave" -> "NightStop";
+    "Retrowave / Synthwave" -> "Lazerhawk";
+    "Retrowave / Synthwave" -> "Cluster Buster";
+    "Retrowave / Synthwave" -> "Suicide Forest";
+    "Retrowave / Synthwave" -> "Random soundcloud";
+
+    "Italo disco" [fontsize=26];
+    "Italo disco" -> "Scotch";
+    "Italo disco" -> "Fred Ventura";
+    "Italo disco" -> "Love";
+
+    "Stoner / Punk / Garage" [fontsize=26];
+    "Stoner / Punk / Garage" -> "Рандомные местные концерты";
+
+    "Industrial / Experimental / Avantgarde" [fontsize=26];
+    "Industrial / Experimental / Avantgarde" -> "Nurse With Wound";
+    "Industrial / Experimental / Avantgarde" -> "Coil";
+    "Industrial / Experimental / Avantgarde" -> "Clock DVA";
+    "Industrial / Experimental / Avantgarde" -> "Felix Kubin";
+
+    "Chiptune" [fontsize=26];
+    "Chiptune" -> "Random soundcloud";
+
+    "Различный русский трэшачок" [fontsize=26];
+    "Различный русский трэшачок" -> "Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна";
+    "Различный русский трэшачок" -> "Влажные ватрушки";
+    "Различный русский трэшачок" -> "Ансамбль христа спасителя";
+    "Различный русский трэшачок" -> "Armour Breaker";
+    "Различный русский трэшачок" -> "Барто";
+}
