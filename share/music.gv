@@ -1,10 +1,10 @@
 digraph G {
     "New Beat" [fontsize=26];
     "New Beat" -> "X-Commando";
-    "New Beat" -> Amnesia";
+    "New Beat" -> "Amnesia";
     "New Beat" -> "Dirty Harry";
     "New Beat" -> "The Beat Pirate";
-    "New Beat" -> Indicate";
+    "New Beat" -> "Indicate";
 
     "Acid House" [fontsize=26];
     "Acid House" -> "BX-8017";
