@@ -397,6 +397,10 @@ permalink: /about_me/
 
 - Край
 
+# Игры
+
+[![Games](/images/games.svg)](/images/games.svg)
+
 # Wishlist
 - Провода Sennheiser 534442
 - Любые сравнительно небольшие колонки лучше чем Genius за 600р

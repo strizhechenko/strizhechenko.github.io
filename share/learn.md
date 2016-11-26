@@ -1,6 +1,5 @@
 ---
 layout: page
-title: Что стоит изучить
 ---
 - TCP
     - Флаги
@@ -38,6 +37,8 @@ title: Что стоит изучить
         - query / response
     - DNS сервера
         - unbound
+            - unbound-control
+            - local-zones
         - bind
         - power dns
 - OSI
@@ -56,7 +57,7 @@ title: Что стоит изучить
     - procfs
         - /proc/net/dev
     - /proc/sys/net
-    - Найти большую картиночку Linux Debugging/Profiling/Troubleshooting Tools и всё пощупать
+    - Найти большую картиночку `Linux Debugging/Profiling/Troubleshooting Tools` и всё пощупать
 - Bash
     - advanced bash scripting guide
     - https://strizhechenko.github.io/2016/11/03/shell-howto.html
