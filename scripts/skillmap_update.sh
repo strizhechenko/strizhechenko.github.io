@@ -1,30 +1,10 @@
 #!/bin/bash
 
-readonly input=share/my-skills.gv
-readonly books=share/books.gv
-readonly movies=share/movies.gv
+set -eu
 
-for format in png svg; do
-	output=images/my-skills.$format
-	sfdp -Goverlap=prism $input | \
-		gvmap -e | \
-		neato -Ecolor="#55555522" -n2 -T$format > $output
-	if [ "$#" = '0' ]; then
-		git add $output
-	fi
+gv2map share/my-skills.gv images/my-skills.svg
+gv2map share/books.gv images/books.svg
+gv2map share/movies.gv images/movies.svg
+gv2map share/games.gv images/games.svg
 
-	output=images/books.$format
-	sfdp -Goverlap=prism $books | \
-		gvmap -e | \
-		neato -Ecolor="#55555522" -n2 -T$format > $output
-	if [ "$#" = '0' ]; then
-		git add $output
-	fi
-	output=images/movies.$format
-	sfdp -Goverlap=prism $movies | \
-		gvmap -e | \
-		neato -Ecolor="#55555522" -n2 -T$format > $output
-	if [ "$#" = '0' ]; then
-		git add $output
-	fi
-done
+[ "$#" != '0' ] || git add images/*.svg

@@ -1,3 +1,7 @@
+---
+layout: page
+title: Что стоит изучить
+---
 - TCP
     - Флаги
         - SYN

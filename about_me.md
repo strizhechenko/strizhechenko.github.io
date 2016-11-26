@@ -397,37 +397,6 @@ permalink: /about_me/
 
 - Край
 
-# Игры
-
-## PC
-- Morrowind
-- Vampires the masquerade: bloodline
-- Mafia 2
-- Skyrim
-- Fallout 3
-- Fallout New Vegas
-- Fallout 4
-- Dark Souls 2
-- Mortal Kombat Komplete Edition
-- Uncharted Waters Online
-
-## Sega
-- Uncharted Waters - New Horizons
-- Comix Zone
-- Phantasy Star IV
-- Rock'n'Roll Racing
-- Shinobi III - Return of the Ninja Master
-- Fatal Labyrinth
-- Sonic the hedgehog 3
-- Streets of Rage III
-
-## Nintendo
-- Blaster Master
-- Chip'n'dale 2
-- Excitebike
-- Contra Force
-- Kage
-
 # Wishlist
 - Провода Sennheiser 534442
 - Любые сравнительно небольшие колонки лучше чем Genius за 600р
