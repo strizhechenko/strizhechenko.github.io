@@ -3,19 +3,19 @@ digraph G {
 	Books [fontsize=26];
 	ISP [fontsize=26];
 	Documentation [fontsize=26];
-	Programming [fontsize=26]
-	ProgrammingTools [fontsize=26]
-	ProgrammingLanguages [fontsize=26]
-	C [fontsize=26]
-	Shell [fontsize=26]
-	ProductManagement [fontsize=26]
-	Python [fontsize=26]
-	Linux [fontsize=26]
-	Networks [fontsize=26]
-	Virtualization [fontsize=26]
-	Education [fontsize=26]
-	Monitoring [fontsize=26]
-	Troubleshooting [fontsize=26]
+	Programming [fontsize=26];
+	ProgrammingTools [fontsize=26];
+	ProgrammingLanguages [fontsize=26];
+	C [fontsize=26];
+	Shell [fontsize=26];
+	ProductManagement [fontsize=26];
+	Python [fontsize=26];
+	Linux [fontsize=26];
+	Networks [fontsize=26];
+	Virtualization [fontsize=26];
+	Education [fontsize=26];
+	Monitoring [fontsize=26];
+	Troubleshooting [fontsize=26];
 
 	Documentation -> Markdown;
 	Documentation -> "Nice READMEs";
@@ -29,11 +29,11 @@ digraph G {
 	ProductManagement -> Jira;
 	ProductManagement -> Agile;
 	ProductManagement -> "Readable release notes";
-	Projects -> "Tandem University (Q/A)"
-	Projects -> "Ideco ASR (Q/A)"
-	Projects -> "Carbon Billing (Q/A, Dev.)"
-	Projects -> "Carbon Reductor (Lead Dev.)"
-	Projects -> "Carbon XGE Router (Lead Dev.)"
+	Projects -> "Tandem University (Q/A)";
+	Projects -> "Ideco ASR (Q/A)";
+	Projects -> "Carbon Billing (Q/A, Dev.)";
+	Projects -> "Carbon Reductor (Lead Dev.)";
+	Projects -> "Carbon XGE Router (Lead Dev.)";
 
 	Programming -> Regexp;
 	Programming -> ProgrammingLanguages;
@@ -66,7 +66,8 @@ digraph G {
 	API -> Soundcloud;
 	API -> LastFM;
 	API -> Uber;
-	API -> Roskomnadzor
+	API -> Roskomnadzor;
+	API -> "Yandex Translate";
 	Twitter -> Tweepy;
 	Flask -> FlaskAPI;
 	Flask -> Jinja;
@@ -103,6 +104,9 @@ digraph G {
 	Linux -> CentOS;
 	Linux -> Netfilter;
 	Linux -> Routing;
+	Routing -> Quagga;
+	Quagga -> OSPF;
+	Quagga -> BGP;
 	CentOS -> Kickstart;
 	CentOS -> Yum;
 	CentOS -> rpmbuild;
@@ -180,14 +184,14 @@ digraph G {
 	Netflow -> v9;
 	Visualization -> Grafana;
 	Visualization -> Graphviz;
-	Education -> "uisi.ru"
-	"uisi.ru" -> "Software, Computers and Automated Systems, techician"
-	Education -> "urfu.ru"
-	"urfu.ru" -> "Software Engineering, bachelor"
-	Education -> "Self-education"
+	Education -> "uisi.ru";
+	"uisi.ru" -> "Software, Computers and Automated Systems, techician";
+	Education -> "urfu.ru";
+	"urfu.ru" -> "Software Engineering, bachelor";
+	Education -> "Self-education";
 	"Self-education" -> Coursera;
 	"Self-education" -> Codewars;
-	Codewars -> "http://codewars.com/users/strizhechenko"
+	Codewars -> "http://codewars.com/users/strizhechenko";
 	"Self-education" -> Hackerrank;
 	"Self-education" -> Books;
 
