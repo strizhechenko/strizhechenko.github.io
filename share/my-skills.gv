@@ -38,6 +38,7 @@ digraph G {
 	Programming -> Regexp;
 	Programming -> ProgrammingLanguages;
 	Programming -> Testing;
+	Programming -> "UI Automation";
 	Programming -> Profiling;
 	Programming -> Benchmarking;
 	Programming -> Databases;
@@ -90,7 +91,10 @@ digraph G {
 	Testing -> Cmocka;
 	Testing -> Behat;
 	Testing -> TDD;
-	Testing -> Selenium;
+	Testing -> "UI Automation";
+	"UI Automation" -> Selenium;
+	"UI Automation" -> xdotool;
+	"UI Automation" -> autoit;
 	Profiling -> cProfile;
 	Profiling -> gprof;
 	Databases -> InfluxDB;
