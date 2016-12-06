@@ -1,21 +1,22 @@
 digraph G {
-
-	Books [fontsize=26];
-	ISP [fontsize=26];
-	Documentation [fontsize=26];
-	Programming [fontsize=26];
-	ProgrammingTools [fontsize=26];
-	ProgrammingLanguages [fontsize=26];
-	C [fontsize=26];
-	Shell [fontsize=26];
-	ProductManagement [fontsize=26];
-	Python [fontsize=26];
-	Linux [fontsize=26];
-	Networks [fontsize=26];
-	Virtualization [fontsize=26];
-	Education [fontsize=26];
-	Monitoring [fontsize=26];
-	Troubleshooting [fontsize=26];
+	node [fontsize=9];
+	edge [arrowsize=0.3, color=black];
+	Books [fontsize=13];
+	ISP [fontsize=13];
+	Documentation [fontsize=13];
+	Programming [fontsize=13];
+	ProgrammingTools [fontsize=13];
+	ProgrammingLanguages [fontsize=13];
+	C [fontsize=13];
+	Shell [fontsize=13];
+	ProductManagement [fontsize=13];
+	Python [fontsize=13];
+	Linux [fontsize=13];
+	Networks [fontsize=13];
+	Virtualization [fontsize=13];
+	Education [fontsize=13];
+	Monitoring [fontsize=13];
+	Troubleshooting [fontsize=13];
 
 	Documentation -> Markdown;
 	Documentation -> "Nice READMEs";
@@ -66,6 +67,7 @@ digraph G {
 	Python -> Tweepy;
 	Python -> Pymorphy2;
 	API -> Twitter;
+	API -> "duma.gov";
 	API -> "Vk.com";
 	API -> Soundcloud;
 	API -> LastFM;
