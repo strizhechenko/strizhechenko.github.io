@@ -104,6 +104,8 @@ digraph G {
 	Linux -> Netfilter;
 	Linux -> Routing;
 	CentOS -> Kickstart;
+	CentOS -> Yum;
+	CentOS -> rpmbuild;
 	Linux -> "Linux network stack peformance";
 	Networks -> "Linux network stack peformance";
 	"Linux network stack peformance" -> RSS;
