@@ -31,27 +31,25 @@ permalink: /about_me/
 
 [![Skills](/images/my-skills.svg)](/images/my-skills.svg)
 
-## Вещи которые хочу когда-нибудь поковырять поподробнее
+# Фильмы
 
-Не решить 1-2 проблемы с помощью stackoverflow, а именно прочитать значительную часть документации.
+[![SVG](/images/movies.svg)](/images/movies.svg)
 
-- selinux
-- graphite
-- systemd
-- netfilter современного ядра Linux
-- ansible - люблю и часто использую, но возможно не идеально
-- continuous queries в influxdb
-- docker
-- openstack
-- write twitterbot with golang
-- profiling and optimizing sql in postgres
-- combining zabbix (as alerter) and influxdb
-- tweepy twitter streaming api in twitterbot-utils
-- python-midi (drums, other instruments, virtual midi controller, combine with garageband)
-- gcov automation
-- устройство Kbuild и dkms
-- правильное использование pipelines в jenkins
-- использование oprofile для профилирования приложений в пользовательском пространсте
+# Посещённые концерты
+
+[![SVG](/images/concerts.svg)](/images/concerts.svg)
+
+# Спектакли
+
+[![SVG](/images/spectacles.svg)](/images/spectacles.svg)
+
+# Музыка
+
+[![Music](/images/music.svg)](/images/music.svg)
+
+# Игры
+
+[![Games](/images/games.svg)](/images/games.svg)
 
 # Книги
 
@@ -63,6 +61,7 @@ permalink: /about_me/
 ## Программирование
 
 [![books](/images/books.svg)](/images/books.svg)
+
 ## Художественная литература
 
 ### Берроуз
@@ -183,9 +182,6 @@ permalink: /about_me/
 - Зеленый луг
 - Зверь в подземелье
 
-# Фильмы
-
-[![SVG](/images/movies.svg)](/images/movies.svg)
 
 # Используемые ОС
 
@@ -228,10 +224,6 @@ permalink: /about_me/
 - Тёмные века
 - XKCD
 
-# Посещённые концерты
-
-[![SVG](/images/concerts.svg)](/images/concerts.svg)
-
 # Созданные сообщества и коллективные аккаунты, которые я вёл
 - [https://twitter.com/kernelunderhood](https://twitter.com/kernelunderhood) - твиттер о системном программировании
 - [https://vk.com/weirdedout](https://vk.com/weirdedout) - музыка
@@ -239,20 +231,30 @@ permalink: /about_me/
 - [https://vk.com/clock_dva](https://vk.com/clock_dva) - музыка
 - [https://vk.com/cevirmovies](https://vk.com/cevirmovies) - шуточки
 
-# Спектакли
-
-[![SVG](/images/spectacles.svg)](/images/spectacles.svg)
-
-# Музыка
-
-[![Music](/images/music.svg)](/images/music.svg)
-
-# Игры
-
-[![Games](/images/games.svg)](/images/games.svg)
-
 # Wishlist
 - Провода Sennheiser 534442
 - Любые сравнительно небольшие колонки лучше чем Genius за 600р
 - Dark Souls 3
 - Site Reliability Engineering: How google runs production software (бумажная)
+
+## Вещи которые хочу когда-нибудь поковырять поподробнее
+
+Не решить 1-2 проблемы с помощью stackoverflow, а именно прочитать значительную часть документации.
+
+- selinux
+- graphite
+- systemd
+- netfilter современного ядра Linux
+- ansible - люблю и часто использую, но возможно не идеально
+- continuous queries в influxdb
+- docker
+- openstack
+- write twitterbot with golang
+- profiling and optimizing sql in postgres
+- combining zabbix (as alerter) and influxdb
+- tweepy twitter streaming api in twitterbot-utils
+- python-midi (drums, other instruments, virtual midi controller, combine with garageband)
+- gcov automation
+- устройство Kbuild и dkms
+- правильное использование pipelines в jenkins
+- использование oprofile для профилирования приложений в пользовательском пространсте
