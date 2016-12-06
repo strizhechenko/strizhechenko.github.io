@@ -230,54 +230,7 @@ permalink: /about_me/
 
 # Посещённые концерты
 
-## and proud
-- cut copy
-- karl bartos
-- kalashnikov
-- matsumoto zoku
-- the dad horse expirience
-- Clock DVA
-- Ben Frost
-- Барто
-- Звёзды
-- The Meantraitors
-- Junk riot
-- Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна
-
-## Прочее
-- butterfly temple
-- melotron
-- and one
-- teslaboy
-- love cult
-- смола
-- матушка гусыня
-- gnoomes
-- СПБЧ
-- Disciplina Medicina
-- Vice Versa
-- Polska Radio One
-- Jars
-- Мразь
-- Blues Bastards
-- ВХОРЕ
-- Боровик Ералаш
-
-## Местные
-- krnangh
-- panicforce
-- 4 позиции бруно
-- стройбат
-- spoilers
-- the stockmen
-- karovas milkshake
-- gazoliners
-- текстура
-- городок чекистов
-- Наука Сна
-- Garry Drummer Orchestra
-- Концы
-- The Quirks
+[![SVG](/images/concerts.svg)](/images/concerts.svg)
 
 # Созданные сообщества и коллективные аккаунты, которые я вёл
 - [https://twitter.com/kernelunderhood](https://twitter.com/kernelunderhood) - твиттер о системном программировании

@@ -1,0 +1,52 @@
+digraph G {
+
+norm [fontsize=26];
+norm -> "cut copy"
+norm -> "karl bartos"
+norm -> kalashnikov
+norm ->  "matsumoto zoku"
+norm ->  "the dad horse expirience"
+norm ->  "Clock DVA"
+norm ->  "Ben Frost"
+norm ->  Барто
+norm ->  Звёзды
+norm ->  "The Meantraitors"
+norm ->  "Junk riot"
+norm ->  "Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна"
+
+other [fontsize=26];
+other ->  "butterfly temple"
+other ->  melotron
+other ->  "and one"
+other ->  teslaboy
+other ->  "love cult"
+other ->  смола
+other ->  "матушка гусыня"
+other ->  gnoomes
+other ->  СПБЧ
+other ->  "Disciplina Medicina"
+other ->  "Vice Versa"
+other ->  "Polska Radio One"
+other ->  Jars
+other ->  Мразь
+other ->  "Blues Bastards"
+other ->  ВХОРЕ
+other ->  "Боровик Ералаш"
+
+local [fontsize=26];
+local ->  krnangh
+local ->  panicforce
+local ->  "4 позиции бруно"
+local ->  стройбат
+local ->  spoilers
+local ->  "the stockmen"
+local ->  "karovas milkshake"
+local ->  gazoliners
+local ->  текстура
+local ->  "городок чекистов"
+local ->  "Наука Сна"
+local ->  "Garry Drummer Orchestra"
+local ->  Концы
+local ->  "The Quirks"
+
+}
