@@ -46,6 +46,9 @@ digraph G {
 	Programming -> Frontend;
 	Programming -> Hobby;
 	Hobby -> API;
+	Hobby -> Blogging;
+	Blogging -> Jekyll;
+	Blogging -> Twitter;
 	Hobby -> "Natural Language Processing";
 	"Natural Language Processing" -> Pymorphy2;
 	ProgrammingLanguages -> Python;
