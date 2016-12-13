@@ -71,7 +71,7 @@ tune_eth() {
 		irq=${irq//:}
 		proc_entry=/proc/irq/$irq/smp_affinity_list
 		evaled="${queue##*TxRx-}"
-		[ "$evaled" -gt 4 ] || evaled=$((evaled+4))
+		[ "$evaled" -gt $((cpucount/2)) ] || evaled=$((evaled+cpucount/2))
 		echo "$irq $queue $(cat $proc_entry) -> $evaled"
 		echo $evaled > $proc_entry
 	done
