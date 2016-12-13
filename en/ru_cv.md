@@ -1,5 +1,6 @@
 ---
 layout: page
+title: CV (ru)
 ---
 
 ## Обо мне
