@@ -1,6 +1,5 @@
 ---
 layout: page
-title: CV (en)
 ---
 
 # Common info
