@@ -1,0 +1,15 @@
+digraph G {
+  systemd
+  docker
+    docker -> docker-swarm
+    docker -> kubernates
+    docker -> docker-registry
+    docker -> docker-compose
+  pacemaker
+  golang
+    golang -> "something for web"
+    golang -> "something for API"
+    golang -> "expvar"
+  english
+  openshift
+}
