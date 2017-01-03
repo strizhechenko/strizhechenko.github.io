@@ -6,6 +6,11 @@ digraph G {
     docker -> docker-registry
     docker -> docker-compose
   pacemaker
+  haproxy
+  books
+    books -> docs@rhel7
+    books -> srebook
+    books -> "introduction to machine learning with python" -> "do something funny"
   golang
     golang -> "something for web"
     golang -> "something for API"
@@ -14,4 +19,5 @@ digraph G {
   english
     english -> lingualeo -> "finish all premium grammar courses"
   openshift
+  ansible -> "stop use it as deployment scripts on my computer"
 }
