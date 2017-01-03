@@ -1,23 +1,27 @@
 digraph G {
-  systemd
-  docker
-    docker -> docker-swarm
-    docker -> kubernates
-    docker -> docker-registry
-    docker -> docker-compose
+  systemd -> "at least one book about it"
+  systemd -> "write hello world unit-file with some kind of watchdog"
+  systemd -> "try to get some benefit from binary logging"
+  centos7 -> "buy separate hdd for experiments with it"
+  centos7 -> systemd
+  centos7 -> docker
+  docker -> docker-swarm
+  docker -> kubernates
+  docker -> docker-registry
+  docker -> docker-compose
   pacemaker
   haproxy
-  books
-    books -> docs@rhel7
-    books -> srebook
-    books -> "introduction to machine learning with python" -> "do something funny"
-  golang
-    golang -> "something for web"
-    golang -> "something for API"
-    golang -> "expvar"
-    golang -> "finish 30 days of code challenge"
-  english
-    english -> lingualeo -> "finish all premium grammar courses"
+  books -> docs@rhel7
+  books -> srebook
+  books -> "introduction to machine learning with python" -> "do something funny"
+  golang -> "something for web"
+  golang -> "something for API"
+  golang -> "expvar"
+  golang -> "finish 30 days of code challenge"
+  english -> lingualeo -> "finish all premium grammar courses"
   openshift
   ansible -> "stop use it as deployment scripts on my computer"
+  influxdata -> influxdb -> "prediction functions"
+  influxdata -> telegraf -> "rewrite carbonsoft services check as plugin for telegraf"
+  influxdata -> kapacitor -> "become more familliar with tickscript"
 }
