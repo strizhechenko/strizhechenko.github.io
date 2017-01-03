@@ -27,4 +27,5 @@ digraph G {
   influxdata -> telegraf -> "rewrite carbonsoft services check as plugin for telegraf"
   influxdata -> kapacitor -> "become more familliar with tickscript"
   geocoding -> "add feature for direct address args for my uber-api based app"
+  "WTF" -> "Data Center TCP"
 }
