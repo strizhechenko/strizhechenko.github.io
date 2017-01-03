@@ -5,6 +5,7 @@ digraph G {
   centos7 -> "buy separate hdd for experiments with it"
   centos7 -> systemd
   centos7 -> docker
+  centos7 -> tuned -> "merge with my network rx interrupts tune script"
   docker -> docker-swarm
   docker -> kubernates
   docker -> docker-registry
