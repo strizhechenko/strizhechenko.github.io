@@ -14,6 +14,7 @@ digraph G {
   books -> docs@rhel7
   books -> srebook
   books -> "introduction to machine learning with python" -> "do something funny"
+  books -> "some classic book about algorythms and data structures"
   golang -> "something for web"
   golang -> "something for API"
   golang -> "expvar"
