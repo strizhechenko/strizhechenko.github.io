@@ -6,6 +6,7 @@ digraph G {
   centos7 -> systemd
   centos7 -> docker
   centos7 -> tuned -> "merge with my network rx interrupts tune script"
+  centos7 -> selinux
   docker -> docker-swarm
   docker -> kubernates
   docker -> docker-registry
