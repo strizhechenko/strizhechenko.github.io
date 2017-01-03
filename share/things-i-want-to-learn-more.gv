@@ -31,4 +31,5 @@ digraph G {
   "WTF" -> "Data Center TCP"
   "WTF" -> "RFC 7217"
   WTF -> "Red Hat Satellite"
+  WTF -> GSSAPI
 }
