@@ -24,5 +24,5 @@ digraph G {
   influxdata -> influxdb -> "prediction functions"
   influxdata -> telegraf -> "rewrite carbonsoft services check as plugin for telegraf"
   influxdata -> kapacitor -> "become more familliar with tickscript"
-  geocosing -> "add feature for direct address args for my uber-api based app"
+  geocoding -> "add feature for direct address args for my uber-api based app"
 }
