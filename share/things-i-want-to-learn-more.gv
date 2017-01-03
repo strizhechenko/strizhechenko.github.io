@@ -10,6 +10,8 @@ digraph G {
     golang -> "something for web"
     golang -> "something for API"
     golang -> "expvar"
+    golang -> "finish 30 days of code challenge"
   english
+    english -> lingualeo -> "finish all premium grammar courses"
   openshift
 }
