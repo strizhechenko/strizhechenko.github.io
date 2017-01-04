@@ -11,6 +11,7 @@ digraph G {
   docker -> kubernates
   docker -> docker-registry
   docker -> docker-compose
+  centos7 -> LVM
   pacemaker
   haproxy
   books -> docs@rhel7
