@@ -35,4 +35,5 @@ digraph G {
   WTF -> "Controller Area Network"
   "Gitlab 8.15"
   gitflow
+  iproute2 -> tc -> "read all shapers kind man pages"
 }
