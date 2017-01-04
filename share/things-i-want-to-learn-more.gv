@@ -33,4 +33,6 @@ digraph G {
   WTF -> "Red Hat Satellite"
   WTF -> GSSAPI
   WTF -> "Controller Area Network"
+  "Gitlab 8.15"
+  gitflow
 }
