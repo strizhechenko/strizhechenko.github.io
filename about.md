@@ -120,6 +120,8 @@ permalink: /about/
 - Разные эссе Джорджа Оруэлла
 - Мёртвые души
 - Квантовая механика - теоретический минимум
+- Site Reliability Engineering: How Google runs production software
+- Selinux user guide
 
 ## Программирование
 - Программист-прагматик
@@ -141,6 +143,11 @@ permalink: /about/
 - Iptables Tutorial 1.1.19
 - Unix in a nutshell
 - Искусство программирования для Unix
+
+### RHEL
+
+- 7.0, 7.1, 7.2, 7.3 release notes
+- getting started with containers
 
 ## Художественная литература
 
