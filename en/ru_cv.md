@@ -2,7 +2,7 @@
 layout: page
 ---
 
-## Linux-разработчик/devops
+## CV (ru)
 
 Олег Стрижеченко, 25 лет, Разработчик, специализируюсь на backend, linux, c, python, сетях.
 
