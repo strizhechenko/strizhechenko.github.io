@@ -2,7 +2,7 @@
 layout: page
 ---
 
-# Common info
+# CV (en)
 
 Oleg Strizhechenko, 25 y.o. Developer: backend, linux, c, python, etc.
 
