@@ -19,7 +19,7 @@ title: Как сохранять release velocity, если среда в кот
 
 Мне очень нравится пирамида потребностей SRE приведённая в SREBook от google:
 
-!(/images/srh.jpg)[Site Reliability Hierarchy]
+![Site Reliability Hierarchy](/images/srh.jpg)
 
 Вещи в этой пирамиде хорошо ложатся на крупную компанию с большим числом людей. В небольшой команде/стартапе ресурсы сильно ограничены.
 
