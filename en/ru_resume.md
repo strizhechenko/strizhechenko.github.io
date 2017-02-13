@@ -14,6 +14,7 @@ layout: page
 - [codewars: ![codewars rating](https://www.codewars.com/users/strizhechenko/badges/micro)](https://www.codewars.com/users/strizhechenko)
 - [linkedin](https://linkedin.com/in/strizhechenko)
 - [CV (с подробностями об опыте)](https://strizhechenko.github.io/en/ru_cv)
+- [Это же резюме в PDF](https://strizhechenko.github.io/share/ru_resume.pdf)
 - [e-mail](mailto:oleg.strizhechenko+github@gmail.com)
 - [twitter](https://twitter.com/strizhechenko)
 
