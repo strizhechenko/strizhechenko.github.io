@@ -138,7 +138,7 @@ big data | 4 | 1
 Systemd | 4 | 1
 cmocka | 3 | 4
 HTTP | 3 | 4
-Траблшутинг: 3 | 4
+Траблшутинг | 3 | 4
 flask | 3 | 4
 Libvirt/KVM/Qemu | 3 | 4
 RPM/Rpmbuild | 3 | 3
