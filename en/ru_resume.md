@@ -145,6 +145,7 @@ HTTPS | 3 | 3
 jira | 3 | 3
 Project management | 3 | 3
 Сетевое оборудование (свитчи, роутеры) | 3 | 2
+SNMP | 3 | 2
 NoSQL | 3 | 2
 SQL | 3 | 2
 Jenkins | 3 | 2
