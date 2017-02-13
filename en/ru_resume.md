@@ -31,6 +31,7 @@ layout: page
 - [blog about Linux](http://strizhechenko.github.io)
 - [codewars: ![codewars rating](https://www.codewars.com/users/strizhechenko/badges/micro)](https://www.codewars.com/users/strizhechenko)
 - [linkedin](https://linkedin.com/in/strizhechenko)
+- [CV (с подробностями об опыте)](https://strizhechenko.github.io/en/ru_cv)
 - [e-mail](mailto:oleg.strizhechenko+github@gmail.com)
 - [twitter](https://twitter.com/strizhechenko)
 

@@ -1,8 +1,7 @@
 ---
+title: CV (ru)
 layout: page
 ---
-
-## CV (ru)
 
 Олег Стрижеченко, 25 лет, Разработчик, специализируюсь на backend, linux, c, python, сетях.
 
