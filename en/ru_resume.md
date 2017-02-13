@@ -25,23 +25,15 @@ layout: page
 - люблю изредка решать проблемы, кажущиеся "чёрным ящиком".
 - не курю -> меньше отвлекаюсь
 
-## В какие стороны хочу развиваться
-
-- облака, хостинги, виртуализация, мониторинги, короче SRE/devops.
-- распределённые системы (хотя тут я тот ещё junior, но без практики чем-то большим стать и не получится).
-- software development in test (я начал работу в IT с тестирования и довольно случайно стал разработчиком).
-- различного рода стартапы (тут больше зависит от идеи).
-
-Привлекает обеспечение надёжности ПО, выжимание производительности из кода и алгоритмов, оптимизации итд. Возможность делать вклад в популярные OpenSource проекты на работе, а не после неё - тоже может заманить.
-
 ## Контакты/ссылки
 
 - [github](https://github.com/strizhechenko)
 - [blog about Linux](http://strizhechenko.github.io)
 - [codewars: ![codewars rating](https://www.codewars.com/users/strizhechenko/badges/micro)](https://www.codewars.com/users/strizhechenko)
 - [linkedin](https://linkedin.com/in/strizhechenko)
-- [twitter](https://twitter.com/strizhechenko)
 - [e-mail](mailto:oleg.strizhechenko+github@gmail.com)
+- [twitter](https://twitter.com/strizhechenko)
+
 
 ## Образование
 
@@ -82,7 +74,7 @@ layout: page
 5. Да, я очень хочу в этом копаться!
 
 Навык/язык/инструмент | Интерес к нему | Опыт работы с ним/экспертиза
-----|----|----
+----|----:|----:
 Git | 5 | 5
 разработка вспомогательных инструментов | 5 | 5
 линтеры | 5 | 4
