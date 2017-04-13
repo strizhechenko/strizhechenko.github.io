@@ -2,7 +2,7 @@
 title: Как работает Linux Network Stack, как его тюнить и мониторить
 ---
 
-Источник: https://blog.packagecloud.io/eng/2016/06/22/monitoring-tuning-linux-networking-stack-receiving-data/
+Источник: [Блог packagecloud.io](https://blog.packagecloud.io/eng/2016/06/22/monitoring-tuning-linux-networking-stack-receiving-data/)
 
 ## Итак, путь пакетика из кабеля в приложение приблизительно такой:
 
