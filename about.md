@@ -636,8 +636,12 @@ permalink: /about/
 - Пулл реквесты:
   - [Утилиты для мониторинга и тюнинга сетевого стека Linux](https://github.com/strizhechenko/netutils-linux)
   - [Тулза для взаимодействия с Uber](https://github.com/strizhechenko/uber-cli)
-  - Библиотеки для [написания твиттер-ботов](https://github.com/strizhechenko/twitterbot_utils) и [их взаимодействия](https://github.com/strizhechenko/twitterbot_farm) (python)
-  - [Твиттер-бот с автозаменой на Golang (gin + jquery)](https://github.com/strizhechenko/go-twitterbot-replacer)
+  - Библиотеки для [написания твиттер-ботов](https://github.com/strizhechenko/twitterbot_utils) и [их взаимодействия](https://github.com/strizhechenko/twitterbot_farm). Сейчас используются для аккаунтов:
+    - [Эт когда в жопу ебут](https://twitter.com/eto_kogda_ebut)
+    - [Всё запрещено по плану](https://twitter.com/zapretbot)
+    - [Harry Potter & Shit](https://twitter.com/HarryTwibotter)
+    - [SocialConstructBot](https://twitter.com/SocConstructBot)
+  - [Твиттер-бот с автозаменой на Golang (gin + jquery)](https://github.com/strizhechenko/go-twitterbot-replacer). Сейчас используется для аккаунта ["Программировать надо"](https://twitter.com/__coding_tips__)
   - [Гайд по программированию на bash (типа unofficial shell strict mode)](https://github.com/strizhechenko/shell-scripting-guide)
 
 Также можно просто подкинуть мне баблишка на VPS/пивко
