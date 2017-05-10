@@ -633,5 +633,5 @@ permalink: /about/
 
 ## Также можно просто подкинуть мне баблишка на VPS/пивко
 
-- https://rocketbank.ru/oleg.strizhechenko 
-- https://www.paypal.me/weirded
+- [рокетбанк](https://rocketbank.ru/oleg.strizhechenko)
+- [paypal](https://www.paypal.me/weirded)
