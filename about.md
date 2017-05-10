@@ -627,9 +627,18 @@ permalink: /about/
 
 # Wishlist
 
-- Любые сравнительно небольшие колонки лучше чем Genius за 600р
-- Dark Souls 3
+- [Пауэрбанк](https://market.yandex.ru/product/13884054?nid=56035)
 - Site Reliability Engineering: How google runs production software (бумажная)
+- [Игоры в steam](http://steamcommunity.com/id/oleg_strizhechenko/wishlist/)
+- Хорошие курсы с менторами (рекомендации, проведение, дары) по:
+  - javascript
+  - flask
+- Пулл реквесты:
+  - [Утилиты для мониторинга и тюнинга сетевого стека Linux](https://github.com/strizhechenko/netutils-linux)
+  - [Тулза для взаимодействия с Uber](https://github.com/strizhechenko/uber-cli)
+  - Библиотеки для [написания твиттер-ботов](https://github.com/strizhechenko/twitterbot_utils) и [их взаимодействия](https://github.com/strizhechenko/twitterbot_farm) (python)
+  - [Твиттер-бот с автозаменой на Golang (gin + jquery)](https://github.com/strizhechenko/go-twitterbot-replacer)
+  - [Гайд по программированию на bash (типа unofficial shell strict mode)](https://github.com/strizhechenko/shell-scripting-guide)
 
 ## Также можно просто подкинуть мне баблишка на VPS/пивко
 
