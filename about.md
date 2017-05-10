@@ -640,7 +640,7 @@ permalink: /about/
   - [Твиттер-бот с автозаменой на Golang (gin + jquery)](https://github.com/strizhechenko/go-twitterbot-replacer)
   - [Гайд по программированию на bash (типа unofficial shell strict mode)](https://github.com/strizhechenko/shell-scripting-guide)
 
-### Также можно просто подкинуть мне баблишка на VPS/пивко
+Также можно просто подкинуть мне баблишка на VPS/пивко
 
 - [рокетбанк](https://rocketbank.ru/oleg.strizhechenko)
 - [paypal](https://www.paypal.me/weirded)
