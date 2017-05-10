@@ -626,7 +626,12 @@ permalink: /about/
 - Kage
 
 # Wishlist
-- Провода Sennheiser 534442
+
 - Любые сравнительно небольшие колонки лучше чем Genius за 600р
 - Dark Souls 3
 - Site Reliability Engineering: How google runs production software (бумажная)
+
+## Также можно просто подкинуть мне баблишка на VPS/пивко
+
+- https://rocketbank.ru/oleg.strizhechenko 
+- https://www.paypal.me/weirded
