@@ -648,3 +648,4 @@ permalink: /about/
 
 - [рокетбанк](https://rocketbank.ru/oleg.strizhechenko)
 - [paypal](https://www.paypal.me/weirded)
+- [рефералка в digitalocean](https://m.do.co/c/fc5f2fdcde16)
