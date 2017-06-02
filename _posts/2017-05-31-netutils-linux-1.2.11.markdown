@@ -38,7 +38,7 @@ https://github.com/strizhechenko/netutils-linux
 
 Что оно показывает:
 
-![network-top](/images/network-top.gif)
+![network-top](https://cloud.githubusercontent.com/assets/3813830/26570951/acacf18c-452c-11e7-8fe7-5d0952f39d8b.gif)
 
 #### Прерывания
 
