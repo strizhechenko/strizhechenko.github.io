@@ -201,6 +201,7 @@ JS | 1 | 1
 - Art of the Unix programming
 - Advanced Linux programming
 - Network Performance Tuning (Jamie Bainbridge and Jon Maxwell)
+- Packagecloud blog: monitoring and tuning the linux networking stack [receiving](https://blog.packagecloud.io/eng/2016/06/22/monitoring-tuning-linux-networking-stack-receiving-data/) and [sending](https://blog.packagecloud.io/eng/2017/02/06/monitoring-tuning-linux-networking-stack-sending-data/) data.
 
 ### Читаемые
 
