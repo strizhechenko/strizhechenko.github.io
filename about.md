@@ -4,9 +4,9 @@ title: Обо мне
 permalink: /about/
 ---
 
-# Контакты:
+## Контакты:
 
-## Кодинг
+### Кодинг
 
 - [codewars](https://www.codewars.com/users/strizhechenko)
 - [github](https://github.com/strizhechenko)
@@ -14,7 +14,7 @@ permalink: /about/
 - [habrahabr](http://habrahabr.ru/users/weirded)
 - [блог о Linux и смежном](http://strizhechenko.github.io)
 
-## Прочее
+### Прочее
 - [twitter (основной)](https://twitter.com/strizhechenko)
 - [twitter (англоязычный)](https://twitter.com/acid_code)
 - [twitter о книгах](https://twitter.com/acid_books)
@@ -27,17 +27,17 @@ permalink: /about/
 - [instagram](https://instagram.com/weirdedout)
 - [почта](mailto:oleg.strizhechenko+random@gmail.com)
 
-# Языки программирования и навыки
+## Языки программирования и навыки
 
-## Основные
+### Основные
 
-### bash
+#### bash
 - замечательная вещь, если скрипт влезает на экран и не содержит функций
 - в своё время доходил до невыразимых безумий с eval и unit-тестированием, больше не хочу
 - написал [свой собственный гайд по разработке на bash](https://gist.github.com/strizhechenko/f82b6eeb29187bdb7e99d6baf46665ab)
 - toolchain: vim > atom, bash -eux, shellcheck
 
-### python
+#### python
 
 - tweepy - люблю писать твиттерботов, удобная либа. мой враппер поверх неё: [https://github.com/strizhechenko/twitterbot_utils](https://github.com/strizhechenko/twitterbot_utils)
 - pymorphy2 - люблю генерировать русскоязычные тексты, а эта либа отлично склоняет слова
@@ -47,30 +47,30 @@ permalink: /about/
 - toolchain: vim > atom > PyCharm CE, nosetests, pylint, ipython, cProfile
 - parsers: xml.etree for quick coding, xml.sax for fast processing, json for APIs, sometimes sed/grep/awk for invalid HTML :D.
 
-### c
+#### c
 
 - linux kernel, netfilter, iptables - в основном пилил модули ядра для фильтрации трафика (производительные MitM для HTTP, HTTPS и DNS с поддержкой IPv6).
 - pf_ring - потратил около 4 часов на эксперименты, а потом обломался из-за отсутствия стенда для тестов
 - netflow processing - портировал с 32 на 64бит один legacy-проект по сбору и агрегации статистики
 - toolchain: vim > atom, cmocka, gcc/clang, clang-format, clang-check, gdb, strace, gprof, make
 
-### linux
+#### linux
 
 - очень хорошо разбираюсь в настройках для производительности сетевых карт (RPS, RRS, Coalesce/Buffer size итд).
 - хорошо разбираюсь в современных утилитках для траблшутинга (в основном сетевые и производительность): iproute2, ethtool, ss, procps, bind-utils, top, iotop, oprofile, ftrace
 
-### sql/postgres
+#### sql/postgres
 
 Недавно (май 2016), поддавшись влиянию @backendsecret из твиттера, решил пощупать возможности postgres по работе с json и проклял всё, но в итоге всё же смог им воспользоваться и получил некоторый профит. Хоррор по началу был в разборе кучи данных в markdown, который был собран кодом на bash, их парсингу на python, преобразованию в json и складыванию в jsonb-поля базы данных, откуда их можно было забрать практически в неизменном виде в виде тонкой прослойки в виде flask-api (он, кстати, няшный) и сложить в influxdb и затем любоваться графиками в grafana. Синтаксис запросов к json-полям - дичайшая боль, наверное единственный адекватный способ это делать - писать UDF на python. Но боль болью, а задачу свою postgres выполняет хорошо.
 
-### influxdb / grafana / метрики
+#### influxdb / grafana / метрики
 
 Давно использую для сбора и визуализации данных, в основном связанных с бизнесом. Спихиваю туда много чего, от потенциальной зарплаты на текущий месяц в рублях/долларах/евро по текущему курсу и статистики числа обнаруженных системой самодиагностики проблем на серверах кастомеров, которые мы обслуживаем до скорости ответов нескольких наших сервисов и результаты прохождения тестов (данные беру от jenkins).
 
-### css
+#### css
 - metroui.org.ua - больше ничего никогда не использовал, в CSS могу еле-еле. Использовал его в [веб-интерфейсе Carbon Reductor](http://demo-reductor.carbonsoft.ru), [bus.acidkerne.com](http://bus.acidkernel.com).
 
-### Виртуализация
+#### Виртуализация
 
 Активный пользователь, писал много всего связанного с автоматическим деплоем виртуалок/контейнеров для рабочих нужд, особое внимание уделял сложным сетевым схемам и роутингу между разными виртуалками/контейнерами. Немного занимался сетевой произволительностью в виртуальных (впрочем и физических тоже) машинах связанной с захватом и анализом трафика.
 
@@ -79,11 +79,11 @@ permalink: /about/
 - kvm
 - libvirt
 
-### Документация
+#### Документация
 
 Люблю писать человечную документацию, которую не надо читать полностью, чтобы решить проблему. Умею в rst и Markdown. Котирую wiki, например confluence. Пример: [документация Carbon Reductor](http://docs.carbonsoft.ru/display/reductor5). Умею в пресс-релизы с ещё более человечным описанием новых фишечек. Не умею в хорошее ведение ChangeLog.
 
-## На уровне "поправить, не понимая как оно в целом работает, но добиться своего"
+### На уровне "поправить, не понимая как оно в целом работает, но добиться своего"
 
 - c++
 - java
@@ -92,7 +92,7 @@ permalink: /about/
 - sql
 - go
 
-## Вещи которые хочу когда-нибудь поковырять поподробнее
+### Вещи которые хочу когда-нибудь поковырять поподробнее
 
 Не решить 1-2 проблемы с помощью stackoverflow, а именно прочитать значительную часть документации.
 
@@ -114,16 +114,16 @@ permalink: /about/
 - правильное использование pipelines в jenkins
 - использование oprofile для профилирования приложений в пользовательском пространсте
 
-# Книги
+## Книги
 
-## Недочитанные
+### Недочитанные
 - Разные эссе Джорджа Оруэлла
 - Мёртвые души
 - Квантовая механика - теоретический минимум
 - Site Reliability Engineering: How Google runs production software
 - Selinux user guide
 
-## Программирование
+### Программирование
 - Программист-прагматик
 - An Introducion to programming on Go
 - Мифический человекомесяц
@@ -144,29 +144,29 @@ permalink: /about/
 - Unix in a nutshell
 - Искусство программирования для Unix
 
-### RHEL
+#### RHEL
 
 - 7.0, 7.1, 7.2, 7.3 release notes
 - getting started with containers
 
-## Художественная литература
+### Художественная литература
 
-### Берроуз
+#### Берроуз
 - Джанки
 - Пидор
 
-### Джордж Оруэл
+#### Джордж Оруэл
 - 1984
 - Скотный двор
 
-### Олдос Хаксли
+#### Олдос Хаксли
 - Дивный новый мир
 - Двери восприятия
 
-### Эдвард Фостер
+#### Эдвард Фостер
 - Машина останавливается
 
-### Говард Лавкрафт
+#### Говард Лавкрафт
 - Тень над Иннсмаутом
 - Ужас Данвича
 - Хребты безумия
@@ -210,14 +210,14 @@ permalink: /about/
 - Коты Ултара
 - Ведьмин лог
 
-### Дэниел Киз
+#### Дэниел Киз
 - Множественные умы Билли Миллигана
 - Цветы для Элджернона
 
-### Джефф нун
+#### Джефф нун
 - Автоматическая Алиса
 
-## В очереди на чтение
+### В очереди на чтение
 - Божественная комедия
 - Обитающий во тьме
 - Единственный наследник
@@ -269,11 +269,11 @@ permalink: /about/
 - Зеленый луг
 - Зверь в подземелье
 
-# Фильмы
+## Фильмы
 
 [SVG](/images/movies.svg) [PNG](/images/movies.png)
 
-## Нормальные
+### Нормальные
 - 500 дней лета (2009)
 - Безумный Макс (1979)
 - Безумный Макс 2: Воин дороги (1981)
@@ -324,9 +324,9 @@ permalink: /about/
 - Доктор Стрендж (2016)
 - Пароходный билл (1928)
 
-## Ебанутые
+### Ебанутые
 
-### Слегка
+#### Слегка
 - Ангел Мщения (1981)
 - Беспокойная Анна (2007)
 - В финале Джон умрет (2012)
@@ -349,7 +349,7 @@ permalink: /about/
 - Труп в белом саване дрожит, но продолжает принимать ванну
 - Безумие (2005)
 
-### Совсем
+#### Совсем
 - Бисер перед свиньями (1999)
 - Декодер (1984)
 - Догола (1999)
@@ -362,7 +362,7 @@ permalink: /about/
 - Эдвард руки-пенисы (1991)
 - Я киборг, но это нормально (2006)
 
-## Охуенные
+### Охуенные
 - Бэтмен (1966)
 - Водный мир (1995)
 - Всегда говори «ДА» (2008)
@@ -384,9 +384,9 @@ permalink: /about/
 - Er ist wieder da (2014)
 - Расплата (2016)
 
-# Используемые ОС
+## Используемые ОС
 
-## Сейчас
+### Сейчас
 
 - Mac OS X 10.11
 - iOS 9.3
@@ -395,7 +395,7 @@ permalink: /about/
 - Android 4.0
 - Ubuntu 16.04
 
-## В прошлом
+### В прошлом
 
 - Ubuntu 10.04
 - Ubuntu 12.04
@@ -407,7 +407,7 @@ permalink: /about/
 - Mac OS X 10.9 (господи, какой прекрасный был дизайн, но kernel panic при закрытии вкладок SSH доканали).
 - CentOS 7
 
-# Мои боты в твиттере
+## Мои боты в твиттере
 - [https://twitter.com/__coding_tips__](https://twitter.com/__coding_tips__)
 - [https://twitter.com/coding_tips_sys](https://twitter.com/coding_tips_sys)
 - [https://twitter.com/vsevsezaebali](https://twitter.com/vsevsezaebali)
@@ -418,29 +418,29 @@ permalink: /about/
 - [https://twitter.com/crafteveryword](https://twitter.com/crafteveryword)
 - [https://twitter.com/eto_kogda_ebut](https://twitter.com/eto_kogda_ebut)
 
-# Предпочитаемая музыка
+## Предпочитаемая музыка
 
-## New Beat
+### New Beat
 - X-Commando
 - Amnesia
 - Dirty Harry
 - The Beat Pirate
 - Indicate
 
-## Acid House
+### Acid House
 - BX-8017
 - Jarvic 7
 - Mike Dred
 - RaTaXeS SA FreeSysTeM
 
-## Electropunk / Anhalt EBM
+### Electropunk / Anhalt EBM
 - Container 90
 - Kommando XY
 - Kropp
 - EM:KO
 - Jaeger 90
 
-## Neue Deutsche Welle
+### Neue Deutsche Welle
 - Malaria
 - Palais Schaumburg
 - Frl. Menke
@@ -448,7 +448,7 @@ permalink: /about/
 - Polar Pop
 - Christiane F.
 
-## EBM
+### EBM
 - Leæther Strip
 - Engelteck-7
 - Schakt Neun
@@ -457,50 +457,50 @@ permalink: /about/
 - Noise Unit
 - Klinik
 
-## Minimal synth / Coldwave
+### Minimal synth / Coldwave
 - Blackie
 - Kap Bambino
 
-## Retrowave / Synthwave
+### Retrowave / Synthwave
 - NightStop
 - Lazerhawk
 - Cluster Buster
 - Suicide Forest
 
-## Italo disco
+### Italo disco
 - Scotch
 - Fred Ventura
 - Love
 
-## Stoner / Punk / Garage
+### Stoner / Punk / Garage
 - Рандомные местные концерты
 
-## Industrial / Experimental / Avantgarde
+### Industrial / Experimental / Avantgarde
 - Nurse With Wound
 - Coil
 - Clock DVA
 - Felix Kubin
 
-## Chiptune
+### Chiptune
 - Random soundcloud
 
-## Различный русский трэшачок
+### Различный русский трэшачок
 - Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна
 - Влажные ватрушки
 - Ансамбль христа спасителя
 - Armour Breaker
 - Барто
 
-# Комиксы
+## Комиксы
 - Saturday Morning Breakfast Cereal
 - Оглаф
 - CTRL+ALT+DEL
 - Тёмные века
 - XKCD
 
-# Посещённые концерты
+## Посещённые концерты
 
-## and proud
+### and proud
 - cut copy
 - karl bartos
 - kalashnikov
@@ -514,7 +514,7 @@ permalink: /about/
 - Junk riot
 - Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна
 
-## Прочее
+### Прочее
 - butterfly temple
 - melotron
 - and one
@@ -533,7 +533,7 @@ permalink: /about/
 - ВХОРЕ
 - Боровик Ералаш
 
-## Местные
+### Местные
 - krnangh
 - panicforce
 - 4 позиции бруно
@@ -549,16 +549,16 @@ permalink: /about/
 - Концы
 - The Quirks
 
-# Созданные сообщества и коллективные аккаунты, которые я вёл
+## Созданные сообщества и коллективные аккаунты, которые я вёл
 - [https://twitter.com/kernelunderhood](https://twitter.com/kernelunderhood) - твиттер о системном программировании
 - [https://vk.com/weirdedout](https://vk.com/weirdedout) - музыка
 - [https://vk.com/newbeatmusic](https://vk.com/newbeatmusic) - музыка
 - [https://vk.com/clock_dva](https://vk.com/clock_dva) - музыка
 - [https://vk.com/cevirmovies](https://vk.com/cevirmovies) - шуточки
 
-# Спектакли
+## Спектакли
 
-## Коляда
+### Коляда
 
 - Клаустрофобия
 - Курица
@@ -571,32 +571,32 @@ permalink: /about/
 - Пиковая дама
 - Маскарад
 
-## ЦСД
+### ЦСД
 
 - Свингеры
 - Как Зоя гусей кормила
 - Бес небес
 - Дом у дороги
 
-## Молодежный театр на Булаке
+### Молодежный театр на Булаке
 
 - Скамейка
 
-## Волхонка
+### Волхонка
 
 - Пиковая дама
 
-## Teatr Slaski
+### Teatr Slaski
 
 - Женитьба
 
-## Ангажемент (Тюмень)
+### Ангажемент (Тюмень)
 
 - Край
 
-# Игры
+## Игры
 
-## PC
+### PC
 - Morrowind
 - Vampires the masquerade: bloodline
 - Mafia 2
@@ -608,7 +608,7 @@ permalink: /about/
 - Mortal Kombat Komplete Edition
 - Uncharted Waters Online
 
-## Sega
+### Sega
 - Uncharted Waters - New Horizons
 - Comix Zone
 - Phantasy Star IV
@@ -618,15 +618,34 @@ permalink: /about/
 - Sonic the hedgehog 3
 - Streets of Rage III
 
-## Nintendo
+### Nintendo
 - Blaster Master
 - Chip'n'dale 2
 - Excitebike
 - Contra Force
 - Kage
 
-# Wishlist
-- Провода Sennheiser 534442
-- Любые сравнительно небольшие колонки лучше чем Genius за 600р
-- Dark Souls 3
+## Wishlist
+
+- [Пауэрбанк](https://market.yandex.ru/product/13884054?nid=56035)
 - Site Reliability Engineering: How google runs production software (бумажная)
+- [Игоры в steam](http://steamcommunity.com/id/oleg_strizhechenko/wishlist/)
+- Хорошие курсы с менторами (рекомендации, проведение, дары) по:
+  - javascript
+  - flask
+- Пулл реквесты:
+  - [Утилиты для мониторинга и тюнинга сетевого стека Linux](https://github.com/strizhechenko/netutils-linux)
+  - [Тулза для взаимодействия с Uber](https://github.com/strizhechenko/uber-cli)
+  - Библиотеки для [написания твиттер-ботов](https://github.com/strizhechenko/twitterbot_utils) и [их взаимодействия](https://github.com/strizhechenko/twitterbot_farm). Сейчас используются для аккаунтов:
+    - [Эт когда в жопу ебут](https://twitter.com/eto_kogda_ebut)
+    - [Всё запрещено по плану](https://twitter.com/zapretbot)
+    - [Harry Potter & Shit](https://twitter.com/HarryTwibotter)
+    - [SocialConstructBot](https://twitter.com/SocConstructBot)
+  - [Твиттер-бот с автозаменой на Golang (gin + jquery)](https://github.com/strizhechenko/go-twitterbot-replacer). Сейчас используется для аккаунта ["Программировать надо"](https://twitter.com/__coding_tips__)
+  - [Гайд по программированию на bash (типа unofficial shell strict mode)](https://github.com/strizhechenko/shell-scripting-guide)
+
+Также можно просто подкинуть мне баблишка на VPS/пивко
+
+- [рокетбанк](https://rocketbank.ru/oleg.strizhechenko)
+- [paypal](https://www.paypal.me/weirded)
+- [рефералка в digitalocean](https://m.do.co/c/fc5f2fdcde16)
