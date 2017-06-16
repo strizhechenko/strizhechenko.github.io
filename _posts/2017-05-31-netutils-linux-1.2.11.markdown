@@ -2,9 +2,7 @@
 title: Релиз netutils-linux 1.2
 ---
 
-Я тут за последнюю неделю довёл до ума свой полусайд-проект:
-
-https://github.com/strizhechenko/netutils-linux
+Я тут за последнюю неделю довёл до ума свой полусайд-проект: [netutils-linux](https://github.com/strizhechenko/netutils-linux).
 
 Его можно разделить на три части:
 
