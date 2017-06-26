@@ -117,6 +117,7 @@ permalink: /about/
 ## Книги
 
 ### Недочитанные
+
 - Разные эссе Джорджа Оруэлла
 - Мёртвые души
 - Квантовая механика - теоретический минимум
@@ -124,6 +125,7 @@ permalink: /about/
 - Selinux user guide
 
 ### Программирование
+
 - Программист-прагматик
 - An Introducion to programming on Go
 - Мифический человекомесяц
@@ -143,6 +145,9 @@ permalink: /about/
 - Iptables Tutorial 1.1.19
 - Unix in a nutshell
 - Искусство программирования для Unix
+- Packagecloud blog posts: Monitoring and tuning Linux networking stack:
+    - sending data
+    - receiving data
 
 #### RHEL
 
@@ -152,21 +157,26 @@ permalink: /about/
 ### Художественная литература
 
 #### Берроуз
+
 - Джанки
 - Пидор
 
 #### Джордж Оруэл
+
 - 1984
 - Скотный двор
 
 #### Олдос Хаксли
+
 - Дивный новый мир
 - Двери восприятия
 
 #### Эдвард Фостер
+
 - Машина останавливается
 
 #### Говард Лавкрафт
+
 - Тень над Иннсмаутом
 - Ужас Данвича
 - Хребты безумия
@@ -211,13 +221,16 @@ permalink: /about/
 - Ведьмин лог
 
 #### Дэниел Киз
+
 - Множественные умы Билли Миллигана
 - Цветы для Элджернона
 
 #### Джефф нун
+
 - Автоматическая Алиса
 
 ### В очереди на чтение
+
 - Божественная комедия
 - Обитающий во тьме
 - Единственный наследник
@@ -274,6 +287,7 @@ permalink: /about/
 [SVG](/images/movies.svg) [PNG](/images/movies.png)
 
 ### Нормальные
+
 - 500 дней лета (2009)
 - Безумный Макс (1979)
 - Безумный Макс 2: Воин дороги (1981)
@@ -327,6 +341,7 @@ permalink: /about/
 ### Ебанутые
 
 #### Слегка
+
 - Ангел Мщения (1981)
 - Беспокойная Анна (2007)
 - В финале Джон умрет (2012)
@@ -350,6 +365,7 @@ permalink: /about/
 - Безумие (2005)
 
 #### Совсем
+
 - Бисер перед свиньями (1999)
 - Декодер (1984)
 - Догола (1999)
@@ -363,6 +379,7 @@ permalink: /about/
 - Я киборг, но это нормально (2006)
 
 ### Охуенные
+
 - Бэтмен (1966)
 - Водный мир (1995)
 - Всегда говори «ДА» (2008)
@@ -408,6 +425,7 @@ permalink: /about/
 - CentOS 7
 
 ## Мои боты в твиттере
+
 - [https://twitter.com/__coding_tips__](https://twitter.com/__coding_tips__)
 - [https://twitter.com/coding_tips_sys](https://twitter.com/coding_tips_sys)
 - [https://twitter.com/vsevsezaebali](https://twitter.com/vsevsezaebali)
@@ -421,6 +439,7 @@ permalink: /about/
 ## Предпочитаемая музыка
 
 ### New Beat
+
 - X-Commando
 - Amnesia
 - Dirty Harry
@@ -428,12 +447,14 @@ permalink: /about/
 - Indicate
 
 ### Acid House
+
 - BX-8017
 - Jarvic 7
 - Mike Dred
 - RaTaXeS SA FreeSysTeM
 
 ### Electropunk / Anhalt EBM
+
 - Container 90
 - Kommando XY
 - Kropp
@@ -441,6 +462,7 @@ permalink: /about/
 - Jaeger 90
 
 ### Neue Deutsche Welle
+
 - Malaria
 - Palais Schaumburg
 - Frl. Menke
@@ -449,6 +471,7 @@ permalink: /about/
 - Christiane F.
 
 ### EBM
+
 - Leæther Strip
 - Engelteck-7
 - Schakt Neun
@@ -458,33 +481,40 @@ permalink: /about/
 - Klinik
 
 ### Minimal synth / Coldwave
+
 - Blackie
 - Kap Bambino
 
 ### Retrowave / Synthwave
+
 - NightStop
 - Lazerhawk
 - Cluster Buster
 - Suicide Forest
 
 ### Italo disco
+
 - Scotch
 - Fred Ventura
 - Love
 
 ### Stoner / Punk / Garage
+
 - Рандомные местные концерты
 
 ### Industrial / Experimental / Avantgarde
+
 - Nurse With Wound
 - Coil
 - Clock DVA
 - Felix Kubin
 
 ### Chiptune
+
 - Random soundcloud
 
 ### Различный русский трэшачок
+
 - Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна
 - Влажные ватрушки
 - Ансамбль христа спасителя
@@ -492,6 +522,7 @@ permalink: /about/
 - Барто
 
 ## Комиксы
+
 - Saturday Morning Breakfast Cereal
 - Оглаф
 - CTRL+ALT+DEL
@@ -501,6 +532,7 @@ permalink: /about/
 ## Посещённые концерты
 
 ### and proud
+
 - cut copy
 - karl bartos
 - kalashnikov
@@ -515,6 +547,7 @@ permalink: /about/
 - Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна
 
 ### Прочее
+
 - butterfly temple
 - melotron
 - and one
@@ -534,6 +567,7 @@ permalink: /about/
 - Боровик Ералаш
 
 ### Местные
+
 - krnangh
 - panicforce
 - 4 позиции бруно
@@ -548,8 +582,10 @@ permalink: /about/
 - Garry Drummer Orchestra
 - Концы
 - The Quirks
+- Lucky 12
 
 ## Созданные сообщества и коллективные аккаунты, которые я вёл
+
 - [https://twitter.com/kernelunderhood](https://twitter.com/kernelunderhood) - твиттер о системном программировании
 - [https://vk.com/weirdedout](https://vk.com/weirdedout) - музыка
 - [https://vk.com/newbeatmusic](https://vk.com/newbeatmusic) - музыка
@@ -593,6 +629,14 @@ permalink: /about/
 ### Ангажемент (Тюмень)
 
 - Край
+
+### Театр Нотарра (Бухарест)
+
+- Сомнамбулизм
+
+### Les Partisans (Ижевск)
+
+- Шлюхи - не огонь
 
 ## Игры
 
