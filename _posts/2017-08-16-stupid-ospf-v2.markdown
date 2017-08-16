@@ -79,3 +79,4 @@ line vty
 - проверить, что роут прилетел можно с помощью `ip r`
 - включить дебаг - это добавить в конфиг ospf `debug ospf events`
 - файрволы - iptables разрешает ospf правилом `iptables -I INPUT -p ospf`
+- zebra тоже должна быть запущена (без неё не будет отображаться area в `show ip ospf`
