@@ -52,8 +52,8 @@ title: Сравнение python-либ и других утилит для ан
 ## Генерация и отправка пакетов
 
 - **scapy** - есть
-- **tshark + lua** - нет
-- **dpkt, pyshark, tcpflow, pcap-flow** - не знаю
+- **tshark + luapy, shark, tcpflow, pcap-flow** - нет
+- **dpkt** - не знаю
 
 ## Что выбрал-то?
 
