@@ -16,5 +16,3 @@ iptables -I OUTPUT -m tcp -p tcp --tcp-flags SYN SYN -m tcpmss --mss 1201:6000 -
 ```
 ip link set eth0 mtu 1400
 ```
-
-И время от времени слушать Александра Залупина.
