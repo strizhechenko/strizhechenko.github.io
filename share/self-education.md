@@ -1,7 +1,9 @@
 - CPU Registers (стараюсь заниматься только этим)
     - Books
-        - Cracking the code interview
-            - Попрактиковать решение задачек на бумаге / collabedit
+        - Ядро Linux. Robert Love. Попытка перечитать и переосмыслить.
+    - Coursera
+        - Cloud computing concepts
+            - week 5
 - L3 cache (начато, но не закончено)
     - Books
         - SREBook
@@ -9,12 +11,10 @@
         - Теория игр
         - Machine learning with python
             - Настроить mglearn / scikit на ноуте
+        - Cracking the code interview
+            - Попрактиковать решение задачек на бумаге / collabedit
     - Golang
         - 30 days of code
-    - Coursera
-        - Cloud computing concepts
-            - week 4
-            - week 5
 - Memory (в планах заняться вперёд)
     - Потыкать
         - Rust
@@ -57,6 +57,7 @@
             - week 1
             - week 2
             - week 3
+            - week 4
         - Machine Learning (Andrew Ng)
             - week 1
             - week 2
