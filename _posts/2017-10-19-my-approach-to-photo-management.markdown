@@ -40,7 +40,7 @@ title: Мой подход к менеджменту фоток
 
 `~/bin/encrypt:`
 
-```
+``` shell
 #!/bin/sh
 
 set -eu
@@ -49,7 +49,7 @@ openssl enc -aes-256-cbc -salt -in "$1" -out "${2:-$1.enc}"
 
 и `~/bin/decrypt`
 
-```
+``` shell
 #!/bin/bash
 
 set -eu
