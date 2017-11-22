@@ -654,6 +654,9 @@ permalink: /about/
 - Dark Souls 2
 - Mortal Kombat Komplete Edition
 - Uncharted Waters Online
+- The Elder Scrolls Online
+- Broforce
+- Just Cause 2, Just Cause 3
 
 ### Sega
 - Uncharted Waters - New Horizons
@@ -694,7 +697,14 @@ permalink: /about/
   - [Гайд по программированию на bash (типа unofficial shell strict mode)](https://github.com/strizhechenko/shell-scripting-guide)
 - [Time Capsule](https://market.yandex.ru/product/10398860?show-uid=113396258341099936716003&nid=55410&context=search)
 - [iPhone SE](https://market.yandex.ru/product/1721921261?glfilter=13887626%3A13891903)
--
+- Мольберт, правда я не знаю как их выбирать
+- [Масляные краски](https://market.yandex.ru/catalog/66165/list?text=краски%20масляные&hid=13626115&suggest=2&rt=11&was_redir=1&rs=eJwzOs-opMMle2HXxYYLGy42Xth1YYfChT1g5u6L_Rf2Xuy-sFXg5e6TbEosHOwC_BoMRvMYuWYzcvFy9BxlFWCWYFB1WBpsB-T-OcIqwATkThLntufi42i4up9NgBHI74zgtefi52i-BuQzSDzkUTWz-G0PVN97mFWAHSi_0F5iP5A79QSrACeQO9vDBsRdB-RyALke4Zr7gabN61zBJsAG5Ccu3bsPKH3uNKsAK5C7-An_PqD0eSCXRWIqo6rZGQU7AJgZQZc%2C&glfilter=13786601%3A13786610&local-offers-first=0&deliveryincluded=0&onstock=1)
+- DLC для ESO
+    - orsinium
+    - morrowind
+    - thief guild
+    - dark brotherhood
+
 Также можно просто подкинуть мне баблишка на VPS/пивко
 
 - [рокетбанк](https://rocketbank.ru/oleg.strizhechenko)
