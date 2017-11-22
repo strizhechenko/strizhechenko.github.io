@@ -680,6 +680,8 @@ permalink: /about/
 - Хорошие курсы с менторами (рекомендации, проведение, дары) по:
   - javascript
   - flask
+  - 2 829р за месяц на Coursera, сдам Cloud Computing Concepts part 1 хотя бы
+  - укулеле
 - Пулл реквесты:
   - [Утилиты для мониторинга и тюнинга сетевого стека Linux](https://github.com/strizhechenko/netutils-linux)
   - [Тулза для взаимодействия с Uber](https://github.com/strizhechenko/uber-cli)
@@ -690,7 +692,9 @@ permalink: /about/
     - [SocialConstructBot](https://twitter.com/SocConstructBot)
   - [Твиттер-бот с автозаменой на Golang (gin + jquery)](https://github.com/strizhechenko/go-twitterbot-replacer). Сейчас используется для аккаунта ["Программировать надо"](https://twitter.com/__coding_tips__)
   - [Гайд по программированию на bash (типа unofficial shell strict mode)](https://github.com/strizhechenko/shell-scripting-guide)
-
+- [Time Capsule](https://market.yandex.ru/product/10398860?show-uid=113396258341099936716003&nid=55410&context=search)
+- [iPhone SE](https://market.yandex.ru/product/1721921261?glfilter=13887626%3A13891903)
+-
 Также можно просто подкинуть мне баблишка на VPS/пивко
 
 - [рокетбанк](https://rocketbank.ru/oleg.strizhechenko)
