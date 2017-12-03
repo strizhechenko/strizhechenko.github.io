@@ -6,7 +6,7 @@ tags: graphviz, sfdp, gv, map, prism, gts
 ## Problem
 
 ```
-brew install graphviz
+➜ brew install graphviz
 ➜ sfdp -Goverlap=prism x.dot | gvmap -e | neato -Ecolor=#55555522 -n2 -Tpng > x.png
 Warning: Overlap value "prism" unsupported - ignored
 Error: remove_overlap: Graphviz not built with triangulation library
