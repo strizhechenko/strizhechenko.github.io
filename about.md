@@ -112,6 +112,25 @@ permalink: /about/
 - правильное использование pipelines в jenkins
 - использование oprofile для профилирования приложений в пользовательском пространсте
 
+## Курсы
+
+### Заброшенные
+
+- [Machine Learning](https://www.coursera.org/learn/machine-learning/home/welcome) (2 недели из 11)
+
+### Просмотренные
+
+- [Cloud Computing Concepts, Part 1](https://www.coursera.org/learn/cloud-computing/home/welcome)
+- [Cloud Computing Concepts, Part 2](https://www.coursera.org/learn/cloud-computing-2/home/welcome)
+
+### В процессе
+
+- [Cloud Computing Applications, part 1](https://www.coursera.org/learn/cloud-applications-part1/home/welcome)
+
+### По которым сдал экзамены
+
+Ничего не сдал :(
+
 ## Книги
 
 ### Недочитанные
