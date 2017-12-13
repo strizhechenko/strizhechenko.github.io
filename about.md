@@ -22,8 +22,6 @@ permalink: /about/
 - [bandcamp (acid house)](https://genacid.bandcamp.com)
 - [soundcloud (acid house)](https://soundcloud.com/genacid)
 - [soundcloud (random)](https://soundcloud.com/weirded)
-- [last.fm](https://last.fm/user/panzersoldat)
-- [vkontakte](https://vk.com/weirded)
 - [instagram](https://instagram.com/weirdedout)
 - [почта](mailto:oleg.strizhechenko+random@gmail.com)
 
