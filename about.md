@@ -13,6 +13,7 @@ permalink: /about/
 - [linkedin](https://linkedin.com/in/strizhechenko)
 - [habrahabr](http://habrahabr.ru/users/weirded)
 - [блог о Linux и смежном](http://strizhechenko.github.io)
+- [medium (зеркало блога)](https://medium.com/@strizhechenko)
 
 ### Прочее
 - [twitter (основной)](https://twitter.com/strizhechenko)
