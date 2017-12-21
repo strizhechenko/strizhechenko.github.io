@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стоит ли покупать Mac?</title>
+</head>
+<body align="center">
+<script type="text/javascript">
+    function decision() {
+        var salary = document.getElementById('salary').value;
+        var cost = document.getElementById('cost').value;
+        salary = parseInt(salary);
+        cost = parseInt(cost);
+        console.log(salary < cost, salary, cost);
+        if (salary < cost)
+            return document.getElementById('result').innerText = "Нет, вы слишком бедны";
+        if (cost > 100000)
+            return document.getElementById('result').innerText = "Можно, но ремонт пиздец дорогой";
+        return document.getElementById('result').innerText = "Можно, но это слабое или устаревшее дерьмо";
+    }
+</script>
+<h1>Стоит ли покупать Mac</h1>
+<p>Ваша зарплата в месяц после налогов</p>
+<input type="text" id="salary">
+<p>Стоимость Mac</p>
+<input type="text" id="cost">
+<br>
+<button onclick="decision()">Определиться</button>
+<h2 id="result">Пока хз, введите данные</h2>
+<p style="color: #777; font-size: 10px;">Я не собираю никаких данных, это сраная HTML'ка на 32 строчки</p>
+</body>
+</html>
