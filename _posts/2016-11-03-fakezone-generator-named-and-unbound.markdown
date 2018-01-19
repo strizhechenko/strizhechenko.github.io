@@ -79,12 +79,16 @@ qwv.tpgknfjhi.ey.ozrmbx1c3u2ads4l.ss
    200000     |    1824M    |    1284M    | OOM | OOM
    400000     |    3515M    |    2655M    | OOM | OOM
 
-# Что стоило ещё померять
+# Что стоило/стоит ещё померять
 
 - Деградация в скорости ответов
 - Замедление рестарта
 - PowerDNS и PowerDNS-Recursor
 - DNS-спуфер в Carbon Reductor
+- Bind10
+- NSD сам по себе
+- Связка Bind + NSD
+- Связка Unbound + NSD
 
 # Выводы
 
