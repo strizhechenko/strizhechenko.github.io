@@ -273,7 +273,6 @@ client_post_start_hook(){
        rss-ladder eth1 0
        rss-ladder eth0 1
 }
-client_post_start_hook
 ```
 
 и делаем его исполнимым: `chmod a+x /app/reductor/cfg/userinfo/hooks/start.sh`.
