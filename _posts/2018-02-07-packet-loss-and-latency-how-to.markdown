@@ -213,7 +213,7 @@ TX:		256
 ethtool -G eth1 rx 2048
 ```
 
-CentOS позволяет указывать параметры ethtool в качестве опции в настройках интерфейса (`/etc/sysconfig/network-scripts/ifcfg-eth1`), например строчкой
+RHEL-based дистрибутивы (платформа Carbon, CentOS, Fedora итд) позволяют указывать параметры ethtool в качестве опции в настройках интерфейса (`/etc/sysconfig/network-scripts/ifcfg-eth1`), например строчкой
 
 ```
 ETHTOOL_OPTS="-G ${DEVICE} rx 2048"
