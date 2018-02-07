@@ -485,7 +485,7 @@ Port number : 2:11
 ip link set eth1 mtu 1540
 ```
 
-**Перманентно** - дописать в конфиг сетёвки `/etc/sysconfig/network-scripts/ifcfg-eth1`:
+**Перманентно** - дописать в настройки сетёвой карты `/etc/sysconfig/network-scripts/ifcfg-eth1`:
 
 ```
 MTU=1540
