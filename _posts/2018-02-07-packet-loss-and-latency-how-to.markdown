@@ -270,8 +270,8 @@ ethtool -L eth2 combined 8
 #!/bin/bash
 
 client_post_start_hook(){
-       rss-ladder eth1 0
-       rss-ladder eth0 1
+    rss-ladder eth0 || true
+    rss-ladder eth1 || true
 }
 ```
 
