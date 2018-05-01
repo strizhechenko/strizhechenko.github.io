@@ -1,0 +1,63 @@
+---
+title: Баг в Quagga 1.2.2
+---
+
+Quagga 1.2.2 не чистит файловые дескрипторы и при использовании автоматизации течёт ими.
+
+Где именно: команда write memory приводит к +1 открытому файловому дескриптору на удалённый файл.
+
+В 1.2.4 вроде как это могли починить, решая другую проблему:
+
+```
+commit dcfbf4eb452d8483a73e4d487d4d93b46cee1569
+Author: Paul Jakma <paul@jakma.org>
+Date:   Tue Dec 5 21:09:46 2017 +0000
+
+    lib/command: make config file robust more robust and kinder to system
+
+    * command.c: (config_write_file) Remove two very heavyweights sync()s and
+      replace with an fdatasync of just the freshly writen config file data.
+      Make the move of the new config into place more robust, by using
+      rename instead of unlink/link.
+
+      This should fix a performance issue on systems with slow storage,
+      where the syncs were disrupting performance, see bugzilla #966. Should
+      also be more robust.
+
+      Problem diagnosed and reported by:
+
+       Patrick Kuijvenhoven <patrick.kuijvenhoven@gmail.com>
+
+      with an initial fix, on which this commit develops, and further work on
+      testing.
+```
+
+Вот кусок стрейса баганной версии:
+
+``` strace
+# открыли временный файл в 24 дескриптор
+open("/etc/quagga/zebra.conf.FUGZ7r", O_RDWR|O_CREAT|O_EXCL, 0600) = 24
+
+# пишем во временный файл собственно конфиг
+writev(24, [{"!\n! Zebra ...
+
+# тут мы скорее всего бэкапим старый конфиг
+unlink("/etc/quagga/zebra.conf.sav")    = 0
+link("/etc/quagga/zebra.conf", "/etc/quagga/zebra.conf.sav") = 0
+sync()                                  = 0
+unlink("/etc/quagga/zebra.conf")        = 0
+
+# а тут пихаем на его место новый
+link("/etc/quagga/zebra.conf.FUGZ7r", "/etc/quagga/zebra.conf") = 0
+sync()                                  = 0
+chmod("/etc/quagga/zebra.conf", 0600)   = 0
+
+# вот перед этим, наверное, нужно сделать close(24) чтобы такой проблемы не случалось
+unlink("/etc/quagga/zebra.conf.FUGZ7r") = 0
+```
+
+В случае, если автоматизация не используется (вы не вызываете vtysh, один раз настроили и всё работает) - вам не страшна эта проблема.
+
+Если у вас есть ватчдог, который рестартит кваггу если та падает - тоже не страшно.
+
+Страшно если запись конфига происходит часто и конфиг при этом большой.
