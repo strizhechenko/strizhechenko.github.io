@@ -1,5 +1,4 @@
 ---
-title: CV (ru)
 layout: page
 ---
 
