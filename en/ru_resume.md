@@ -84,3 +84,7 @@ Carbon Reductor - система фильтрации трафика для пр
 В 2011 году я закончил [колледж связи](http://uisi.ru/) с красным дипломом техника.
 
 В 2016 году получил высшее образование на радиофакультете [УрФУ](http://urfu.ru/) и стал бакалавром программной инеженерии.
+
+----
+
+PDF-версия резюме: [https://strizhechenko.github.io/share/ru_resume.pdf](https://strizhechenko.github.io/share/ru_resume.pdf)
