@@ -49,13 +49,10 @@ Carbon Reductor - система фильтрации трафика для пр
 
 ## Open Source / Портфолио
 
-[netutils-linux](https://github.com/strizhechenko/netutils-linux) - Утилиты для отладки сетевой производительности и оптимизации сетевой подсистемы Linux.
-
-[binary-pairs](https://github.com/strizhechenko/binary-pairs) - Утилита для упрощения pairwise-тестирования в bash.
-
-[tshark-tcp-stream-splitter](https://github.com/strizhechenko/tshark-tcp-stream-splitter) - Похоже быстрейшая дробилка крупных PCAP файлов по TCP-сессиям в мире.
-
-... и ещё 100 непонятных репозиториев на [github](https://github.com/strizhechenko).
+- [netutils-linux](https://github.com/strizhechenko/netutils-linux) - Утилиты для отладки и оптимизации сетевой производительности Linux.
+- [binary-pairs](https://github.com/strizhechenko/binary-pairs) - Утилита для упрощения pairwise-тестирования в bash.
+- [tshark-tcp-stream-splitter](https://github.com/strizhechenko/tshark-tcp-stream-splitter) - Похоже быстрейшая дробилка крупных PCAP файлов по TCP-сессиям в мире.
+- ... и ещё 100 непонятных репозиториев на [github](https://github.com/strizhechenko).
 
 ## Обо мне
 
@@ -66,6 +63,8 @@ Carbon Reductor - система фильтрации трафика для пр
 Не боюсь **английского языка**, но разговорный не беглый. За границей иногда долго вспоминаю слова в повседневных ситуациях. Но его хватает чтобы читать и смотреть курсы без субтитров. Незнакомых языков программирования тоже не боюсь.
 
 Веду блог о Linux и ремонте - [https://strizhechenko.github.io](https://strizhechenko.github.io).
+
+Ещё я чертовски люблю табличные процессоры и не понимаю зачем люди программируют если есть Excel.
 
 Прочитал "Пиши, сокращай", но не смог написать короткое резюме.
 
