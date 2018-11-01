@@ -6,7 +6,18 @@
 </head>
 <body align="center">
 <script type="text/javascript">
+    function getRespectableSalary(country) {
+        switch (country) {
+            case 'kz':
+                return 600000;
+
+            default:
+                return 100000;
+        }
+    }
+
     function decision() {
+        var country = document.getElementById('country').value;
         var salary = document.getElementById('salary').value;
         var cost = document.getElementById('cost').value;
         salary = parseInt(salary);
@@ -14,12 +25,17 @@
         console.log(salary < cost, salary, cost);
         if (salary < cost)
             return document.getElementById('result').innerText = "Нет, вы слишком бедны";
-        if (cost > 100000)
+        if (cost > getRespectableSalary(country))
             return document.getElementById('result').innerText = "Можно, но ремонт пиздец дорогой";
         return document.getElementById('result').innerText = "Можно, но это слабое или устаревшее дерьмо";
     }
 </script>
 <h1>Стоит ли покупать Mac</h1>
+<p>Ваша страна</p>
+<select id="country">
+    <option value="ru">Россия</option>
+    <option value="kz">Казахстан</option>
+</select>
 <p>Ваша зарплата в месяц после налогов</p>
 <input type="text" id="salary">
 <p>Стоимость Mac</p>
