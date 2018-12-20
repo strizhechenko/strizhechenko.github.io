@@ -44,3 +44,14 @@ export X11_PREFS_DOMAIN=org.macosforge.xquartz.X11
 ## Примечания
 
 Если в терминале xquartz (xterm вроде) запустить zsh - проброс X'ов тоже отваливается.
+
+# Год спустя та же хрень с MacOS Mojave
+
+Но на этот раз всё решилось!
+
+В файл ~/.ssh/config вставляем:
+
+``` shell
+Host *
+    XAuthLocation /opt/X11/bin/xauth
+```
