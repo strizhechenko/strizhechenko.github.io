@@ -16,9 +16,7 @@ permalink: /about/
 - [medium (зеркало блога)](https://medium.com/@strizhechenko)
 
 ### Прочее
-- [twitter (основной)](https://twitter.com/strizhechenko)
 - [twitter (англоязычный)](https://twitter.com/acid_code)
-- [twitter о книгах](https://twitter.com/acid_books)
 - [twitter о фильмах](https://twitter.com/acid_movies)
 - [bandcamp (acid house)](https://genacid.bandcamp.com)
 - [soundcloud (acid house)](https://soundcloud.com/genacid)
@@ -733,10 +731,7 @@ permalink: /about/
 - Оленьи ручьи - и дальняя и короткая тропа + сплав
 - Лесопарк им. Лесоводов России (Екатеринбург) - дошёл до озера, скушал пиццу, ушёл
 - Качканар - поднимался на "верблюда", был в монастыре
-
-В планах:
-
-- Аркаим
+- Аркаим - смотрел на "раскопки"
 
 ## Wishlist
 
@@ -747,6 +742,9 @@ permalink: /about/
   - flask
   - 2 829р за месяц на Coursera, сдам Cloud Computing Concepts part 1 хотя бы
   - укулеле
+  - фортепьяно
+- Бас-гитара
+- Электро-гитара
 - Пулл реквесты:
   - [Утилиты для мониторинга и тюнинга сетевого стека Linux](https://github.com/strizhechenko/netutils-linux)
   - [Тулза для взаимодействия с Uber](https://github.com/strizhechenko/uber-cli)
@@ -760,10 +758,6 @@ permalink: /about/
 - [Time Capsule](https://market.yandex.ru/product/10398860?show-uid=113396258341099936716003&nid=55410&context=search)
 - Мольберт, правда я не знаю как их выбирать
 - [Масляные краски](https://market.yandex.ru/catalog/66165/list?text=краски%20масляные&hid=13626115&suggest=2&rt=11&was_redir=1&rs=eJwzOs-opMMle2HXxYYLGy42Xth1YYfChT1g5u6L_Rf2Xuy-sFXg5e6TbEosHOwC_BoMRvMYuWYzcvFy9BxlFWCWYFB1WBpsB-T-OcIqwATkThLntufi42i4up9NgBHI74zgtefi52i-BuQzSDzkUTWz-G0PVN97mFWAHSi_0F5iP5A79QSrACeQO9vDBsRdB-RyALke4Zr7gabN61zBJsAG5Ccu3bsPKH3uNKsAK5C7-An_PqD0eSCXRWIqo6rZGQU7AJgZQZc%2C&glfilter=13786601%3A13786610&local-offers-first=0&deliveryincluded=0&onstock=1)
-- DLC для ESO
-    - morrowind
-    - summerset
-    - cradle of shadows
 
 Также можно просто подкинуть мне баблишка на VPS/пивко
 
