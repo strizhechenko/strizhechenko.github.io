@@ -1,14 +1,10 @@
-title: Strizhechenko's public blog
+title: Strizhechenko's blog
 email: oleg.strizhechenko@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Blog about linux, system development, ISP in Russia, networks,
-  python. I'm interested in fast network packet processing, dpi,
-  natural language processing, statistic, time series and machine
-  learning. Also: linters, shell, influxdb and twitterbots.
+  Blog about development, linux, networks & python.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: strizhechenko
-twitter_username: strizhechenko
 
 # Build settings
 markdown: kramdown
