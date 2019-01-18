@@ -8,6 +8,16 @@ title: Как я перекатываюсь с atom на pycharm
 2. Включил опцию Surround selection on typing quotes or brace.
 3. Отображение warning'ов как в atom-linter: code -> inspection.
 4. Включил опцию: Strip trailing spaces on Save - Modified lines
+5. Настройки BashSupport:
+  - отключены проверки:
+    - evaluate expansion
+    - convert simple brackets to double brackets
+  - включены проверки:
+    - convert backquote to subshell command
+6. Code Style -> Other File Types:
+  - включен Use tab character
+  - tab size 8
+  - indent 8
 
 # Страдания
 
