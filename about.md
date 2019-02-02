@@ -573,6 +573,7 @@ permalink: /about/
 - The Meantraitors
 - Junk riot
 - Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна
+- Der Finger
 
 ### Прочее
 
