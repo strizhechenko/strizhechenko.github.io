@@ -689,40 +689,6 @@ permalink: /about/
 
 - Бежать
 
-## Игры
-
-### PC
-- Morrowind
-- Vampires the masquerade: bloodline
-- Mafia 2
-- Skyrim
-- Fallout 3
-- Fallout New Vegas
-- Fallout 4
-- Dark Souls 2
-- Mortal Kombat Komplete Edition
-- Uncharted Waters Online
-- The Elder Scrolls Online
-- Broforce
-- Just Cause 2, Just Cause 3
-
-### Sega
-- Uncharted Waters - New Horizons
-- Comix Zone
-- Phantasy Star IV
-- Rock'n'Roll Racing
-- Shinobi III - Return of the Ninja Master
-- Fatal Labyrinth
-- Sonic the hedgehog 3
-- Streets of Rage III
-
-### Nintendo
-- Blaster Master
-- Chip'n'dale 2
-- Excitebike
-- Contra Force
-- Kage
-
 ## Походы
 
 Периодически ходил и ныл в походах:
@@ -733,6 +699,8 @@ permalink: /about/
 - Лесопарк им. Лесоводов России (Екатеринбург) - дошёл до озера, скушал пиццу, ушёл
 - Качканар - поднимался на "верблюда", был в монастыре
 - Аркаим - смотрел на "раскопки"
+- Адыгея, плато Лаго-Наки - катался на машинке по горам, ползал по пещерам, виды красивые смотрел
+- Адыгея, водопады Руфабго - ползал по пересечённой местности, потел и ныл
 
 ## Wishlist
 
