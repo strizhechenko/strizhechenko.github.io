@@ -13,6 +13,8 @@ layout: page
 
 Не ищу работу активно, подбираю запасные варианты, знакомлюсь с компаниями и практикуюсь в прохождении собеседований.
 
+Лучший способ порекомендовать мне вакансию - [заполнить форму](https://docs.google.com/forms/d/e/1FAIpQLSe0OenKaXI82AlxPAgIH-iA9EUNBYhFzwJjvyIa8GoNwuGtzw/viewform?vc=0&c=0&w=1).
+
 ## Опыт работы
 
 ### 2012-2018. Carbon Soft. Carbon Reductor
