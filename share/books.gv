@@ -1,25 +1,56 @@
 digraph G {
 
 	Books [fontsize=26];
+		Management [fontsize=24];
+		Books -> Management
+			Management -> "The Mythical Man-Month"
+			Management -> "Agile technologies, Extreme Programming and RUP."
+			Management -> "Human factor. Successful projects and commands."
+			Management -> "Scrum and XP, notes from frontline"
+			Management -> "The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win"
 
-	Books -> "The Mythical Man-Month"
-	Books -> "Agile technologies, Extreme Programming and RUP."
-	Books -> "Human factor. Successful projects and commands."
-	Books -> "Scrum and XP, notes from frontline"
-	Books -> "SRE. How google runs production software."
-	Books -> "An Introducion to programming on Go"
-	Books -> "C Programming language"
-	Books -> "Linux kernel primer"
-	Books -> "Dive into python"
-	Books -> "Advanced Bash Scripting Guide"
-	Books -> "The Pragmatic Programmer"
-	Books -> "Facts and Fallacies of Software Engineering"
-	Books -> "Clean Code"
-	Books -> "The main question of coding, refactoring and everything."
-	Books -> "Extreme programming"
-	Books -> "Linux Advanced Routing and Traffic Control"
-	Books -> "Unix in a nutshell"
-	Books -> "Art of the Unix programming"
-	Books -> "Advanced Linux programming"
-	Books -> "Network Performance Tuning (RHEL)"
+			People [fontsize=22];
+			Management -> People
+				People -> "The Inmates Are Running the Asylum"
+				People -> "Game theory, the art of strategy"
+
+	Programming [fontsize=24];
+	Books -> Programming
+		Programming -> "SRE. How google runs production software."
+		Programming -> "The Pragmatic Programmer"
+		Programming -> "Facts and Fallacies of Software Engineering"
+		Programming -> "Clean Code"
+		Programming -> "Extreme programming"
+		Programming -> "Cracking the code Interview"
+		Programming -> "Distributed Systems, v3"
+		Programming -> "97 Things Every Software Architect Should Know"
+		Programming -> "The Clean Architecture"
+
+		Languages [fontsize=22];
+		Programming -> Languages
+			Languages -> "An Introducion to programming on Go"
+			Languages -> "C Programming language"
+			Languages -> "Dive into python"
+			Languages -> "Advanced Bash Scripting Guide"
+			Languages -> "The main question of coding, refactoring and everything."
+			Languages -> "Enough rope to shoot yourself in the foot"
+			Languages -> "Learning SQL, O'Reilly"
+			Languages -> "C++ today. Beast is back"
+
+	Linux [fontsize=22]
+	Books -> Linux
+		Linux -> "Linux kernel primer"
+		Linux -> "Linux Advanced Routing and Traffic Control"
+		Linux -> "Unix in a nutshell"
+		Linux -> "Art of the Unix programming"
+		Linux -> "Advanced Linux programming"
+		Linux -> "Network Performance Tuning (RHEL)"
+		Linux -> "Packagecloud blog posts: Monitoring and tuning Linux networking stack: sending data & receiving data"
+		Linux -> "Linux Kernel, Robert Love"
+
+	Texts [fontsize=24]
+	Books -> Texts;
+		Texts -> "Пиши сокращай"
+		Texts -> "Слово живое и мёртвое"
+		Texts -> "Дизайн для недизайнеров"
 }
