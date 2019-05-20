@@ -8,6 +8,8 @@ digraph G {
 			Management -> "Human factor. Successful projects and commands."
 			Management -> "Scrum and XP, notes from frontline"
 			Management -> "The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win"
+			Management -> "Goldratt: Isn't It Obvious? Retailing and the Theory of Constraints"
+			Management -> "Goldratt: The Choice"
 
 			People [fontsize=22];
 			Management -> People
