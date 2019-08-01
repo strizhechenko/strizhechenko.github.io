@@ -1,8 +1,0 @@
----
-layout: post
-title: "Коаны Vim"
-date: '2013-04-09 02:17:00'
----
-
-Это просто шикарнейший текст. Всем, кто использует Vim, стоит прочитать - и улыбнёт и узнаете немного нового.
-[http://blog.sanctum.geek.nz/vim-koans/](http://blog.sanctum.geek.nz/vim-koans/)
