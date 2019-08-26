@@ -10,6 +10,12 @@ date: '2012-12-31 02:27:00'
 sudo nice -n -19 gunzip -v -c bigarchive.gz > superbigfile.ext
 ```
 
+----
+
+[Шаблон bash-скрипта](https://github.com/carbonsoft/crab_utils/blob/templates/tmplt/tmplt_bash)
+
+----
+
 Выводить значение переменной в bash перед каждым действием:
 
 ``` shell
@@ -33,3 +39,11 @@ blockdev -rereadpt /dev/sda (BLKRRPART failed : device or resource busy)
 sfdisk -R /dev/sda (BLKRRPART failed : device or resource busy)
 ```
 
+Как найти последние изменённые файлы на Linux-сервере:
+
+``` shell
+find  /app -xdev -type f -mtime -3 | egrep -v "(localtime|proc|resolv|boot|hosts|.git|/tmp/)"
+```
+
+- `-mtime 3` - количество дней в течении которых нужны изменения.
+- `/app` - папка в которой происходит поиск изменений
