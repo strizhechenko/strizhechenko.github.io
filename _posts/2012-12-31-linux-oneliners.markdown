@@ -47,3 +47,10 @@ find  /app -xdev -type f -mtime -3 | egrep -v "(localtime|proc|resolv|boot|host
 
 - `-mtime 3` - количество дней в течении которых нужны изменения.
 - `/app` - папка в которой происходит поиск изменений
+
+Побайтовый бэкап системы
+
+``` shell
+mount /dev/sdc1 /mnt/backup/
+dd if=/dev/sda of="/mnt/backup/system.$(date +"%Y-%m-%d").img" bs=4096
+```
