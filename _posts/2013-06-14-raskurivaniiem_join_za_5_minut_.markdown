@@ -3,10 +3,8 @@ layout: post
 title: "Раскуриванием Join за 5 минут!"
 date: '2013-06-14 07:55:00'
 tags:
-- bash2
+- bash
 - join
-- obiedinieniie_failov
-- primier_ispol_zovaniia
 ---
 
 # Сравнение с помощью join
@@ -28,15 +26,14 @@ tags:
 
 # Примеры
 
-## что есть в file1, но нет в file2
+## Что есть в file1, но нет в file2
 
     hordecore@oleg:~$ join -a 1 -j 1 -v 1 file1.txt file2.txt
     12 грепал
     24 грепом
     44 реку
 
-## всё, кроме общих строк обоих файлов
-
+## Всё, кроме общих строк обоих файлов
 
     hordecore@oleg:~$ join -a 2 -j 1 -v 1 file1.txt file2.txt
     11 видит
@@ -46,14 +43,14 @@ tags:
     45 в репе
     77 баг
 
-## всё, что есть в file2, но нет в file1
+## Всё, что есть в file2, но нет в file1
 
     hordecore@oleg:~$ join -a 2 -j 1 -v 2 file1.txt file2.txt
     11 видит
     45 в репе
     77 баг
 
-## только общие строки обоих файлов
+## Только общие строки обоих файлов
 
     join -j 1 file1.txt file2.txt 
     16 грека грека

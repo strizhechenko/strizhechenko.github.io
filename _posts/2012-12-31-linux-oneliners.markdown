@@ -54,3 +54,10 @@ find  /app -xdev -type f -mtime -3 | egrep -v "(localtime|proc|resolv|boot|host
 mount /dev/sdc1 /mnt/backup/
 dd if=/dev/sda of="/mnt/backup/system.$(date +"%Y-%m-%d").img" bs=4096
 ```
+
+Конвертирование образов виртуальных машин
+
+``` shell
+sudo qemu-img convert host.qcow2 host.raw
+VBoxManage convertdd test.raw test.vdi
+```
