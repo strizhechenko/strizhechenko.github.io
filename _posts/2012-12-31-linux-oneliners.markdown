@@ -85,6 +85,18 @@ GSSAPIAuthentication no
 
 По-хорошему после подчистки места и перед сжатием образа, нужно сделать зачистку файловой системы - создать большой файл, забитый нулями, а затем удалить.
 
-```
+``` shell
 sudo qemu-img convert -c -f qcow2 -O qcow2 carbon_ci.img carbon_ci_zip.img
+```
+
+Проброс порта на SSH:
+
+- 10.11.12.13 - адрес машины за NAT
+- 22 порт - сейчас используется SSH-сервером
+- 8686 порт будет доступен снаружи
+
+``` shell
+iptables -t nat -I PREROUTING -p tcp --dport 8686 -j DNAT --to-dest 10.11.12.13:22
+iptables -I FORWARD -s 10.11.12.13 -j ACCEPT
+iptables -I FORWARD -d 10.11.12.13 -j ACCEPT
 ```
