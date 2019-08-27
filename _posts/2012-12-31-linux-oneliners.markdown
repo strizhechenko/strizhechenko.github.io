@@ -61,3 +61,15 @@ dd if=/dev/sda of="/mnt/backup/system.$(date +"%Y-%m-%d").img" bs=4096
 sudo qemu-img convert host.qcow2 host.raw
 VBoxManage convertdd test.raw test.vdi
 ```
+
+Получить список IP-адресов на машине:
+
+``` shell
+ip addr | egrep -wo '([0-9]{1,3}\.*){4}/[0-9]{1,2}'
+```
+
+или
+
+``` shell
+ip -o -f "inet" addr | awk '{print $4}'
+```
