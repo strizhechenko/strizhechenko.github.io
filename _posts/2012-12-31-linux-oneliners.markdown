@@ -73,3 +73,10 @@ ip addr | egrep -wo '([0-9]{1,3}\.*){4}/[0-9]{1,2}'
 ``` shell
 ip -o -f "inet" addr | awk '{print $4}'
 ```
+
+Долгое подключение по SSH - отключите в `/etc/ssh/sshd_config` параметры:
+
+```
+UseDNS no
+GSSAPIAuthentication no
+```
