@@ -80,3 +80,11 @@ ip -o -f "inet" addr | awk '{print $4}'
 UseDNS no
 GSSAPIAuthentication no
 ```
+
+Сжатие qcow2 дисков.
+
+По-хорошему после подчистки места и перед сжатием образа, нужно сделать зачистку файловой системы - создать большой файл, забитый нулями, а затем удалить.
+
+```
+sudo qemu-img convert -c -f qcow2 -O qcow2 carbon_ci.img carbon_ci_zip.img
+```
