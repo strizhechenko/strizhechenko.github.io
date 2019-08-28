@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Подробно о ccache: что за зверь, как настроить, что даст?"
+title: "Как настроить ccache?"
 date: '2013-08-30 10:31:00'
 tags:
 - centos

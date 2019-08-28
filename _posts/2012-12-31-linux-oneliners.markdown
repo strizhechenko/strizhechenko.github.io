@@ -100,3 +100,11 @@ iptables -t nat -I PREROUTING -p tcp --dport 8686 -j DNAT --to-dest 10.11.12.13:
 iptables -I FORWARD -s 10.11.12.13 -j ACCEPT
 iptables -I FORWARD -d 10.11.12.13 -j ACCEPT
 ```
+
+Конвертировать содержимое файла в char:
+
+``` shell
+hexdump -v -e '12/1 "0x%02X, " "\n"' file.txt | sed 's/0x  /0x00/g'
+```
+
+Как
