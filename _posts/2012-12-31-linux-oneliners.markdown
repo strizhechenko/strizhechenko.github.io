@@ -107,4 +107,8 @@ iptables -I FORWARD -d 10.11.12.13 -j ACCEPT
 hexdump -v -e '12/1 "0x%02X, " "\n"' file.txt | sed 's/0x  /0x00/g'
 ```
 
-Как
+Установить nslookup (он устарел, лучше используйте dig):
+
+``` shell
+yum install bind-utils
+```
