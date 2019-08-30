@@ -112,3 +112,35 @@ hexdump -v -e '12/1 "0x%02X, " "\n"' file.txt | sed 's/0x  /0x00/g'
 ``` shell
 yum install bind-utils
 ```
+
+Какие внешние утилиты используются в скрипте:
+
+``` shell
+strace -f -s 100 -e trace=execve ./test.sh 2>&1 | grep -o "execve.*" | sort
+```
+
+После отключения ipv6 и перезагрузки перестал работать проброс X'ов по SSH.
+
+Укажите в sshd_config:
+
+```
+AddressFamily inet
+```
+
+Показать настройки IPv4 только для ethernet-интерфейсов (например если много туннелей) без grep:
+
+``` shell
+ip -o -4 addr show label eth*
+```
+
+Показывать в режиме bash -x номер выполняемой строки:
+
+``` shell
+PS4="$PS4 line: \$LINENO "
+```
+
+Посчитать общий размер списка файлов перечисленных в файле:
+
+``` shell
+eval echo '$((('"$(while read line; do du -s $line; done < backups.conf | while read x d; do echo -n $x+; done)"'0 ) / 1024 / 1024))'
+```
