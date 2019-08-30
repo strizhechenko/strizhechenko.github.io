@@ -139,6 +139,22 @@ ip -o -4 addr show label eth*
 PS4="$PS4 line: \$LINENO "
 ```
 
+Как указать конкретное зеркало yum
+
+в конфиге `/etc/yum/pluginconf.d/fastestmirror.conf` указать `include_only`:
+
+``` shell
+[main]
+enabled=1
+verbose=0
+always_print_best_host = true
+socket_timeout=3
+hostfilepath=timedhosts.txt
+maxhostfileage=10
+maxthreads=15
+include_only=mirror.yandex.ru
+```
+
 Посчитать общий размер списка файлов перечисленных в файле:
 
 ``` shell
