@@ -5,7 +5,7 @@ date: '2014-07-31 15:13:00'
 ---
 ``` shell
 usage() {
-	echo "$0 [OPTIONS] &lt;nas_id&gt;"
+	echo "$0 [OPTIONS] <nas_id>""
 	grep "^# usage:" $0 | sed -e 's/# usage: //g'
 	echo "where OPTIONS is:"
 	grep -m1 -A 1000 "^parse_params" $0 | grep -B 1000 -m1 "^}" | grep ".*|.*)$" | tr '|' '-' | tr -d ')'

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'При установке вашего RPM: cpio digest mismatch for packet maintainers.'
+title: 'При установке вашего RPM: cpio digest mismatch'
 date: '2013-10-12 19:21:00'
 tags:
 - cpio_digest_mismatch

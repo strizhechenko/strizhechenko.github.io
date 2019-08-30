@@ -74,11 +74,11 @@ ip addr | egrep -wo '([0-9]{1,3}\.*){4}/[0-9]{1,2}'
 ip -o -f "inet" addr | awk '{print $4}'
 ```
 
-Долгое подключение по SSH - отключите в `/etc/ssh/sshd_config` параметры:
+Долгое подключение по SSH:
 
-```
-UseDNS no
-GSSAPIAuthentication no
+``` shell
+sed -E 's/.(UseDNS|GSSAPIAuthentication)./\1 no/g' -i /etc/ssh/sshd_config
+service sshd reload
 ```
 
 Сжатие qcow2 дисков.
