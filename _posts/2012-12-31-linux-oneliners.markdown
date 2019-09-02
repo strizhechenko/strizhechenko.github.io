@@ -155,6 +155,67 @@ maxthreads=15
 include_only=mirror.yandex.ru
 ```
 
+Добавление VLAN:
+
+``` shell
+#!/bin/bash
+
+set -euE
+
+dev="$1"
+tag="$2"
+
+ip link add link "$dev" name "$dev.$tag" type vlan id "$tag"
+ip link set "$dev.$tag" up
+```
+
+Развернуть систему сборки ядра CentOS 6
+
+``` shell
+#!/bin/bash
+
+SRCRPM="http://vault.centos.org/6.6/os/Source/SPackages/kernel-2.6.32-504.el6.src.rpm"
+curl https://raw.githubusercontent.com/hordecore/cookbooks/devel/centos7_prototype.sh | bash
+yum -y groupinstall "Development tools"
+yum -y install xmlto asciidoc elfutils-libelf-devel elfutils-devel binutils-devel newt-devel  python-devel audit-libs-devel "perl(ExtUtils::Embed)" hmaccalc ncurses-devel
+rpm -i "$SRCRPM"
+rm -f /dev/random
+ln -s /dev/urandom /dev/random
+cd /root/rpmbuild/SPECS
+rpmbuild -bp kernel.spec
+```
+
+Подпись запроса на сертификат с помощью OpenSSL
+
+``` shell
+openssl ca \
+	-config /cfg/cert/cert.cfg \
+	-cert /cfg/cert/ca.crt \
+	-keyfile /cfg/cert/ca.key \
+	-in /root/request_from_human.csr \
+	-out /root/cert_for_human.crt
+```
+
+- Запрос - `/root/request_from_human.csr`
+- Подпись на выходе - `/root/cert_for_human.crt`
+
+Конвертация IP в uint32 и обратно:
+
+``` shell
+ip2string() {
+		a="$(($1>>24))"
+		b="$(($1-(a<<24)>>16))"
+		c="$((($1-(a<<24)-(b<<16))>>8))"
+		d="$((($1-(a<<24)-(b<<16))-(c<<8)))"
+		echo "$a.$b.$c.$d"
+}
+
+string2ip() {
+		IFS=. read a b c d <<< "$1"
+		echo "$(( (a<<24) + (b<<16) + (c<<8) + d))"
+}
+```
+
 Посчитать общий размер списка файлов перечисленных в файле:
 
 ``` shell
