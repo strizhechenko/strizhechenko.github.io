@@ -216,6 +216,46 @@ string2ip() {
 }
 ```
 
+Форсировать обновление дистрибутива CentOS
+
+Yum может сообщать о том, что текущая установленная версия - ещё не выпущена. Можно обойти это так:
+
+``` shell
+echo 6.6 > /etc/yum/vars/releasever
+rpm -Uvh http://mirror.yandex.ru/centos/6.6/os/x86_64/Packages/centos-release-6-6.el6.centos.12.2.x86_64.rpm
+yum -y update
+```
+
+Регулярное выражение egrep для приватных сетей:
+
+```
+"^1(27\.|92\.168\.|0\.|72\.(1[6-9]|2[0-9]3[01]))[0-9.]*$"
+```
+
+Создание chroot-jail в CentOS:
+
+``` shell
+name="grafana"
+mkdir -p "/containers/$name/etc/yum.repos.d/"
+sed s/'$releasever'/6/g /etc/yum.repos.d/CentOS-Base.repo > "/containers/$name/etc/yum.repos.d/CentOS-Base.repo"
+yum groupinstall core --installroot="/containers/$name/" --nogpgcheck -y
+export PATH="$PATH:/bin/:/sbin/"
+chroot "/containers/$name/" rpm -vv --rebuilddb
+```
+
+Установка Bat в CentOS (и любого другого Go-кода):
+
+``` shell
+yum -y install golang
+export GOPATH=~/git/go/
+mkdir -p $GOPATH/src/
+cd $GOPATH/src/
+git clone https://github.com/astaxie/bat.git
+go get
+go build
+cp bat/bat /usr/local/bin/bat
+```
+
 Посчитать общий размер списка файлов перечисленных в файле:
 
 ``` shell

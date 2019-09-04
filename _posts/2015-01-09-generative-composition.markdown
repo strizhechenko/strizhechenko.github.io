@@ -37,3 +37,7 @@ while True:
 ```
 
 Хочу найти библиотеку для работы с midi в python и написать такой мини-язык. Надо бы сперва перепробовать весь софт из [статьи на википедии](http://en.wikipedia.org/wiki/Generative_music).
+
+## Доп. Список ПО
+
+Max/MSP, PureData, Overtone, SuperCollider, CSound, ChucK, Faust, Processing, Pixelang.
