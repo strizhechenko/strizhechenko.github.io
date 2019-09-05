@@ -74,10 +74,13 @@ ip addr | egrep -wo '([0-9]{1,3}\.*){4}/[0-9]{1,2}'
 ip -o -f "inet" addr | awk '{print $4}'
 ```
 
-Долгое подключение по SSH:
+Долгое подключение по SSH (лучше разобраться с причиной, здесь набор костылей под разные проблемы):
 
 ``` shell
 sed -E 's/.(UseDNS|GSSAPIAuthentication)./\1 no/g' -i /etc/ssh/sshd_config
+yum -y install nscd
+service nscd restart
+echo options single-request >> /etc/resolv.conf
 service sshd reload
 ```
 
@@ -254,6 +257,18 @@ git clone https://github.com/astaxie/bat.git
 go get
 go build
 cp bat/bat /usr/local/bin/bat
+```
+
+Установить шаблоны LXC в CentOS
+
+``` shell
+yum -y install lxc-templates
+```
+
+Починить зависающий ntpdate в CentOS:
+
+``` shell
+sed -e 's/^server //; s/ iburst$//' -i /etc/ntp/step-tickers
 ```
 
 Посчитать общий размер списка файлов перечисленных в файле:
