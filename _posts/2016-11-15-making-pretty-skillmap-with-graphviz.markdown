@@ -14,7 +14,12 @@ tags:
 
 [![PNG](/images/my-skills.png)](/images/my-skills.png)
 
-I've been searching for some way to visualize my skills today, for fun mostly. At first I was trying to use GraphML and Gephi and it was: Hard, Slow, GUI and Ugly.
+I've been searching for some way to visualize my skills today, for fun mostly. At first I was trying to use GraphML and Gephi and it was:
+
+- hard
+- slow
+- GUI based
+- ugly
 
 After one hour of efforts I listened to [@Shoonoise](https://twitter.com/shoonoise/status/798232697265156096) and gave dot a try. Aaaaand it's perfect human-oriented "language"! Just look at this example:
 
@@ -32,13 +37,21 @@ digraph G {
 }
 ```
 
-No ```<node id="1" label="SCM"/>```, no ```<edge source="1" target="2"/>```. Just human readable text!
+No
 
-I don't remember how I got it, it was long ago, when I profiled python for first time. Maybe ```pip install graphviz``` will help, maybe ```port install pydot```.
+``` xml
+<node id="1" label="SCM"/>
+<edge source="1" target="2"/>
+```
+Just human readable text!
+
+``` shell
+pip install graphviz
+```
 
 And result of two hours of "fun", generated from [DOT (source)](/share/my-skills.gv) by:
 
-```
+``` shell
 sfdp -Goverlap=prism  share/my-skills.gv | gvmap -e | neato -Ecolor="#55555522" -n2 -Tsvg > images/my-skills.svg
 sfdp -Goverlap=prism  share/my-skills.gv | gvmap -e | neato -Ecolor="#55555522" -n2 -Tpng > images/my-skills.png
 ```
