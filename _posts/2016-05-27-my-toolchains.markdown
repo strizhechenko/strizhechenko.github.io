@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "My toolchains for shell, python and C"
+title: "Инструменты для работы с Python, C, Bash, Markdown"
 date: '2016-05-27 10:39:04'
 ---
 
-# atom
+## atom
+
+- markdown-writer
+
+update 2019: устарело, только блог пишу в нём
 
 - script
 - server-script
@@ -23,13 +27,14 @@ date: '2016-05-27 10:39:04'
 - atom-ctags
 - atom-prettify
 - markdown-toc
-- markdown-writer
 - python-iresolve
 - python-nosetests
 - python-tools
 - split-diff
 
-# c
+## c
+
+- clion
 - cmocka
 - make
 - valgrind
@@ -40,13 +45,16 @@ date: '2016-05-27 10:39:04'
   - clang-format
   - clang-check
 
-# python
-- pylint
+## python
+
+- pycharm
+- pylint -> встроенные проверки pycharm
 - virtualenv
 - ipython
-- nosetests
+- nosetests -> pytest
 - cProfile
 
-# other
+## other (update 2019: устарело, не пользуюсь ansible)
+
 - language-ansible
 - linter-ansible-linting

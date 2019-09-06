@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Хостим twitter-бота в heroku"
+title: "Использование heroku: пример с twitter ботом"
 date: '2016-03-08 04:37:45'
 tags:
 - twitter
@@ -10,119 +10,136 @@ tags:
 - heroku
 ---
 
-# Регистрация в heroku
+Все примеры подразумевают использование Python.
 
-1. Идём в http://heroku.com/, регистрируемся.
-- Идём по гайду https://devcenter.heroku.com/articles/getting-started-with-python#introduction
-- Устанавливаем себе на пекарню утилки от heroku.
+## Регистрация на Heroku
 
-# Конфиги и переменные
+1. [Регистрируемся на heroku](http://heroku.com/).
+2. Идём по [гайду](https://devcenter.heroku.com/articles/getting-started-with-python#introduction), устанавливаем утилиты от heroku.
 
-Используя heroku, конфиги стоит хранить в окружении. Для этого:
+## Конфигурация
 
-1. Задаём параметры командой:
+В heroku конфигурацию принято хранить в окружении.
 
- heroku config:set variable="value"
+1. Задаём параметры командой: `heroku config:set variable="value"`. Не забудьте кавычки, особенно если в значении есть пробелы.
+2. В коде получаем доступ к ним с помощью `os.getenv('variable')`
 
- не забываем кавычки, по крайней мере в случае переменной template.
-- В python получаем доступ к ним с помощью os.environ.get()
+## Пример бота
 
-# Шаблонный бот
+``` shell
+git clone https://github.com/strizhechenko/twitterbot_example.git
+```
 
-    git clone git@github.com:strizhechenko/twitterbot_example.git
+Содержимое репозитория:
 
-или
+- `Procfile` - объясняет какой командой запускать бота;
+- `runtime` - какая среда (читай версия python) нужна для запуска бота;
+- `requirements.txt` - все зависимости бота;
+- `bot.py` - код бота;
+- `morpher.py` - вспомогательный модуль для нормализации русскоязычных существительных.
 
-    git clone https://github.com/strizhechenko/twitterbot_example.git
+## Конфигурация
 
-В этой репе лежат:
+Я обычно использую в качестве словаря бота не файл или базу, а собственную ленту твиттера. Для этого нужна авторизация под несколькими пользователями:
 
-- Procfile - объясняет какой командой запускать бота;
-- runtime - какая среда (читай версия python) нужна для запуска бота;
-- requirements.txt - все зависимости бота;
-- bot.py - набросок бота;
-- morpher.py - модуль для нормализации русскоязычных существительных.
+* самого бота - `user_access_token` и `user_access_secret`
+* читателя - `strizhechenko_access_token` `strizhechenko_access_secret`
 
-## Конфиг
+Просмотр конфигурации:
 
-Я обычно использую в качестве словаря бота - не какой-то файл, базу или что-то ещё, а выдернутые из моей собственной ленты существительные. Для этого нужна авторизация под несколькими пользователями - самого бота (**user\_access\_token/secret**) и reader'а (в данном случае - **strizhechenko\_access\_token/secret**).
+``` shell
+$ heroku config -s
+template='%s – это когда тебя любят.'
+timeout=30
+```
 
-    $ heroku config -s
-    consumer_key=
-    consumer_secret=
-    reader_name=strizhechenko
-    strizhechenko_access_secret=
-    strizhechenko_access_token=
-    template='%s – это когда тебя в жопу ебут.'
-    timeout=30
-    user_access_secret=
-    user_access_token=
+## Регистрация приложения в твиттер
 
-## Регистрация приложения
-
-**consumer key** / **consumer secret** - можно получить зарегистрировав приложение здесь - https://apps.twitter.com/. По сути это идентификаторы вашего приложения, лучше его никому не знать. Я к примеру для всех ботов использую один идентификатор.
+`consumer_key` и `consumer_secret` - можно получить зарегистрировав приложение здесь - https://apps.twitter.com/. Это идентификаторы вашего приложения, их лучше никому не знать, в публичный код его зашивать не надо.
 
 ## Авторизация пользователей
-Авторизовать пользователей можно следующим образом:
 
-    virtualenv env/
-    . env/bin/activate
-    pip install -r requirements.txt 
-    export consumer_key=your_consumer_key
-    export consumer_secret=your_consumer_secret
-    python -m twitterbot_utils.TwiAuth
+Авторизовать пользователей можно с помощью утилиты в `twitterbot_utils`:
 
-Утилита спросит PIN код, который будет показан в браузере, а затем отдаст **access token / secret**. В верхней части экрана возможно придётся перелогиниться на другого пользователя, т.к. авторизовать надо и себя и бота.
+``` shell
+virtualenv env/
+. env/bin/activate
+pip install -r requirements.txt
+export consumer_key=your_consumer_key
+export consumer_secret=your_consumer_secret
+python -m twitterbot_utils.TwiAuth
+```
 
-Осталось два парметра  template и timeout:
+Утилита спросит PIN код, который будет показан в браузере, а затем отдаст: `access_token` и `access_secret`. Авторизовать надо и себя и бота, поэтому не забудьте перелогиниться в браузере.
 
-    template='%s – это когда тебя в жопу ебут.'
+Осталось два парметра  `template` и `timeout`:
 
-**template** - шаблон фразы, в которую нужно подставлять существительные. Как printf почти.
+``` shell
+template='%s – это когда тебя любят.'
+```
 
-    timeout=30
+`template` - шаблон фразы, в которую будут подставлены существительные, работает как printf почти.
 
-**timeout** - с каким промежутком постить, задаётся в минутах.
+``` shell
+timeout=30
+```
+
+`timeout` - интервал межд постингом, задаётся в минутах.
 
 Есть ещё две необязательные опции:
 
-    tweet_grab = 3
-    tweets_per_tick = 2
+``` shell
+tweet_grab = 3
+tweets_per_tick = 2
+```
 
-**tweet\_grab** - число твитов, которые подтягиваются из ленты reader'а для выхватывания существительных.
+* `tweet_grab` - число твитов, которые подтягиваются из ленты reader'а для поиска существительных.
+* `tweets_per_tick` - число твитов, которые бот постит за один раз.
 
-**tweets\_per\_tick** - число твитов, которые бот постит за один тик (т.е. раз в timeout).
+## Deploy в heroku
 
-# Заливка в heroku
+Итак мы всё настроили, возможно слегка поправили код `bot.py`. Закомитьтесь, если что-то меняли:
 
-Итак мы всё настроили, возможно слегка поправили код bot.py. Закомитьтесь, если что-то меняли (и блудили):
-
-    git add -p
-    git commit -m "блаблабла"
+``` shell
+git add -p
+git commit -m "блаблабла"
+```
 
 Меняем origin, репозиторий-пример с гитхаба нам больше не нужен.
 
-    git remote remove origin
-    heroku create yourbotname
-    git push heroku master
+```
+git remote remove origin
+heroku create yourbotname
+git push heroku master
+```
 
-После git push heroku должен обнарудить питоновое приложение и собрать его из requirements.txt:
+После `git push` heroku должен обнаружить питоновое приложение и собрать его из requirements.txt:
 
-    remote: -----> Python app detected
+```
+remote: -----> Python app detected
+```
 
 Закончиться всё должно:
 
-    remote: Verifying deploy... done.
+```
+remote: Verifying deploy... done.
+```
 
-# Запускаем бота
+## Запуск
 
-    heroku scale worker=1
+``` shell
+heroku scale worker=1
+```
 
-Дальше уже остаётся любоваться логами и чинить если что-то не работает:
+Дальше остаётся смотреть логи и чинить если что-то не работает:
 
-    heroku logs -t
+``` shell
+heroku logs -t
+```
 
-Рестарт бота:
+Перезапуск бота:
 
-    heroku scale worker=0
-    heroku scale worker=1
+``` shell
+heroku scale worker=0
+heroku scale worker=1
+```

@@ -127,3 +127,7 @@ done | grep -o /proc.*fd/ | tr -d '/a-zA-Z' | sort -u | while read pid; do
     kill -KILL "$pid"
 done
 ```
+
+## Держите git в /boot
+
+Мало ли что при обновлении сломается.
