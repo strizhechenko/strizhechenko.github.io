@@ -21,3 +21,19 @@ UPD: Забавно, но в новых билдах iptables есть `--check 
 ``` shell
 iptables -t nat -D my_mega_chain 1 3 16
 ```
+
+### 20 ноября 2016
+
+Модуль autocomplete для ansible в atom. Чтобы пишешь:
+
+``` yaml
+    - name: blabla
+      copy:
+```
+
+и оно превращается в:
+
+``` yaml
+  - name: blabla
+    copy: src=../files/ dst=/dst/
+```

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Заметки об influxdb, grafana и collectd"
+title: "Заметки об influxdb, grafana, kapacitor, telegraf и collectd"
 date: '2015-05-30 10:17:06'
 tags:
 - influxdb
@@ -116,6 +116,65 @@ $HOSTNAME/memory/memory-used
 
 ``` sql
 SELECT mean(value) FROM /cpu*/ GROUP BY time(1h)
+```
+
+## Интеграция с Kapacitor
+
+Kapacitor - алертер на Go, созданный специально для работы с InfluxDB.
+
+### Разные loglevel
+
+Пример для low-latency хоста. Процессор всегда должен быть почти свободен, если это не так - это аномалия.
+
+``` python
+stream
+    |from()
+        .measurement('cpu')
+    |alert()
+        .info(lambda: "usage_idle" < 95)
+        .warn(lambda: "usage_idle" < 90)
+        .crit(lambda: "usage_idle" < 80)
+        .slack()
+        .channel('@weirded')
+```
+
+Проверка: запускаем в новых окнах команду:
+
+``` shell
+grep -o -a 'rrr' /dev/urandom > /dev/null
+```
+
+Оффтоп: кстати, grep довольно прожорливая^Wочень эффективно использующая имеющиеся ресурсы штука, как и вообще вся работа с текстом, если её вовремя не останавливать. Съесть 100% CPU ему ничего не стоит.
+
+```
+cpu:nil is WARNING
+cpu:nil is CRITICAL
+cpu:nil is WARNING
+cpu:nil is OK
+```
+
+### Добавление имени хоста на котором произошло событие
+
+``` python
+stream
+    |from()
+        .measurement('cpu')
+    |alert()
+	    .id('{{.Tags}}')
+	    .message('{{.ID}} is in {{.Level}} state because of usage_idle value: {{ index .Fields "usage_idle" }}')
+        .warn(lambda: "usage_idle" < 90)
+        .crit(lambda: "usage_idle" < 70)
+        .crit(lambda: "usage_idle" < 70)
+        .log('/tmp/alerts.log')
+        .slack()
+	.channel('@weirded')
+```
+
+На выходе:
+
+```
+map[cpu:cpu-total host:influxdb-test-deploy] is in WARNING state because of value: 87.39076154796331
+map[cpu:cpu-total host:influxdb-test-deploy] is in OK state because of value: 95.49999999999272
 ```
 
 ## Заметки по релизу 0.9.0
