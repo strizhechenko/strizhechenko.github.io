@@ -177,6 +177,28 @@ map[cpu:cpu-total host:influxdb-test-deploy] is in WARNING state because of valu
 map[cpu:cpu-total host:influxdb-test-deploy] is in OK state because of value: 95.49999999999272
 ```
 
+## Интеграция с Telegraf
+
+### Как указать разные интервалы сбора с помощью нескольких плагинов-коллекторов
+
+Укажите несколько секций `[inputs.exec]` и у каждой укажите свой интервал. Пример:
+
+``` python
+[inputs.exec]
+  commands = ["/etc/telegraf/telegraf.d/my-collector.sh 1m"]
+  interval = "1m"
+
+[inputs.exec]
+  commands = ["/etc/telegraf/telegraf.d/my-collector.sh 10s"]
+  interval = "10s"
+```
+
+Зачем такое может понадобиться?
+
+- Есть редко изменяющиеся, либо требующие ресурсов и времени на сбор данные (обращения к внешним серверам). В то же время есть данные, которые нужно собирать постоянно и которые собираются быстро (содержимое/размер текстовых файлов, счетчики).
+- Для изоляции сложности двумя местами: свой конфиг в `telegraf.d` и ваш скрипт-коллектор `my-collector.sh`. Что они будут получать и какие метрики выводить - станет заботой тех частей приложения, которые они вызывают.
+
+
 ## Заметки по релизу 0.9.0
 
 [Написал статью на хабр](http://habrahabr.ru/post/262565)
