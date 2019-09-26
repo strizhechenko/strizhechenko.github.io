@@ -16,7 +16,7 @@ sudo nice -n -19 gunzip -v -c bigarchive.gz > superbigfile.ext
 
 ----
 
-Выводить значение переменной в bash перед каждым действием:
+## Выводить значение переменной в bash перед каждым действием:
 
 ``` shell
 oleg@macbook:~ $ trap 'echo "VARIABLE-TRACE> \$variable = \"$variable\""' DEBUG
@@ -30,7 +30,16 @@ VARIABLE-TRACE> $variable = "20"
 VARIABLE-TRACE> $variable = "0"
 ```
 
-Перечитать partition-table. Никак, пробовал:
+## Показывать в режиме bash -x номер выполняемой строки:
+
+``` shell
+PS4="$PS4 line: \$LINENO "
+```
+
+
+## Перечитать partition-table
+
+Никак, пробовал:
 
 ``` shell
 partprobe /dev/sda (warning : kernel failed to reread ....)
@@ -39,7 +48,7 @@ blockdev -rereadpt /dev/sda (BLKRRPART failed : device or resource busy)
 sfdisk -R /dev/sda (BLKRRPART failed : device or resource busy)
 ```
 
-Как найти последние изменённые файлы на Linux-сервере:
+## Найти последние изменённые файлы на Linux-сервере
 
 ``` shell
 find  /app -xdev -type f -mtime -3 | egrep -v "(localtime|proc|resolv|boot|hosts|.git|/tmp/)"
@@ -48,21 +57,21 @@ find  /app -xdev -type f -mtime -3 | egrep -v "(localtime|proc|resolv|boot|host
 - `-mtime 3` - количество дней в течении которых нужны изменения.
 - `/app` - папка в которой происходит поиск изменений
 
-Побайтовый бэкап системы
+## Побайтовый бэкап системы
 
 ``` shell
 mount /dev/sdc1 /mnt/backup/
 dd if=/dev/sda of="/mnt/backup/system.$(date +"%Y-%m-%d").img" bs=4096
 ```
 
-Конвертирование образов виртуальных машин
+## Конвертирование образов виртуальных машин
 
 ``` shell
 sudo qemu-img convert host.qcow2 host.raw
 VBoxManage convertdd test.raw test.vdi
 ```
 
-Получить список IP-адресов на машине:
+## Получить список IP-адресов на машине:
 
 ``` shell
 ip addr | egrep -wo '([0-9]{1,3}\.*){4}/[0-9]{1,2}'
@@ -74,7 +83,9 @@ ip addr | egrep -wo '([0-9]{1,3}\.*){4}/[0-9]{1,2}'
 ip -o -f "inet" addr | awk '{print $4}'
 ```
 
-Долгое подключение по SSH (лучше разобраться с причиной, здесь набор костылей под разные проблемы):
+## Победить долгое подключение по SSH
+
+Лучше разобраться с причиной, здесь набор костылей под разные проблемы.
 
 ``` shell
 sed -E 's/.(UseDNS|GSSAPIAuthentication)./\1 no/g' -i /etc/ssh/sshd_config
@@ -84,7 +95,7 @@ echo options single-request >> /etc/resolv.conf
 service sshd reload
 ```
 
-Сжатие qcow2 дисков.
+## Сжать qcow2 диск
 
 По-хорошему после подчистки места и перед сжатием образа, нужно сделать зачистку файловой системы - создать большой файл, забитый нулями, а затем удалить.
 
@@ -92,7 +103,7 @@ service sshd reload
 sudo qemu-img convert -c -f qcow2 -O qcow2 carbon_ci.img carbon_ci_zip.img
 ```
 
-Проброс порта на SSH:
+## Проброс порта на SSH
 
 - 10.11.12.13 - адрес машины за NAT
 - 22 порт - сейчас используется SSH-сервером
@@ -104,25 +115,27 @@ iptables -I FORWARD -s 10.11.12.13 -j ACCEPT
 iptables -I FORWARD -d 10.11.12.13 -j ACCEPT
 ```
 
-Конвертировать содержимое файла в char:
+## Конвертировать содержимое файла в char
 
 ``` shell
 hexdump -v -e '12/1 "0x%02X, " "\n"' file.txt | sed 's/0x  /0x00/g'
 ```
 
-Установить nslookup (он устарел, лучше используйте dig):
+## Установить nslookup
+
+Он устарел, лучше используйте dig:
 
 ``` shell
 yum install bind-utils
 ```
 
-Какие внешние утилиты используются в скрипте:
+## Определить внешние утилиты, используемые в скрипте
 
 ``` shell
 strace -f -s 100 -e trace=execve ./test.sh 2>&1 | grep -o "execve.*" | sort
 ```
 
-После отключения ipv6 и перезагрузки перестал работать проброс X'ов по SSH.
+## Починить проброс X'ов по SSH после отключения ipv6 и перезагрузки
 
 Укажите в sshd_config:
 
@@ -130,19 +143,15 @@ strace -f -s 100 -e trace=execve ./test.sh 2>&1 | grep -o "execve.*" | sort
 AddressFamily inet
 ```
 
-Показать настройки IPv4 только для ethernet-интерфейсов (например если много туннелей) без grep:
+## Показать настройки IPv4 только для ethernet-интерфейсов без grep:
+
+Ннапример если много туннелей:
 
 ``` shell
 ip -o -4 addr show label eth*
 ```
 
-Показывать в режиме bash -x номер выполняемой строки:
-
-``` shell
-PS4="$PS4 line: \$LINENO "
-```
-
-Как указать конкретное зеркало yum
+## Как указать конкретное зеркало yum
 
 в конфиге `/etc/yum/pluginconf.d/fastestmirror.conf` указать `include_only`:
 
@@ -158,7 +167,17 @@ maxthreads=15
 include_only=mirror.yandex.ru
 ```
 
-Добавление VLAN:
+## Форсировать обновление дистрибутива CentOS
+
+Yum может сообщать о том, что текущая установленная версия - ещё не выпущена. Можно обойти это так:
+
+``` shell
+echo 6.6 > /etc/yum/vars/releasever
+rpm -Uvh http://mirror.yandex.ru/centos/6.6/os/x86_64/Packages/centos-release-6-6.el6.centos.12.2.x86_64.rpm
+yum -y update
+```
+
+## Добавление VLAN
 
 ``` shell
 #!/bin/bash
@@ -172,7 +191,7 @@ ip link add link "$dev" name "$dev.$tag" type vlan id "$tag"
 ip link set "$dev.$tag" up
 ```
 
-Развернуть систему сборки ядра CentOS 6
+## Развернуть систему сборки ядра CentOS 6
 
 ``` shell
 #!/bin/bash
@@ -188,7 +207,7 @@ cd /root/rpmbuild/SPECS
 rpmbuild -bp kernel.spec
 ```
 
-Подпись запроса на сертификат с помощью OpenSSL
+## Подпись запроса на сертификат с помощью OpenSSL
 
 ``` shell
 openssl ca \
@@ -202,7 +221,7 @@ openssl ca \
 - Запрос - `/root/request_from_human.csr`
 - Подпись на выходе - `/root/cert_for_human.crt`
 
-Конвертация IP в uint32 и обратно:
+## Конвертация IP в uint32 и обратно на bash
 
 ``` shell
 ip2string() {
@@ -219,17 +238,7 @@ string2ip() {
 }
 ```
 
-Форсировать обновление дистрибутива CentOS
-
-Yum может сообщать о том, что текущая установленная версия - ещё не выпущена. Можно обойти это так:
-
-``` shell
-echo 6.6 > /etc/yum/vars/releasever
-rpm -Uvh http://mirror.yandex.ru/centos/6.6/os/x86_64/Packages/centos-release-6-6.el6.centos.12.2.x86_64.rpm
-yum -y update
-```
-
-Регулярное выражение egrep для приватных сетей:
+## Регулярное выражение egrep для приватных IPv4 сетей
 
 ```
 "^1(27\.|92\.168\.|0\.|72\.(1[6-9]|2[0-9]3[01]))[0-9.]*$"
@@ -246,7 +255,7 @@ export PATH="$PATH:/bin/:/sbin/"
 chroot "/containers/$name/" rpm -vv --rebuilddb
 ```
 
-Установка Bat в CentOS (и любого другого Go-кода):
+## Установка Bat в CentOS (и любого другого Go-кода)
 
 ``` shell
 yum -y install golang
@@ -259,24 +268,49 @@ go build
 cp bat/bat /usr/local/bin/bat
 ```
 
-Установить шаблоны LXC в CentOS
+## Установить шаблоны LXC в CentOS
 
 ``` shell
 yum -y install lxc-templates
 ```
 
-Починить зависающий ntpdate в CentOS:
+## Починить зависающий ntpdate в CentOS
 
 ``` shell
 sed -e 's/^server //; s/ iburst$//' -i /etc/ntp/step-tickers
 ```
 
-Трасировка кода в ядре Linux с помощью ftrace
+## Трасировка кода в ядре Linux с помощью ftrace
 
-В CentOS 6.7 работает. Прочитал о нём [на хабре в бложеке селектела](https://habrahabr.ru/company/selectel/blog/280322/). Плюсы: можно указать список трасируемых функций, можно строить текстовые графы. Подводные камни: в `avaible_filter_set` содержатся не все функции отлаживаемого модуля, но часть их - на месте. От чего это зависит - не понимаю. 
+В CentOS 6.7 работает. Прочитал о нём [на хабре в бложеке селектела](https://habrahabr.ru/company/selectel/blog/280322/). Плюсы: можно указать список трасируемых функций, можно строить текстовые графы. Подводные камни: в `avaible_filter_set` содержатся не все функции отлаживаемого модуля, но часть их - на месте. От чего это зависит - не понимаю.
+
+## Создать задержку HTTP-запросов с помощью tc на шлюзе с Linux
+
+Всё очень упрощённо, без подчистки за собой.
+
+Мне нужно было добавить секундную задержку только для GET-запросов, чтобы установка соединения и последующий обмен ACK'ами не замедлялись.
+
+```
+#!/bin/bash
+
+set -eu
+
+IF="${1:-eth3}"
+IFSPEED=1000Mbps
+DELAY="${2:-1000ms}"
+CLASS=11
+ROOT=1
+
+tc qdisc  add dev $IF handle $ROOT: root htb
+tc class  add dev $IF parent $ROOT: classid $ROOT:$CLASS htb rate $IFSPEED
+tc qdisc  add dev $IF parent $ROOT:$CLASS handle $CLASS: netem delay $DELAY
+tc filter add dev $IF parent $ROOT:0 prio 1 protocol ip handle $CLASS fw flowid $ROOT:$CLASS
+iptables -t mangle -A POSTROUTING -o $IF -p tcp --dport 80 -m string --string 'GET' --algo 'bm' -j MARK --set-mark $CLASS
+```
 
 
-Посчитать общий размер списка файлов перечисленных в файле:
+
+## Посчитать общий размер списка файлов перечисленных в файле:
 
 ``` shell
 eval echo '$((('"$(while read line; do du -s $line; done < backups.conf | while read x d; do echo -n $x+; done)"'0 ) / 1024 / 1024))'
