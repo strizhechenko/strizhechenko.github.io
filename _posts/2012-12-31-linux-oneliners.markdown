@@ -308,7 +308,16 @@ tc filter add dev $IF parent $ROOT:0 prio 1 protocol ip handle $CLASS fw flowid 
 iptables -t mangle -A POSTROUTING -o $IF -p tcp --dport 80 -m string --string 'GET' --algo 'bm' -j MARK --set-mark $CLASS
 ```
 
+## Избежать сброса локали при подключении по SSH в MacOS
 
+Я очень сильно промучался с тем, что при ssh на Linux-сервера с моей MacOS переменные `LANG` и `LC_ALL`, `LC_CTYPE` сбрасывались в `C`, вместо `ru_RU.UTF-8`, в результате в vim с кириллическими символами творилась лютая кракозябра. В `~/.ssh/ssh_config` SendEnv почему-то игнорировался (в `ssh -vvv` было написано что файл читается, хз в чём прикол), но в `/etc/ssh/ssh_config` проканало.
+
+Собственно нужно туда добавить строчки:
+
+```
+Host *
+    SendEnv LANG LC_*
+```
 
 ## Посчитать общий размер списка файлов перечисленных в файле:
 
