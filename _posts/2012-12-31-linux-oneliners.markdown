@@ -319,6 +319,20 @@ Host *
     SendEnv LANG LC_*
 ```
 
+## Убедиться в отзыве SSL-сертификата
+
+Вводные: получаем ошибку SEC_ERROR_REVOKED_CERTIFICATE
+
+1. https://www.ssllabs.com/ssltest/
+2. Ищем "Revocation status"
+3. Если не отозван - дело в чём-то другом
+4. Если отозван, ищем информацию об отзыве.
+	1. Найдите серийный номер вашего сертификат. Мне это удалось только через Safari, до того как он обновил списки отозванных сертификатов, Firefox не показывает никакой отладочной информации, если сталкивается с отозванным сертификатом. Есть два способа:
+    2. CRL:
+		1. `wget "http://crl.comodoca.com/COMODORSADomainValidationSecureServerCA.crl" -O COMODORSADomainValidationSecureServerCA.crl`
+		2. `openssl crl -inform DER -text -noout -in COMODORSADomainValidationSecureServerCA.crl | grep -A 1 YOUR_CERT_SERIAL_NUMBER_WITHOUT_SPACES`
+    3. OCSP: http://ocsp.comodoca.com
+
 ## Посчитать общий размер списка файлов перечисленных в файле:
 
 ``` shell
