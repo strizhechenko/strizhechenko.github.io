@@ -1,5 +1,5 @@
 ---
-title: Ещё более тупой пример ospf
+title: Простой пример OSPF
 ---
 
 ## Задача
@@ -21,16 +21,17 @@ title: Ещё более тупой пример ospf
     inet 192.168.37.1/24 brd 192.168.37.255 scope global eth1
 ```
 
+### /etc/quagga/zebra.conf
+
 ```
-cat /etc/quagga/zebra.conf
 hostname ospf1
 log file /var/log/quagga/zebra.log
 ip forwarding
 line vty
 ```
 
+### /etc/quagga/ospfd.conf
 ```
-cat /etc/quagga/ospfd.conf
 hostname ospf1
 log file /var/log/quagga/ospfd.log
 router ospf
@@ -70,13 +71,17 @@ router ospf
 line vty
 ```
 
+## Примечания
+
+`redistribute connected` - означает распространять маршруты к сетям, к которым маршрутизатор подключен напрямую. Если вам необходимо распространять добавленные через конфигурацию zebra статические маршруты - используйте `redistribute static`, если вы добавляете маршруты внешними средствами - `redistribute kernel`.
+
 ## Советы
 
 - проверьте доступность хостов между друг другом с помощью ping
-- проверьте, что оба высылают OSPF Hello с помощью tcpdump / tshark
-- проверьте, что оба получают высланные друг другом OSPF Hello
+- проверьте, что оба высылают OSPF Hello с помощью tcpdump или tshark
+- проверьте, что оба хоста получают высланные друг другом OSPF Hello
     - тут есть нюанс, это multicast, так что прилетать будет src=ip-отправителя dst=224.0.0.x
-- проверить, что роут прилетел можно с помощью `ip r`
-- включить дебаг - это добавить в конфиг ospf `debug ospf events`
-- файрволы - iptables разрешает ospf правилом `iptables -I INPUT -p ospf`
+- проверить, что маршрут прилетел можно с помощью `ip r`
+- включить дебаг можно, добавив в конфиг ospf `debug ospf events`
+- могу мешать файрволы - iptables разрешает ospf правилом `iptables -I INPUT -p ospf`
 - zebra тоже должна быть запущена (без неё не будет отображаться area в `show ip ospf`
