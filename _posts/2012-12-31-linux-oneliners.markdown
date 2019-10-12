@@ -333,6 +333,12 @@ Host *
 		2. `openssl crl -inform DER -text -noout -in COMODORSADomainValidationSecureServerCA.crl | grep -A 1 YOUR_CERT_SERIAL_NUMBER_WITHOUT_SPACES`
     3. OCSP: http://ocsp.comodoca.com
 
+## Отключить турбобуст
+
+``` shell
+echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
+```
+
 ## Посчитать общий размер списка файлов перечисленных в файле:
 
 ``` shell
