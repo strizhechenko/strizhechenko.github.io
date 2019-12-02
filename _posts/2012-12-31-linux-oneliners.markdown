@@ -344,3 +344,10 @@ echo 1 > /sys/devices/system/cpu/intel_pstate/no_turbo
 ``` shell
 eval echo '$((('"$(while read line; do du -s $line; done < backups.conf | while read x d; do echo -n $x+; done)"'0 ) / 1024 / 1024))'
 ```
+
+## Посмотреть температуру процессоров
+
+``` shell
+modprobe coretemp
+grep '' /sys/class/hwmon/hwmon*/device/temp*_input
+```
