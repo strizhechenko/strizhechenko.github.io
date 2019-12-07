@@ -351,3 +351,9 @@ eval echo '$((('"$(while read line; do du -s $line; done < backups.conf | while 
 modprobe coretemp
 grep '' /sys/class/hwmon/hwmon*/device/temp*_input
 ```
+
+## Отслеживать изменения файлов в директории
+
+``` shell
+inotifywait -mr /tmp
+```
