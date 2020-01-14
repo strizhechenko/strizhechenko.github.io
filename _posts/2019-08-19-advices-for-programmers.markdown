@@ -114,20 +114,6 @@ second2hms() {
 second2hms "$1"
 ```
 
-## Убить программы, съевшие всё место удалёнными незакрытыми файлами
-
-``` shell
-#!/bin/bash
-
-ls -l /proc/*/fd/* 2>/dev/null | grep -i deleted | while read -r fd; do
-    : > $fd
-    echo $fd
-done | grep -o /proc.*fd/ | tr -d '/a-zA-Z' | sort -u | while read pid; do
-    ps aux | grep "$pid"
-    kill -KILL "$pid"
-done
-```
-
 ## Версионируйте или бэкапьте /boot раздел
 
 Мало ли что при обновлении сломается. Как именно - дело вкуса.
