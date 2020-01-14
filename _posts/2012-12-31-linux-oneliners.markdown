@@ -372,3 +372,8 @@ done | grep -o /proc.*fd/ | tr -d '/a-zA-Z' | sort -u | while read pid; do
 done
 ```
 
+## Конвертировать unixtime во время в формате ЧЧ:ММ:СС
+
+``` shell
+date --date @$1 +%H:%M:%S
+```
