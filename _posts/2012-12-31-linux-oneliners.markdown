@@ -357,3 +357,23 @@ grep '' /sys/class/hwmon/hwmon*/device/temp*_input
 ``` shell
 inotifywait -mr /tmp
 ```
+
+## Убить программы, съевшие всё место удалёнными незакрытыми файлами
+
+``` shell
+#!/bin/bash
+
+ls -l /proc/*/fd/* 2>/dev/null | grep -i deleted | while read -r fd; do
+    : > $fd
+    echo $fd
+done | grep -o /proc.*fd/ | tr -d '/a-zA-Z' | sort -u | while read pid; do
+    ps aux | grep "$pid"
+    kill -KILL "$pid"
+done
+```
+
+## Конвертировать unixtime во время в формате ЧЧ:ММ:СС
+
+``` shell
+date --date @$1 +%H:%M:%S
+```

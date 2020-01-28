@@ -114,18 +114,10 @@ second2hms() {
 second2hms "$1"
 ```
 
-## Убить программы, съевшие всё место удалёнными незакрытыми файлами
+Как сделать одной командой date:
 
 ``` shell
-#!/bin/bash
-
-ls -l /proc/*/fd/* 2>/dev/null | grep -i deleted | while read -r fd; do
-    : > $fd
-    echo $fd
-done | grep -o /proc.*fd/ | tr -d '/a-zA-Z' | sort -u | while read pid; do
-    ps aux | grep "$pid"
-    kill -KILL "$pid"
-done
+date --date @$1 +%H:%M:%S
 ```
 
 ## Версионируйте или бэкапьте /boot раздел
