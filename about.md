@@ -6,22 +6,12 @@ permalink: /about/
 
 ## Контакты:
 
-### Кодинг
-
 - [codewars](https://www.codewars.com/users/strizhechenko)
 - [github](https://github.com/strizhechenko)
 - [linkedin](https://linkedin.com/in/strizhechenko)
 - [habrahabr](http://habrahabr.ru/users/weirded)
 - [блог о Linux и смежном](http://strizhechenko.github.io)
 - [medium (зеркало блога)](https://medium.com/@strizhechenko)
-
-### Прочее
-- [twitter (англоязычный)](https://twitter.com/acid_code)
-- [twitter о фильмах](https://twitter.com/acid_movies)
-- [bandcamp (acid house)](https://genacid.bandcamp.com)
-- [soundcloud (acid house)](https://soundcloud.com/genacid)
-- [soundcloud (random)](https://soundcloud.com/weirded)
-- [instagram](https://instagram.com/weirdedout)
 - [почта](mailto:oleg.strizhechenko+random@gmail.com)
 
 ## Языки программирования и навыки
