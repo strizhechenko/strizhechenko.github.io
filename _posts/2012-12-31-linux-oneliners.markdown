@@ -377,3 +377,9 @@ done
 ``` shell
 date --date @$1 +%H:%M:%S
 ```
+
+## Посмотреть сколько файлов открыл пользователь
+
+``` shell
+lsof -u nginx | awk '{print $9}' | sort | uniq | wc -l
+```
