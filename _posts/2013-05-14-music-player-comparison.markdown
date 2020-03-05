@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Сравнение плееров: iPod shuffle, Classic, iPhone SE
+title: Сравнение плееров - iPod shuffle, Classic, iPhone SE
 date: '2013-05-14 15:32:00'
 tags:
 - ipod
