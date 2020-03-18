@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сколько туалетной бумаги вам нужно?</title>
+</head>
+<body align="center">
+<script type="text/javascript">
+    function decision() {
+        var family_size = parseInt(document.getElementById('family_size').value);
+        var freq = parseInt(document.getElementById('freq').value);
+        var usage = parseInt(document.getElementById('usage').value);
+        var papers_in_roll = parseInt(document.getElementById('papers_in_roll').value);
+        var weeks = parseInt(document.getElementById('weeks').value);
+        return document.getElementById('rolls_you_need').innerText = (family_size * freq * usage * weeks) / (papers_in_roll);
+    }
+</script>
+<h1>Сколько туалетной бумаги вам нужно?</h1>
+<p>Сколько у вас человек в семье?</p>
+<input type="number" id="family_size" value="2">
+<p>Как часто один человек в среднем ходит в туалет в течение недели, используя туалетную бумагу?</p>
+<input type="number" id="freq" value="4">
+<p>Сколько листочков бумаги в среднем используются за раз?</p>
+<input type="number" id="usage" value="12">
+<p>Сколько листочков бумаги в одном рулоне?</p>
+<input type="number" id="papers_in_roll" value="145">
+<p>На сколько недель вы хотите запастись?</p>
+<input type="number" id="weeks" value="4">
+
+<br>
+<button onclick="decision()">Сколько брать рулонов-то?</button>
+<h2 id="rolls_you_need">Пока хз, введите данные</h2>
+<p style="color: #777; font-size: 10px;">Я̘̰̘͔ͅ ̛͚͕н̢͉̲̯̦е̖̣͜ͅ ̥с̛̳̰̫̗о͕̹̣͎̹̠б͝и̯р̜̭̟̰͍а̴̮̦̗̫̻ю̼ н̲̥͇̙͓͙и̴̼̺̪ка̶̥͓̝̪̞̬к̩̫̥̳̬и̤̯̘͔̯̩х̤̞ ͖̯д̤̞̣͖̦̙͕͞а͉̳̺̹̘͔͠н̛н̶̟̯̠͕̹ы̲̙̪̣͙х́,̯̜͇̲̥ͅͅ ̥̟͕͇͕͉э̕т̣̞̣̰̤͉о̺͈̪̳̞̺ ͈̰̣̕с̟̯͚̫̼͘р̗͉̟̟а̧͉͎̲н͇а̮̞͚̥я̡̜̩͚̮̲̘ ͏͎̘̲̟H̲̯̹͖̣̯͈Ţ̱̫M̹̳L̘̩̙'͕к̧̗͓͇̮а̬͚̬͔͠ ̶͎̝̳̜̣на̙̻̩̤͞ ̷͚̳̮̯̯3̣̠̠5̝̝̟̣͇ ͖͖͚с̞͇͟т̶̙р̡͇̱͖͍̳͍ͅоче̲͚к̷̝̰̰͇͓</p>
+</body>
+</html>
