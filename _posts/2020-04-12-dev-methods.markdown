@@ -19,7 +19,7 @@ def solve_task(task, timeout):
         result = do_it(task, minute(30))
     else:
         result = do_it(task, minute(15))
-    return result if result.status == DONE else solve_task(task)
+    return result if result.status == DONE else solve_task(task, timeout)
 ```
 
 Главное – _не стоит бояться_ (п)оказаться занудой, который для того чтобы покакать пишет техническое задание (которым потом можно подтереться), равно как и (п)оказаться невеждой, который не способен формулировать свои мысли и надеется на авось. _Главное – решить задачу как можно быстрее_. Каким способом вы пытаетесь этого добиться - не важно, важен результат.
