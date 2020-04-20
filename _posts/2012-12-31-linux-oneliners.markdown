@@ -383,3 +383,11 @@ date --date @$1 +%H:%M:%S
 ``` shell
 lsof -u nginx | awk '{print $9}' | sort | uniq | wc -l
 ```
+
+## Синхронизация содержимого двух директорий с помощью rsync
+
+(обязательно с / в конце оба аргумента)
+
+``` shell
+rsync -a --delete 1/ 2/
+```
