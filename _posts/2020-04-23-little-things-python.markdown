@@ -1,5 +1,5 @@
 ---
-title: Мелочь, которой мне не хватает в Python: first(iter)
+title: Мелочь, которой мне не хватает в Python - first(iter)
 ---
 
 Эдакое first or none для +/- сложного поиска в дикте.
