@@ -9,14 +9,13 @@ title: Мелочь, которой мне не хватает в Python - first
 ``` python
 mydict_new = dict()
 for key, value in mydict.items():
-    сложная логика чтобы уместиться в одну строчку
     flag = False
-    не один вложенный цикл:
-        if очень сложное условие, возможно не одно:
-            mydict_new[как бы key, но не совсем] = как бы value, но не совсем
+    for a in something_else():
+        if condition:
+            mydict_new[key] = func2(value, a)
             flag = True
     if not flag:
-        mydict_new[чуток другой key] = чуток другой value
+        mydict_new[key] = func2(value)
 return mydict_new
 ```
 
@@ -34,7 +33,6 @@ return mydict_new
 ``` python
 mydict_new = dict()
 for key, value in mydict.items():
-    сложная логика чтобы уместиться в одну строчку
-    mydict_new[как бы key, но не совсем] = first(some_func(a, value) for a in не один вложенный цикл if очень сложное условие) or чуток другой value
+    mydict_new[func] = first(func2(value, a) for a in somthing_else() if condition) or func2(value)
 return mydict_new
 ```
