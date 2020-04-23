@@ -8,14 +8,14 @@ title: Мелочь, которой мне не хватает в Python - first
 
 ``` python
 mydict_new = dict()
-for key, value in mydict.items():
+for key, val in mydict.items():
     flag = False
-    for a in something_else():
-        if condition:
-            mydict_new[key] = func2(value, a)
+    for a in gen1():
+        if cond:
+            mydict_new[key] = func2(val, a)
             flag = True
     if not flag:
-        mydict_new[key] = func2(value)
+        mydict_new[key] = func2(val)
 return mydict_new
 ```
 
@@ -32,7 +32,7 @@ return mydict_new
 
 ``` python
 mydict_new = dict()
-for key, value in mydict.items():
-    mydict_new[func] = first(func2(value, a) for a in somthing_else() if condition) or func2(value)
+for key, val in mydict.items():
+    mydict_new[func] = first(func2(val, a) for a in gen1() if cond) or func2(val)
 return mydict_new
 ```
