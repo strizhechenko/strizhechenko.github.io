@@ -400,3 +400,9 @@ rsync -a --delete 1/ 2/
 Host *
     LogLevel DEBUG
 ```
+
+## Автоматически установить всё что просит rpmbuild
+
+``` shell
+rpmbuild -bp coreutils.spec 2>&1  | grep -v ошибка | while read pkg _; do yum -y install $pkg; done
+```
