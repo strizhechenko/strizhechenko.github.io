@@ -406,3 +406,9 @@ Host *
 ``` shell
 rpmbuild -bp coreutils.spec 2>&1  | grep -v ошибка | while read pkg _; do yum -y install $pkg; done
 ```
+
+## Найти все перезагрузки Linux-сервера
+
+``` shell
+find /var/log/sa/ -type f | sort -n | while read f; do sar -f "$f" 2>/dev/null | grep -i restart && echo $f; done
+```
