@@ -412,3 +412,9 @@ rpmbuild -bp coreutils.spec 2>&1  | grep -v ошибка | while read pkg _; do 
 ``` shell
 find /var/log/sa/ -type f | sort -n | while read f; do sar -f "$f" 2>/dev/null | grep -i restart && echo $f; done
 ```
+
+## Транспонирование вывода в PostgreSQL
+
+``` sql
+SELECT * FROM table\gx
+```
