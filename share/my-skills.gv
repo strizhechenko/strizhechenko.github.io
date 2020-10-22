@@ -17,7 +17,19 @@ digraph G {
 	Education [fontsize=13];
 	Monitoring [fontsize=13];
 	Troubleshooting [fontsize=13];
+	Testing [fontsize=13];
 
+	Testing -> Mobile -> Appium;
+		Mobile -> ADB;
+	Testing -> BDD -> Behave;
+		BDD -> Behat;
+	Testing -> Web -> Selenium -> "Speed optimization";
+		Selenium -> "Selenium-Hub" -> "Docker-compose" -> "Teamcity"
+		Web -> Sahi;
+		Web -> Javascript;
+		Web -> "Structure Patterns" -> "Page objects, etc"
+	Testing -> Jmeter -> API;
+		Jmeter -> Load;
 	Documentation -> Markdown;
 	Documentation -> "Nice READMEs";
 	Documentation -> Confluence;
