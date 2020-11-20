@@ -4,6 +4,14 @@ title: Апгрейд домашнего ПК
 
 Хочу на чёрную пятницу немного обновить свой домашний компьютер.
 
+А майкрософт не хочет, поэтому запрятал страничку так, что в гугле я [информацию о совместимости Win 8.1 с AMD'шными процессорами только](https://docs.microsoft.com/en-us/windows-hardware/design/minimum/windows-processor-requirements) по запросу "windows 8.1 intel cpu generation supported". К слову:
+
+> Up through the following AMD 6th Generation Processors (A-Series Ax-8xxx & E-Series Ex-8xxx & FX-870K)
+
+То есть топчик на 65Вт - Intel Core i7 6600Вт, 3.4GHz / 4 cores / 8 threads.
+
+Всё что ниже - можно не читать.
+
 Цели:
 
 - Чтобы дома было тише.
