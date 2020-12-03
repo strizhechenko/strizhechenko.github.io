@@ -418,3 +418,9 @@ find /var/log/sa/ -type f | sort -n | while read f; do sar -f "$f" 2>/dev/null |
 ``` sql
 SELECT * FROM table\gx
 ```
+
+## Разобраться кто активно использует память, а кто свопится (и ему норм)
+
+``` shell
+smem  -ktrs rss
+```
