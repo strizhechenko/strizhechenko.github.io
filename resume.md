@@ -7,8 +7,6 @@ layout: page
 
 Местонахождение: Россия, Екатеринбург.
 
-Почта для связи: oleg.strizhechenko+github@gmail.com
-
 ## Для HR
 
 **Не** ищу работу. Вот [форма для рекомендации вакансий](https://docs.google.com/forms/d/e/1FAIpQLSe0OenKaXI82AlxPAgIH-iA9EUNBYhFzwJjvyIa8GoNwuGtzw/viewform?vc=0&c=0&w=1) о которой я вспоминаю раз в полгода.
