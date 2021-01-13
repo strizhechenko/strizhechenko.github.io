@@ -2,7 +2,7 @@ digraph G {
 	Фильмы [fontsize=26];
 
 	Нормальные [fontsize=22];
-		"Мне нравятся" [fontsize=20];
+		"Мне нравится" [fontsize=20];
 		"Меня заставили" [fontsize=20];
 		"Не очень" [fontsize=20];
 	Ебанутые [fontsize=22];
