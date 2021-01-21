@@ -424,3 +424,26 @@ SELECT * FROM table\gx
 ``` shell
 smem  -ktrs rss
 ```
+
+## Поиск утечек памяти в python
+
+``` python
+import tracemalloc
+import os, resource
+import guppy
+
+h = guppy.hpy()
+tracemalloc.start()
+
+
+def memstat(label="", count=10):
+    snapshot = tracemalloc.take_snapshot()
+    top_stats = snapshot.statistics('lineno')
+    usage=resource.getrusage(resource.RUSAGE_SELF)
+    heap = h.heap()
+    print(f'RESOURCE_USAGE[{os.getpid()}]: {label}: mem={usage[2]/1024.0} mb')
+    print(str(heap[0]).split('\n')[0])
+    print(f"[ Top {label} {count} ]")
+    for stat in top_stats[:count]:
+        print(stat)
+```
