@@ -31,9 +31,9 @@ layout: page
 
 ## Open Source
 
-- [netutils-linux](https://github.com/strizhechenko/netutils-linux) - Утилиты для отладки и оптимизации сетевой производительности Linux.
-- [binary-pairs](https://github.com/strizhechenko/binary-pairs) - Утилита для упрощения pairwise-тестирования в bash.
-- [tshark-tcp-stream-splitter](https://github.com/strizhechenko/tshark-tcp-stream-splitter) - Похоже быстрейшая дробилка крупных PCAP файлов по TCP-сессиям в мире.
+- [netutils-linux](https://github.com/strizhechenko/netutils-linux) — утилиты для отладки и оптимизации сетевой производительности Linux.
+- [binary-pairs](https://github.com/strizhechenko/binary-pairs) — утилита для упрощения pairwise-тестирования в bash.
+- [tshark-tcp-stream-splitter](https://github.com/strizhechenko/tshark-tcp-stream-splitter) — похоже быстрейшая дробилка крупных PCAP файлов по TCP-сессиям в мире.
 - ... и ещё 100 непонятных репозиториев на [github](https://github.com/strizhechenko).
 
 ## Образование
