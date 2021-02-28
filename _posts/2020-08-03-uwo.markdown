@@ -92,17 +92,8 @@ while True:
 21. Возвращаемся в Sakai, остатки вина адмиралом меняем на что угодно.
 22. Шаримся по полу.
 23. Плывём обратно в San Francisco (10500:3100).
-24. Повтоярем процедуру переноса товаров по ЖД.
-
-Trading, no bazaar, 4k x 4k y
-San Francisco 
-Put aide bazaar with katana & saori
-SF: Move to omaha with 1430x3
-Put aide bazaar with katana & saori
-EA: back to sacramento
-Get first bazaar clean
-SF: Move to omaha with 1430x3
-Get second bazaar clean
-Plymouth
-Gijon
-Valencia
+24. Повторяем процедуру переноса товаров по ЖД в обратном порядке с 14 по 3.
+25. Отправляемся из Boston в Plymouth (16100:2500).
+26. Если нет места для продажи - едем в London.
+27. Если есть товары для Iberia - едем в Gijon (оттуда видно цены в Seville и Bilbao)
+28. Если везде цены малы - плывём в Valencia.
