@@ -435,23 +435,45 @@ smem  -ktrs rss
 
 ## Поиск утечек памяти в python
 
+Лучше не перемешивать разные способы профилирования. Себя они какими-то костылями из замеров отсекают, а вот друг-друга - вряд ли. В итоге получится профилирование профилировщиков профилировщиками, нелинейно разрастающееся с каждым замером.
+
 ``` python
 import tracemalloc
-import os, resource
-import guppy
-
-h = guppy.hpy()
 tracemalloc.start()
-
 
 def memstat(label="", count=10):
     snapshot = tracemalloc.take_snapshot()
     top_stats = snapshot.statistics('lineno')
-    usage=resource.getrusage(resource.RUSAGE_SELF)
-    heap = h.heap()
-    print(f'RESOURCE_USAGE[{os.getpid()}]: {label}: mem={usage[2]/1024.0} mb')
-    print(str(heap[0]).split('\n')[0])
     print(f"[ Top {label} {count} ]")
     for stat in top_stats[:count]:
         print(stat)
 ```
+
+или
+
+``` python
+import os, resource
+def memstat(label=""):
+    usage=resource.getrusage(resource.RUSAGE_SELF)
+    print(f'RESOURCE_USAGE[{os.getpid()}]: {label}: mem={usage[2]/1024.0} mb')
+```
+
+или
+
+``` python
+import guppy
+h = guppy.hpy()
+
+def memstat(label=""):
+    heap = h.heap()
+    print(label, str(heap[0]).split('\n')[0])
+```
+
+## Автоматически создать SSH-ключи без пароля
+
+Не делайте так.
+
+``` shell
+ssh-keygen -N "" -f ~/.ssh/id_rsa
+```
+
