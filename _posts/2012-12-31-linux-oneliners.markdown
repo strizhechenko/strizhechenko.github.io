@@ -481,3 +481,10 @@ def memstat(label=""):
 ssh-keygen -N "" -f ~/.ssh/id_rsa
 ```
 
+## Предотвратить поглощение stdin при использовании ssh в цикле
+
+``` shell
+while read -r something; do
+	./your_script_using_ssh_or_ssh_itself.sh "$something" < /dev/null
+done
+```
