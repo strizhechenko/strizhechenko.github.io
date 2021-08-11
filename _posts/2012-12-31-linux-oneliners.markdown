@@ -489,3 +489,19 @@ while read -r something; do
 	./your_script_using_ssh_or_ssh_itself.sh "$something" < /dev/null
 done
 ```
+
+## "Профилирование" кусков кода принтами в питоне
+
+``` python
+TIMERS = dict()
+
+
+def _start(key):
+    TIMERS[key] = datetime.now()
+    print("START:", key)
+
+
+def _end(key):
+    print("DONE:", key, 'took', datetime.now() - TIMERS[key])
+    del TIMERS[key]
+```
