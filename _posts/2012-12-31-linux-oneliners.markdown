@@ -494,14 +494,19 @@ done
 
 ``` python
 TIMERS = dict()
+PREV = None
 
 
-def _start(key):
-    TIMERS[key] = datetime.now()
-    print("START:", key)
-
-
-def _end(key):
-    print("DONE:", key, 'took', datetime.now() - TIMERS[key])
-    del TIMERS[key]
+def tick(key):
+    global PREV
+    global TIMERS
+    try:
+        TIMERS[key] = datetime.datetime.now()
+        if PREV:
+            print('TIMERS: DONE:', PREV, 'took', TIMERS[key] - TIMERS[PREV])
+            del TIMERS[PREV]
+        print("TIMERS: START:", key)
+        PREV = key
+    except Exception:
+        logging.exception("TRACING EXCEPTION HAPPENED")
 ```
