@@ -510,3 +510,8 @@ def tick(key):
     except Exception:
         logging.exception("TRACING EXCEPTION HAPPENED")
 ```
+## Посмотреть что там с SSL-сертификатом у хоста
+
+``` shell
+openssl s_client -connect example.com:443
+```
