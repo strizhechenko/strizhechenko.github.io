@@ -512,6 +512,12 @@ def tick(key):
 ```
 ## Посмотреть что там с SSL-сертификатом у хоста
 
+Вместо -connect можно использовать -showcerts, но я не очень понимаю в чём разница.
+
 ``` shell
-openssl s_client -connect example.com:443
+openssl s_client -connect example.com:443 < /dev/null | openssl x509 -noout -text
 ```
+
+Первая команда показывает сертификаты в сыром виде.
+
+Вторая "парсит" их и выводит подробности вплоть до `alt_names`.
