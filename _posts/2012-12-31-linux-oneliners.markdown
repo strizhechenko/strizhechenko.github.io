@@ -435,7 +435,7 @@ SELECT * FROM table\gx
 ## Разобраться кто активно использует память, а кто свопится (и ему норм)
 
 ``` shell
-smem  -ktrs rss
+smem  -traks rss
 ```
 
 ## Поиск утечек памяти в python
