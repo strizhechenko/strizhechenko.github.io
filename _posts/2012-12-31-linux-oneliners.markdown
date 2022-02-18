@@ -204,7 +204,7 @@ ip link set "$dev.$tag" up
 SRCRPM="http://vault.centos.org/6.6/os/Source/SPackages/kernel-2.6.32-504.el6.src.rpm"
 curl https://raw.githubusercontent.com/hordecore/cookbooks/devel/centos7_prototype.sh | bash
 yum -y groupinstall "Development tools"
-yum -y install xmlto asciidoc elfutils-libelf-devel elfutils-devel binutils-devel newt-devel  python-devel audit-libs-devel "perl(ExtUtils::Embed)" hmaccalc ncurses-devel
+yum -y install xmlto asciidoc elfutils-libelf-devel elfutils-devel binutils-devel newt-devel python-devel audit-libs-devel "perl(ExtUtils::Embed)" hmaccalc ncurses-devel
 rpm -i "$SRCRPM"
 rm -f /dev/random
 ln -s /dev/urandom /dev/random
@@ -306,10 +306,10 @@ DELAY="${2:-1000ms}"
 CLASS=11
 ROOT=1
 
-tc qdisc  add dev $IF handle $ROOT: root htb
-tc class  add dev $IF parent $ROOT: classid $ROOT:$CLASS htb rate $IFSPEED
-tc qdisc  add dev $IF parent $ROOT:$CLASS handle $CLASS: netem delay $DELAY
-tc filter add dev $IF parent $ROOT:0 prio 1 protocol ip handle $CLASS fw flowid $ROOT:$CLASS
+tc qdisc add dev $IF handle $ROOT: root htb
+tc class add dev $IF parent $ROOT: classid $ROOT:$CLASS htb rate $IFSPEED
+tc qdisc add dev $IF parent $ROOT:$CLASS handle $CLASS: netem delay $DELAY
+tc filte add dev $IF parent $ROOT:0 prio 1 protocol ip handle $CLASS fw flowid $ROOT:$CLASS
 iptables -t mangle -A POSTROUTING -o $IF -p tcp --dport 80 -m string --string 'GET' --algo 'bm' -j MARK --set-mark $CLASS
 ```
 
@@ -521,3 +521,12 @@ openssl s_client -connect example.com:443 < /dev/null | openssl x509 -noout -tex
 Первая команда показывает сертификаты в сыром виде.
 
 Вторая "парсит" их и выводит подробности вплоть до `alt_names`.
+
+## Проверить, были ли в логах сервиса сообщения с таким-то шаблоном за последний час
+
+``` shell
+hour_ago="$(date +"%Y-%m-%d %H:%M" --date -1hour)"
+journalctl --since="$hour_ago" -u whatsapp-socketio --grep 'failure.*reason="405"
+```
+
+Если ничего не найдётся, код возврата будет равен 1, если найдётся — 0, так что команду можно использовать в вызовах вида ` if journalctl...--since... --grep...; then`.
