@@ -2,6 +2,7 @@
 layout: post
 title: "Однострочники в Linux"
 date: '2012-12-31 02:27:00'
+category: linux
 ---
 
 Максимально быстрая распаковка больших gzip архивов
@@ -94,6 +95,10 @@ service nscd restart
 echo options single-request >> /etc/resolv.conf
 service sshd reload
 ```
+
+### Совсем уж костыли
+
+Указывать в `~/.ssh/config` путь к `IdentityFile` (обычно `~/.ssh/id_rsa`), чтобы ssh при подключении не обходил потенциальные варианты, которых всё равно нет.
 
 ## Сжать qcow2 диск
 
@@ -430,28 +435,89 @@ SELECT * FROM table\gx
 ## Разобраться кто активно использует память, а кто свопится (и ему норм)
 
 ``` shell
-smem  -ktrs rss
+smem  -traks rss
 ```
 
 ## Поиск утечек памяти в python
 
+Лучше не перемешивать разные способы профилирования. Себя они какими-то костылями из замеров отсекают, а вот друг-друга - вряд ли. В итоге получится профилирование профилировщиков профилировщиками, нелинейно разрастающееся с каждым замером.
+
 ``` python
 import tracemalloc
-import os, resource
-import guppy
-
-h = guppy.hpy()
 tracemalloc.start()
-
 
 def memstat(label="", count=10):
     snapshot = tracemalloc.take_snapshot()
     top_stats = snapshot.statistics('lineno')
-    usage=resource.getrusage(resource.RUSAGE_SELF)
-    heap = h.heap()
-    print(f'RESOURCE_USAGE[{os.getpid()}]: {label}: mem={usage[2]/1024.0} mb')
-    print(str(heap[0]).split('\n')[0])
     print(f"[ Top {label} {count} ]")
     for stat in top_stats[:count]:
         print(stat)
 ```
+
+или
+
+``` python
+import os, resource
+def memstat(label=""):
+    usage=resource.getrusage(resource.RUSAGE_SELF)
+    print(f'RESOURCE_USAGE[{os.getpid()}]: {label}: mem={usage[2]/1024.0} mb')
+```
+
+или
+
+``` python
+import guppy
+h = guppy.hpy()
+
+def memstat(label=""):
+    heap = h.heap()
+    print(label, str(heap[0]).split('\n')[0])
+```
+
+## Автоматически создать SSH-ключи без пароля
+
+Не делайте так.
+
+``` shell
+ssh-keygen -N "" -f ~/.ssh/id_rsa
+```
+
+## Предотвратить поглощение stdin при использовании ssh в цикле
+
+``` shell
+while read -r something; do
+	./your_script_using_ssh_or_ssh_itself.sh "$something" < /dev/null
+done
+```
+
+## "Профилирование" кусков кода принтами в питоне
+
+``` python
+TIMERS = dict()
+PREV = None
+
+
+def tick(key):
+    global PREV
+    global TIMERS
+    try:
+        TIMERS[key] = datetime.datetime.now()
+        if PREV:
+            print('TIMERS: DONE:', PREV, 'took', TIMERS[key] - TIMERS[PREV])
+            del TIMERS[PREV]
+        print("TIMERS: START:", key)
+        PREV = key
+    except Exception:
+        logging.exception("TRACING EXCEPTION HAPPENED")
+```
+## Посмотреть что там с SSL-сертификатом у хоста
+
+Вместо -connect можно использовать -showcerts, но я не очень понимаю в чём разница.
+
+``` shell
+openssl s_client -connect example.com:443 < /dev/null | openssl x509 -noout -text
+```
+
+Первая команда показывает сертификаты в сыром виде.
+
+Вторая "парсит" их и выводит подробности вплоть до `alt_names`.
