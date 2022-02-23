@@ -59,9 +59,9 @@ SELECT
 FROM
     ...
 WHERE
-    STRFTIME('%s', 'now') - updated at > ttl
+    STRFTIME('%s', 'now') - updated_at > ttl
 ORDER BY
-    STRFTIME('%s', 'now') - updated at - ttl
+    STRFTIME('%s', 'now') - updated_at - ttl
 LIMIT
     500
 ```
