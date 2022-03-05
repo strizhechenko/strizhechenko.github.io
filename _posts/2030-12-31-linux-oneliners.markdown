@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Однострочники в Linux"
-date: '2012-12-31 02:27:00'
 category: linux
 ---
 
