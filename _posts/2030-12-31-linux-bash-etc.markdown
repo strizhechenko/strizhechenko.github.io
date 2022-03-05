@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Однострочники в Linux"
-category: linux
 ---
 
 Максимально быстрая распаковка больших gzip архивов
