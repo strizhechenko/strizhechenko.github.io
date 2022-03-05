@@ -530,3 +530,23 @@ journalctl --since="$hour_ago" -u whatsapp-socketio --grep 'failure.*reason="405
 ```
 
 Если ничего не найдётся, код возврата будет равен 1, если найдётся — 0, так что команду можно использовать в вызовах вида ```if journalctl...--since... --grep...; then```.
+
+## Распределение состояний Conntrack
+
+``` shell
+conntrack -d $YOUR_DST_IP -p tcp -L | awk '{print $4}' | sort | uniq -c
+```
+
+## TOP-10 хостов, установивших соединение
+
+``` shell
+conntrack -d $YOUR_DST_IP -p tcp -L | awk '{print $5}' | sort | uniq -c | sort -nr | head -n 10
+```
+
+## Распределение клиентских хостов по числу TCP-сессий
+
+1 колонка - число хостов, 2 колонка - число открытых сессий на хост. Смотреть глазами одинаковые данные больно, засуньте в Excel.
+
+``` shell
+conntrack -d $YOUR_DST_IP -p tcp -L | awk '{print $5}' | sort | uniq -c | sort -nr | awk '{print $1}' | sort -nr | uniq -c
+```
