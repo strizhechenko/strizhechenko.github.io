@@ -306,7 +306,7 @@ ROOT=1
 tc qdisc add dev $IF handle $ROOT: root htb
 tc class add dev $IF parent $ROOT: classid $ROOT:$CLASS htb rate $IFSPEED
 tc qdisc add dev $IF parent $ROOT:$CLASS handle $CLASS: netem delay $DELAY
-tc filte add dev $IF parent $ROOT:0 prio 1 protocol ip handle $CLASS fw flowid $ROOT:$CLASS
+tc filter add dev $IF parent $ROOT:0 prio 1 protocol ip handle $CLASS fw flowid $ROOT:$CLASS
 iptables -t mangle -A POSTROUTING -o $IF -p tcp --dport 80 -m string --string 'GET' --algo 'bm' -j MARK --set-mark $CLASS
 ```
 
