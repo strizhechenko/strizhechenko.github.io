@@ -154,7 +154,9 @@ ssh-keygen -N "" -f ~/.ssh/id_rsa
 ### Найти все перезагрузки Linux-сервера
 
 ``` shell
-find /var/log/sa/ -type f | sort -n | while read f; do sar -f "$f" 2>/dev/null | grep -i restart && echo $f; done
+find /var/log/sa/ -type f | sort -n | while read f; do
+	sar -f "$f" 2>/dev/null | grep -i restart && echo $f
+done
 ```
 
 ### Разобраться кто активно использует память, а кто свопится (и ему норм)
