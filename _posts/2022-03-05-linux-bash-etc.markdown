@@ -470,19 +470,21 @@ sudo qemu-img convert -c -f qcow2 -O qcow2 carbon_ci.img carbon_ci_zip.img
 
 ## OpenSSL, HTTPS, сертификаты
 
-### Подпись запроса на сертификат с помощью OpenSSL
+### Сделать самоподписные сертификаты
+
+Максимально просто, без корневого сертификата, внятного subject итд.
 
 ``` shell
-openssl ca \
-	-config /cfg/cert/cert.cfg \
-	-cert /cfg/cert/ca.crt \
-	-keyfile /cfg/cert/ca.key \
-	-in /root/request_from_human.csr \
-	-out /root/cert_for_human.crt
+cert=/etc/nginx/ssl/ecc.pem
+key=/etc/nginx/ssl/ecc.key
+req=/etc/nginx/ssl/ecc.csr
+f [ ! -f "$cert" -o ! -f "$key" ]; then
+	openssl ecparam -out "$key" -name prime256v1 -genkey
+	openssl req -new -key "$key" -out "$req" -subj "/C=RU/"
+	openssl req -x509 -nodes -days 365 -key "$key" -in "$req" -out "$cert"
+fi
 ```
 
-- Запрос - `/root/request_from_human.csr`
-- Подпись на выходе - `/root/cert_for_human.crt`
 
 ### Посмотреть что там с SSL-сертификатом у хоста
 
