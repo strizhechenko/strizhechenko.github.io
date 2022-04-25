@@ -478,7 +478,7 @@ sudo qemu-img convert -c -f qcow2 -O qcow2 carbon_ci.img carbon_ci_zip.img
 cert=/etc/nginx/ssl/ecc.pem
 key=/etc/nginx/ssl/ecc.key
 req=/etc/nginx/ssl/ecc.csr
-f [ ! -f "$cert" -o ! -f "$key" ]; then
+if [ ! -f "$cert" -o ! -f "$key" ]; then
 	openssl ecparam -out "$key" -name prime256v1 -genkey
 	openssl req -new -key "$key" -out "$req" -subj "/C=RU/"
 	openssl req -x509 -nodes -days 365 -key "$key" -in "$req" -out "$cert"
