@@ -23,6 +23,7 @@ digraph G {
 	Servers -> Nginx;
 	Servers -> Uwsgi;
 	Servers -> Redis;
+	Servers -> "Capacity Planning" -> "Budgeting";
 	Testing -> Mobile -> Appium;
 		Mobile -> ADB;
 	Testing -> BDD -> Behave;
