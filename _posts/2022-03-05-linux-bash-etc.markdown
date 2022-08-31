@@ -176,6 +176,23 @@ blockdev -rereadpt /dev/sda (BLKRRPART failed : device or resource busy)
 sfdisk -R /dev/sda (BLKRRPART failed : device or resource busy)
 ```
 
+### Настроить статику в LXC с netplan
+
+``` shell
+cat > /etc/netplan/10-lxc.yaml << EOF
+network:
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses: [192.168.1.4/26]
+      gateway4: 192.168.1.1
+      nameservers:
+        addresses: [192.168.1.1]
+  version: 2
+EOF
+netplan apply
+```
+
 ## Bash + Linux, однострочники
 
 ### Взаимодействие с файлами
