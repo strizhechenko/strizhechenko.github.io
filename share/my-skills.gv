@@ -9,7 +9,6 @@ digraph G {
 	ProgrammingLanguages [fontsize=13];
 	C [fontsize=13];
 	Shell [fontsize=13];
-	ProductManagement [fontsize=13];
 	Python [fontsize=13];
 	Linux [fontsize=13];
 	Networks [fontsize=13];
@@ -34,24 +33,19 @@ digraph G {
 		Web -> Javascript;
 		Web -> "Structure Patterns" -> "Page objects, etc"
 	Testing -> Load -> Jmeter -> API;
-	Documentation -> Markdown;
 	Documentation -> "Nice READMEs";
-	Documentation -> Confluence;
 	Documentation -> Wiki;
-	Documentation -> RST;
 	Documentation -> Structuring;
+	Documentation -> "Readable release notes";
+	Documentation -> graphviz;
 	SCM -> Ansible;
 	Ansible -> Jinja;
-	ProductManagement -> Scrum;
-	ProductManagement -> Jira;
-	ProductManagement -> Agile;
-	ProductManagement -> "Readable release notes";
 	Projects -> "Tandem University (Q/A)";
 	Projects -> "Ideco ASR (Q/A)";
 	Projects -> "Carbon Billing (Q/A, Dev.)";
-	Projects -> "Carbon Reductor (Lead Dev.)";
-	Projects -> "EvaTeam (Lead Deploy Dev.)";
+	Projects -> "Carbon Reductor (Lead Dev.)" -> DPI;
 	Projects -> "Carbon XGE Router (Lead Dev.)";
+	Projects -> "EvaTeam (Lead Deploy Dev.)";
 
 	Programming -> Regexp;
 	Programming -> ProgrammingLanguages;
@@ -188,11 +182,11 @@ digraph G {
 	DPI -> QOE -> RTT;
 	QOE -> Retransmissions;
 	DNS -> Bind9;
-	DNS -> Unbound;
+	DNS -> Unbound -> MemoryUsage;
 	DNS -> Nsd;
 	HTTP -> Nginx;
 	HTTP -> Curl;
-	HTTP -> "URLs (RFC, Unexpectd Behaviors)";
+	HTTP -> "URLs, (Non)RFC";
 	HTTPS -> Squid;
 	ProgrammingTools -> Linters;
 	ProgrammingTools -> Editors;
@@ -231,10 +225,9 @@ digraph G {
 			Codewars -> "http://codewars.com/users/strizhechenko";
 		"Self-education" -> Hackerrank;
 		"Self-education" -> Books;
-	Virtualization -> KVM;
+	Virtualization -> KVM -> Libvirt;
 	Virtualization -> VMWare;
 	Virtualization -> LXC;
 	Virtualization -> OpenVZ;
-	Virtualization -> Libvirt;
 	Virtualization -> Docker -> "Docker-Compose";
 }
