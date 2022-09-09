@@ -222,7 +222,7 @@ digraph G {
 	Visualization -> Grafana;
 	Visualization -> Graphviz;
 	Education -> "uisi.ru" -> "Software, Computers and Automated Systems, techician";
-	Education -> "urfu.ru" -> "urfu.ru" -> "Software Engineering, bachelor";
+	Education -> "urfu.ru" -> "Software Engineering, bachelor";
 	Education -> "academyit.ru" -> "Information Security, bachelor"
 	Education -> "Self-education";
 		"Self-education" -> Coursera;
