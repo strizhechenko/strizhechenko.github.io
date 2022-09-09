@@ -157,6 +157,12 @@ digraph G {
 	Networks -> TCP;
 	Networks -> UDP;
 	Networks -> DPI;
+		DPI -> Protocols;
+			Protocols -> HTTP;
+			Protocols -> HTTPS;
+			Protocols -> QUIC;
+			Protocols -> DNS;
+
 	Networks -> Vlan -> QinQ;
 	Networks -> Mirroring;
 	Networks -> ISP;
@@ -175,12 +181,8 @@ digraph G {
 	Frontend -> HTML;
 		CSS -> MetroUI;
 		CSS -> Bootstrap;
-	DPI -> HTTP;
-	DPI -> HTTPS;
-	DPI -> QUIC;
 	HTTPS -> LetsEncrypt;
 	HTTPS -> OpenSSL;
-	DPI -> DNS;
 	DPI -> IPv6;
 	DPI -> MitM;
 	DPI -> QOE -> RTT;
