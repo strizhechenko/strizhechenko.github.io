@@ -35,7 +35,7 @@ digraph G {
 	Projects -> "Carbon Billing (Q/A, Dev.)" -> Shell;
 	Projects -> "Carbon Reductor (Lead Dev.)" -> DPI;
 	Projects -> "Carbon XGE Router (Lead Dev.)" -> Routing;
-	Projects -> "EvaTeam (Lead Deploy Dev.)" -> SaaS;
+	Projects -> "EvaTeam (Lead Deploy Dev.)" -> SaaS -> Servers;
 		"EvaTeam (Lead Deploy Dev.)" -> "Multi-node VZ cluster";
 		"EvaTeam (Lead Deploy Dev.)" -> "IMAP integration";
 		"EvaTeam (Lead Deploy Dev.)" -> "Auth service";
