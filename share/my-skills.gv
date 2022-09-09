@@ -30,11 +30,11 @@ digraph G {
 	Documentation -> graphviz;
 	SCM -> Ansible;
 	Ansible -> Jinja;
-	Projects -> "Tandem University (Q/A)";
-	Projects -> "Ideco ASR (Q/A)";
-	Projects -> "Carbon Billing (Q/A, Dev.)";
+	Projects -> "Tandem University (Q/A)" -> Testing;
+	Projects -> "Ideco ASR (Q/A)" -> Testing;
+	Projects -> "Carbon Billing (Q/A, Dev.)" -> Shell;
 	Projects -> "Carbon Reductor (Lead Dev.)" -> DPI;
-	Projects -> "Carbon XGE Router (Lead Dev.)";
+	Projects -> "Carbon XGE Router (Lead Dev.)" -> Routing;
 	Projects -> "EvaTeam (Lead Deploy Dev.)" -> SaaS;
 		"EvaTeam (Lead Deploy Dev.)" -> "Multi-node VZ cluster";
 		"EvaTeam (Lead Deploy Dev.)" -> "IMAP integration";
@@ -63,6 +63,7 @@ digraph G {
 			Blogging -> "Twitter †";
 			Blogging -> Mastodon;
 		Hobby -> "Natural Language Processing" -> Pymorphy2 -> Epythets -> HTML2Text;
+			Epythets -> Parsing;
 	ProgrammingLanguages -> Python;
 	ProgrammingLanguages -> C;
 	ProgrammingLanguages -> Shell;
