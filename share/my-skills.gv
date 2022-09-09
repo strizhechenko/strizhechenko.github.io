@@ -28,7 +28,7 @@ digraph G {
 	Documentation -> Wiki;
 	Documentation -> Structuring;
 	Documentation -> "Release notes for humans";
-	Documentation -> graphviz;
+	Documentation -> Graphviz;
 	SCM -> Ansible;
 	Ansible -> Jinja;
 	Projects -> "Tandem University (Q/A)" -> Testing;
