@@ -20,7 +20,7 @@ digraph G {
 	Servers [fontsize=13]
 
 	Servers -> Nginx;
-	Servers -> Uwsgi;
+	Servers -> Uwsgi -> MemoryUsage;
 	Servers -> Redis;
 	Servers -> "Capacity Planning" -> "Budgeting";
 	Testing -> Mobile -> Appium;
@@ -36,7 +36,7 @@ digraph G {
 	Documentation -> "Nice READMEs";
 	Documentation -> Wiki;
 	Documentation -> Structuring;
-	Documentation -> "Readable release notes";
+	Documentation -> "Release notes for humans";
 	Documentation -> graphviz;
 	SCM -> Ansible;
 	Ansible -> Jinja;
@@ -45,7 +45,12 @@ digraph G {
 	Projects -> "Carbon Billing (Q/A, Dev.)";
 	Projects -> "Carbon Reductor (Lead Dev.)" -> DPI;
 	Projects -> "Carbon XGE Router (Lead Dev.)";
-	Projects -> "EvaTeam (Lead Deploy Dev.)";
+	Projects -> "EvaTeam (Lead Deploy Dev.)" -> SaaS;
+		"EvaTeam (Lead Deploy Dev.)" -> "Multi-node VZ cluster";
+		"EvaTeam (Lead Deploy Dev.)" -> "IMAP integration";
+		"EvaTeam (Lead Deploy Dev.)" -> "Auth service";
+		"EvaTeam (Lead Deploy Dev.)" -> "Demo data and CI/CD";
+		"EvaTeam (Lead Deploy Dev.)" -> "Dev/teamlead tooling";
 
 	Programming -> Regexp;
 	Programming -> ProgrammingLanguages;
@@ -60,11 +65,12 @@ digraph G {
 	Programming -> Parsing -> XML -> RSS;
 		Parsing -> HTML -> BeautifulSoup;
 		Parsing -> "API Parsing";
+		XML -> "Large files, sax" -> MemoryUsage
 	Programming -> Hobby;
 
 		Hobby -> Blogging;
 			Blogging -> Jekyll;
-			Blogging -> Twitter;
+			Blogging -> "Twitter †";
 			Blogging -> Mastodon;
 		Hobby -> "Natural Language Processing" -> Pymorphy2 -> Epythets -> HTML2Text;
 	ProgrammingLanguages -> Python;
@@ -87,10 +93,9 @@ digraph G {
 	"API Parsing" -> Soundcloud;
 	"API Parsing" -> LastFM;
 	"API Parsing" -> Uber;
-	"API Parsing" -> Roskomnadzor;
 	Twitter -> Tweepy;
 	Flask -> FlaskAPI;
-	Flask -> Jinja;
+	Flask -> Jinja -> Jinjarg;
 	C -> Cmocka;
 	C -> Gcc;
 	C -> Clang;
@@ -106,7 +111,7 @@ digraph G {
 	Testing -> Nosetests;
 	Testing -> Cmocka;
 	Testing -> BDD -> Behat;
-	BDD -> Behave;
+		BDD -> Behave;
 	Testing -> TDD;
 	Testing -> "UI Automation";
 	"UI Automation" -> Selenium;
@@ -131,7 +136,7 @@ digraph G {
 	Linux -> Netfilter;
 	Linux -> Routing;
 	Routing -> Quagga;
-	Routing -> FRRouting;
+	Routing -> FRRouting -> MemoryUsage;
 	Quagga -> OSPF;
 	Quagga -> BGP;
 	CentOS -> Kickstart;
@@ -225,6 +230,7 @@ digraph G {
 			Codewars -> "http://codewars.com/users/strizhechenko";
 		"Self-education" -> Hackerrank;
 		"Self-education" -> Books;
+	Linux -> Virtualization;
 	Virtualization -> KVM -> Libvirt;
 	Virtualization -> VMWare;
 	Virtualization -> LXC;
