@@ -18,6 +18,7 @@ digraph G {
 	Troubleshooting [fontsize=13];
 	Testing [fontsize=13];
 	Servers [fontsize=13]
+	Projects [fontsize=13]
 
 	Servers -> Nginx;
 	Servers -> Uwsgi -> MemoryUsage;
