@@ -234,5 +234,5 @@ digraph G {
 	Virtualization -> VMWare;
 	Virtualization -> LXC;
 	Virtualization -> OpenVZ;
-	Virtualization -> Docker -> "Docker-Compose";
+	Virtualization -> Docker -> "Docker-compose";
 }
