@@ -72,3 +72,42 @@ openssl enc -aes-256-cbc -d -in "$1" -out "$2"
 - Необходимо помнить пароли которым зашифрованы архивы
 - Нужно не забывать удалять фотографии в незашифрованном виде с остальных носителей (и из корзины) в случае их кражи
 - Я какой-то ебанутый, надо ведь в инстаграмм всё выкладывать
+
+## В Linux опять не работает импорт фоток с iPhone
+
+1. Если не монтируется камера, но монтируются документы, CTRL-L и убираем котика `:3` из URL.
+2. Копируем папки DCIM/APPLE109, 110 итд в любую папку.
+3. Запускаем в ней:
+
+``` shell
+#!/bin/bash
+
+set -euE
+
+sort_source_apple_directories_by_date() {
+	local filename date new_directory year month day
+	find *APPLE/ -type f | while read -r filename; do
+		m_time="$(stat -c %y $filename)"
+		date=${m_time%% *}
+		IFS='-' read -r year month day <<<"$date"
+		new_directory="$year.$month/$day"
+		mkdir -p "$new_directory"
+		mv -v "$filename" "$new_directory"
+	done
+	return 0
+}
+
+heif_convert() {
+	local dir_name file_name
+	find -maxdepth 1 -mindepth 1 -type d -name '20*' | while read -r dir_name; do
+		find "$dir_name" -type f -name "*.HEIC" | while read -r file_name; do
+			heif-convert -q 100 "$file_name" "${file_name%.HEIC}.JPG" && rm -vf "$file_name"
+		done
+	done
+}
+
+sort_source_apple_directories_by_date
+heif_convert
+
+exit 0
+```
