@@ -9,6 +9,9 @@ digraph G {
 			Management -> "Scrum and XP, notes from frontline"
 			Management -> "The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win"
 			Management -> "Jedi Techniques of Personal Effectiveness"
+			Management -> "Ruthless Management"
+			Management -> "Ideal Executive"
+			Management -> "The first 90 days"
 
 			Goldratt [fontsize=22];
 			Management -> Goldratt
@@ -22,6 +25,7 @@ digraph G {
 				People -> "The Inmates Are Running the Asylum"
 				People -> "Game theory, the art of strategy"
 				People -> "Republic (Plato)"
+				People -> "Politics"
 
 	Programming [fontsize=24];
 	Books -> Programming
@@ -62,4 +66,5 @@ digraph G {
 		Texts -> "Пиши сокращай"
 		Texts -> "Слово живое и мёртвое"
 		Texts -> "Дизайн для недизайнеров"
+		Texts -> "Ководство"
 }
