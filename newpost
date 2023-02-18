@@ -1,4 +1,17 @@
 #!/bin/bash
 
-cp -a "template.md" "_posts/$(date +%Y-%m-%d)-$*.markdown"
-git add "_posts/$(date +%Y-%m-%d)-$*.markdown"
+set -euE
+
+declare DST
+
+DST="_posts/$(date +%Y-%m-%d)-$*.markdown"
+
+if [ ! -f $DST ]; then
+	cp -a "template.md" "$DST"
+else
+	sed -E 's/\s*$//g' -i "$DST"
+fi
+
+git add "$DST"
+
+exit 0
