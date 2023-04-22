@@ -26,7 +26,7 @@ layout: page
 
 Технический бэкграунд:
 
-- актуальное: сменил python-стэк на asyncio + aiohttp + peewee, postgres, SQL, rabbitmq, kubernetes, pytest, sphinx, небольшой сайд-проект с aiogram. Погружаюсь в PostgreSQL всё глубже и глубже.
+- актуальное: сменил python-стэк на asyncio + aiohttp + peewee, postgres, SQL, rabbitmq, kubernetes, pytest, sphinx, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже.
 - в прошлом: Openresty, Flask + SQLAlchemy + Alembic + Postgres + uWSGI + Celery, bootstrap, JWT, OpenVZ, IMAP.
 - в давнем прошлом: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, SQLite, postgres. прогнозирование производительности оборудования.
 - в совсем давнем прошлом: Firebird, lxc, libvirt, qemu, selenium, xdotool, behat, pymorphy.
