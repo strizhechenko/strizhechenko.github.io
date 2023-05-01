@@ -462,6 +462,15 @@ cp bat/bat /usr/local/bin/bat
 yum -y install lxc-templates
 ```
 
+#### В CentOS 8 не хватает ANSI_X3.4-1968 чтобы выставить кириллическую локаль
+
+В результате выхлоп ls с кириллическими именами показывает ????
+
+``` shell
+dnf -y install glibc-locale-source
+localedef -i ru_RU -f UTF-8 ru_RU.UTF-8
+```
+
 ### Определить внешние утилиты, используемые в скрипте
 
 ``` shell
