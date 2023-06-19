@@ -546,6 +546,16 @@ openssl s_client -connect example.com:443 < /dev/null | openssl x509 -noout -tex
 SELECT * FROM table\gx
 ```
 
+### Делаем Redis INCR из буханки с PostgreSQL
+
+Можно использовать простой советский CREATE SEQUENCE, это вариант на случай, если не хочется тащить динамику в DDL.
+
+``` sql
+INSERT INTO sequences (key) VALUES ('key')
+ON CONFLICT(key) DO UPDATE SET value = sequences.value + 1
+RETURNING value;
+```
+
 ### Копирование в таблицу из CSV с клиента
 
 ```
