@@ -28,7 +28,7 @@ layout: page
 
 - актуальное: сменил python-стэк на asyncio + aiohttp + peewee, postgres, SQL, rabbitmq, kubernetes, pytest, sphinx, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже.
 - в прошлом: Openresty, Flask + SQLAlchemy + Alembic + Postgres + uWSGI + Celery, bootstrap, JWT, OpenVZ, IMAP.
-- в давнем прошлом: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, SQLite, postgres. прогнозирование производительности оборудования.
+- в давнем прошлом: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, [DNS-сервера](https://strizhechenko.github.io/2016/11/03/fakezone.html) (named, unbound), SQLite, postgres. прогнозирование производительности оборудования.
 - в совсем давнем прошлом: Firebird, lxc, libvirt, qemu, selenium, xdotool, behat, ansible, pymorphy.
 
 Нетехнический бэкграунд: побыл не только разработчиком, но и соучредителем компании. Это наложило интересный отпечаток, когда появляется мотивация устранять бутылочные горлышки во всём процессе денежного потока, не только в разработке - я тесно работал над технической поддержкой, имиджем компании в вопросах общения с клиентами и маркетинга.
