@@ -28,7 +28,7 @@ layout: page
 
 ### Технический бэкграунд
 
-- **Актуальное**: сменил python-стэк на asyncio + aiohttp + peewee, SQL, rabbitmq, программирование на YAML (docker, kubernetes, gitlab-ci), pytest, снова selenium, sphinx, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже, т.к. хоть базы сервисов и отдельные, а кластер - общий на всю компанию, хочу дожать CQRS, но это долгая история.
+- **Актуальное**: сменил python-стэк на asyncio + aiohttp + peewee, SQL, rabbitmq, программирование на YAML (docker, kubernetes, gitlab-ci), pytest, снова selenium, plantuml, sphinx, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже, т.к. хоть базы сервисов и отдельные, а кластер - общий на всю компанию, хочу дожать CQRS, но это долгая история.
 - **В прошлом**: Openresty, Flask + SQLAlchemy + Alembic + Postgres + uWSGI + Celery, bootstrap, JWT, OpenVZ, IMAP.
 - **В давнем прошлом**: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО и автоматизация работы с git, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, [DNS-сервера](https://strizhechenko.github.io/2016/11/03/fakezone.html) (named, unbound), SQLite, postgres. прогнозирование производительности оборудования.
 - **В совсем давнем прошлом**: Firebird, lxc, libvirt, qemu, selenium, xdotool, behat, ansible, pymorphy.
@@ -41,7 +41,14 @@ layout: page
 
 ## Обо мне
 
-Много [читаю](https://strizhechenko.github.io/2017/06/30/programming-books.html). Прочитал "Пиши, сокращай", но не смог написать короткое резюме. Один раз прошёл [кусок курса на курсере](http://coursera.org/api/certificate.v1/pdf/4DHY7WQBMT25), когда-то игрался на [codewars](https://www.codewars.com/users/strizhechenko). Английский язык в норме, за границей что-то спросить или беседу поддержать обычно не проблема. Веду [блог](https://strizhechenko.github.io). Чертовски люблю табличные процессоры. В работе предпочитаю иметь явно очерченную зону ответственности. В свободное время понемногу пытаюсь собрать в единое целое четыре своих пет-проекта планировщика, чтобы в нём были и повторяющиеся задачи с чеклистами, и [приоритизация по очередям](https://strizhechenko.github.io/2022/06/21/power-planning.html), и [прогнозирование в виде распределений (PERT)](https://strizhechenko.github.io/2023/01/23/pert-vs-storypoints.html) и поминутное расписание на день. Променял кендо и походы на бассейн, потому что болит колено.
+- Много [читаю](https://strizhechenko.github.io/2017/06/30/programming-books.html). Прочитал "Пиши, сокращай", но не смог написать короткое резюме.
+- Один раз прошёл [кусок курса на курсере](http://coursera.org/api/certificate.v1/pdf/4DHY7WQBMT25), когда-то игрался на [codewars](https://www.codewars.com/users/strizhechenko).
+- Английский язык в норме, за границей что-то спросить или беседу поддержать обычно не проблема.
+- Веду [блог](https://strizhechenko.github.io). Там есть немного устаревшая [статья про моё отношение к IT](https://strizhechenko.github.io/2018/07/25/development_and_developers.html), возможно она что-то говорит о том, что я за человек такой.
+- Чертовски люблю табличные процессоры.
+- В работе предпочитаю иметь явно очерченную зону ответственности.
+- В свободное время понемногу пытаюсь собрать в единое целое четыре своих пет-проекта планировщика, чтобы в нём были и повторяющиеся задачи с чеклистами, и [приоритизация по очередям](https://strizhechenko.github.io/2022/06/21/power-planning.html), и [прогнозирование в виде распределений (PERT)](https://strizhechenko.github.io/2023/01/23/pert-vs-storypoints.html) и поминутное расписание на день.
+- Променял кендо и походы на бассейн, потому что болит колено.
 
 ## Open Source
 
