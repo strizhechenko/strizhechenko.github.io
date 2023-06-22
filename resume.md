@@ -35,7 +35,7 @@ layout: page
 
 ## Обо мне
 
-Много [читаю](https://strizhechenko.github.io/2017/06/30/programming-books.html). Прочитал "Пиши, сокращай", но не смог написать короткое резюме. Один раз прошёл [кусок курса на курсере](http://coursera.org/api/certificate.v1/pdf/4DHY7WQBMT25), когда-то игрался на [codewars](https://www.codewars.com/users/strizhechenko). Английский язык в норме, за границей что-то спросить или беседу поддержать обычно не проблема. Веду [блог](https://strizhechenko.github.io). Чертовски люблю табличные процессоры.
+Много [читаю](https://strizhechenko.github.io/2017/06/30/programming-books.html). Прочитал "Пиши, сокращай", но не смог написать короткое резюме. Один раз прошёл [кусок курса на курсере](http://coursera.org/api/certificate.v1/pdf/4DHY7WQBMT25), когда-то игрался на [codewars](https://www.codewars.com/users/strizhechenko). Английский язык в норме, за границей что-то спросить или беседу поддержать обычно не проблема. Веду [блог](https://strizhechenko.github.io). Чертовски люблю табличные процессоры. В свободное время понемногу пытаюсь собрать в единое целое четыре своих пет-проекта планировщика, чтобы в нём были и повторяющиеся задачи с чеклистами, и [приоритизация по очередям](https://strizhechenko.github.io/2022/06/21/power-planning.html), и [прогнозирование в виде распределений (PERT)](https://strizhechenko.github.io/2023/01/23/pert-vs-storypoints.html) и поминутное расписание на день. Променял кендо и походы на бассейн, потому что болит колено.
 
 ## Open Source
 
