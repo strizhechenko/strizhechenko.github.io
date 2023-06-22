@@ -9,7 +9,7 @@ layout: page
 
 ## Опыт работы
 
-- **2022-сейчас, АО "Точка"**, ~~сервисы для формирования аудиторий и доставки цифровых коммуникаций клиентам~~ показываю баннеры с _невероятно выгодными предложениями_, два проекта - один на 80% состоит из OLAP, второй на 90% из OLTP.
+- **2022-сейчас, АО "Точка"**, ~~сервисы для формирования аудиторий и доставки цифровых коммуникаций клиентам~~ показываю баннеры с _невероятно выгодными предложениями_, два проекта - один мучает табличку на 15 миллионов строк, второй обрабатывает OLTP-нагрузку около 100-500 RPS.
 - **2020-2022, Carbon Soft, EvaTeam и EvaCRM**. Заведовал сервисом регистрации и авторизации, отвечал за скорость выдачи экземпляра SaaS-приложения (VM) после регистрации.
 - **2012-2020, Carbon Soft, Carbon Reductor**. Ведущий системный разработчик.
 - **2011-2012, Carbon Soft, Carbon Billing**. Тестировщик, разработчик.
@@ -28,7 +28,7 @@ layout: page
 
 ### Технический бэкграунд
 
-- **Актуальное**: сменил python-стэк на asyncio + aiohttp + peewee, SQL, rabbitmq, программирование на YAML (docker, kubernetes, gitlab-ci), pytest, снова selenium, plantuml, sphinx, логи в ELK, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже, т.к. хоть базы сервисов и отдельные, а кластер - общий на всю компанию, хочу дожать CQRS, но это долгая история.
+- **Актуальное**: сменил python-стэк на asyncio + aiohttp + peewee, SQL, rabbitmq, программирование на YAML (docker, kubernetes, gitlab-ci), pytest, снова selenium, plantuml, sphinx, логи в ELK, grafana, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже, т.к. хоть базы сервисов и отдельные, а кластер - общий на всю компанию, хочу дожать CQRS, но это долгая история.
 - **В прошлом**: Openresty, Flask + SQLAlchemy + Alembic + Postgres + uWSGI + Celery, bootstrap, JWT, OpenVZ, IMAP.
 - **В давнем прошлом**: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО и автоматизация работы с git, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, [DNS-сервера](https://strizhechenko.github.io/2016/11/03/fakezone.html) (named, unbound), SQLite, postgres. прогнозирование производительности оборудования.
 - **В совсем давнем прошлом**: Firebird, lxc, libvirt, qemu, selenium, xdotool, behat, ansible, pymorphy.
