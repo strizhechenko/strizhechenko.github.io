@@ -56,6 +56,7 @@ layout: page
 - [netutils-linux](https://github.com/strizhechenko/netutils-linux) — утилиты для отладки и оптимизации сетевой производительности Linux.
 - [binary-pairs](https://github.com/strizhechenko/binary-pairs) — утилита для упрощения pairwise-тестирования в bash.
 - [tshark-tcp-stream-splitter](https://github.com/strizhechenko/tshark-tcp-stream-splitter) — похоже быстрейшая дробилка крупных PCAP файлов по TCP-сессиям в мире.
+- [uuid05](https://github.com/strizhechenko/uuid05) — компактные человекочитаемые почти уникальные идентификаторы для объектов с небольшим сроком жизни в небольших несинхронизирующихся распределённых системах; вдохновлялся nanoid и mktemp.
 - ... и ещё 100 непонятных репозиториев на [github](https://github.com/strizhechenko).
 
 ## Образование
