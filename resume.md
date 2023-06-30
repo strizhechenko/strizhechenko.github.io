@@ -30,7 +30,7 @@ layout: page
 
 - **Актуальное**: сменил python-стэк на asyncio + aiohttp + peewee, SQL, rabbitmq, программирование на YAML (docker, kubernetes, gitlab-ci), pytest, снова selenium, plantuml, sphinx, логи в ELK, grafana, небольшой сайд-проект с aiogram. [Погружаюсь в PostgreSQL](https://strizhechenko.github.io/2023/02/18/postgres.html) всё глубже и глубже, т.к. хоть базы сервисов и отдельные, а кластер - общий на всю компанию, хочу дожать CQRS, но это долгая история.
 - **В прошлом**: Openresty, Flask + SQLAlchemy + Alembic + Postgres + uWSGI + Celery, bootstrap, JWT, OpenVZ, IMAP.
-- **В давнем прошлом**: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО и автоматизация работы с git, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, [DNS-сервера](https://strizhechenko.github.io/2016/11/03/fakezone.html) (named, unbound), SQLite, postgres. прогнозирование производительности оборудования.
+- **В давнем прошлом**: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, netflow, wireshark, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО и автоматизация работы с git, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, [DNS-сервера](https://strizhechenko.github.io/2016/11/03/fakezone.html) (named, unbound), SQLite, PostgreSQL, прогнозирование производительности сетевого оборудования.
 - **В совсем давнем прошлом**: Firebird, lxc, libvirt, qemu, selenium, xdotool, behat, ansible, pymorphy.
 
 ### Нетехнический бэкграунд
