@@ -30,6 +30,7 @@ digraph G {
 	Documentation -> Structuring;
 	Documentation -> "Release notes for humans";
 	Documentation -> Graphviz;
+	Documentation -> Obsidian;
 	SCM -> Ansible;
 	Ansible -> Jinja;
 	Projects -> "Tandem University (Q/A)" -> Testing;
