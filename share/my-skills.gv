@@ -24,6 +24,7 @@ digraph G {
 	Servers -> Nginx;
 	Servers -> Uwsgi -> MemoryUsage;
 	Servers -> Redis;
+	Servers -> RabbitMQ -> STOMP;
 	Servers -> "Capacity Planning" -> "Budgeting";
 	Documentation -> "Nice READMEs";
 	Documentation -> Wiki;
