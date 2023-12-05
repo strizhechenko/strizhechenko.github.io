@@ -19,16 +19,19 @@ digraph G {
 	Testing [fontsize=13];
 	Servers [fontsize=13]
 	Projects [fontsize=13]
+	Servers -> Deployment;
 
 	Servers -> Nginx;
 	Servers -> Uwsgi -> MemoryUsage;
 	Servers -> Redis;
+	Servers -> RabbitMQ -> STOMP;
 	Servers -> "Capacity Planning" -> "Budgeting";
 	Documentation -> "Nice READMEs";
 	Documentation -> Wiki;
 	Documentation -> Structuring;
 	Documentation -> "Release notes for humans";
 	Documentation -> Graphviz;
+	Documentation -> Obsidian;
 	SCM -> Ansible;
 	Ansible -> Jinja;
 	Projects -> "Tandem University (Q/A)" -> Testing;
@@ -49,6 +52,8 @@ digraph G {
 	Programming -> "UI Automation" -> "Gaming Bots" -> UWO;
 	Programming -> Profiling;
 	Programming -> Benchmarking;
+		Benchmarking -> pytest;
+		Benchmarking -> "/usr/bin/time";
 	Programming -> Databases;
 	Programming -> Debugging;
 	Programming -> ProgrammingTools;
@@ -63,6 +68,7 @@ digraph G {
 			Blogging -> Jekyll;
 			Blogging -> "Twitter †";
 			Blogging -> Mastodon;
+		Hobby -> DigitalGarden -> Obsidian;
 		Hobby -> "Natural Language Processing" -> Pymorphy2 -> Epythets -> HTML2Text;
 			Epythets -> Parsing;
 	ProgrammingLanguages -> Python;
@@ -79,6 +85,10 @@ digraph G {
 	Python -> Multiprocessing -> "Carbon Satellite";
 	Python -> Tweepy;
 	Python -> Pymorphy2;
+	Python -> "Peewee";
+	Python -> "STOMP"
+	Python -> asyncio -> aiohttp;
+	Python -> Pydantic;
 	"API Parsing" -> Twitter;
 	"API Parsing" -> "duma.gov";
 	"API Parsing" -> "Vk.com";
@@ -110,7 +120,8 @@ digraph G {
 		Web -> Javascript;
 		Web -> "Structure Patterns" -> "Page objects, etc"
 	Testing -> Load -> Jmeter -> API;
-	Testing -> Nosetests;
+	Testing -> Unit -> Nosetests;
+		Unit -> Pytest;
 	Testing -> Cmocka;
 	Testing -> TDD;
 	Testing -> "UI Automation";
@@ -121,10 +132,13 @@ digraph G {
 	Profiling -> gprof;
 	Databases -> InfluxDB;
 	Databases -> Postgres;
+		Postgres -> Performance;
+			Performance -> "linearizing workload into small chunks";
+			Performance -> MemoryUsage;
+			Performance -> IO -> "avoiding repeatable seq-scan";
 	Databases -> Sqlite;
 	Databases -> SQL;
 	Databases -> Indexing;
-	Postgres -> Jsonb;
 	Linters -> Pylint;
 	Linters -> "clang-check";
 	Linters -> Shellcheck;
@@ -156,6 +170,9 @@ digraph G {
 	Networks -> IPv6;
 	Networks -> TCP;
 	Networks -> UDP;
+	Networks -> Vendors;
+		Vendors -> Mikrotik;
+		Vendors -> "TP-Link";
 	Networks -> DPI;
 		DPI -> Protocols;
 			Protocols -> HTTP;
@@ -183,6 +200,7 @@ digraph G {
 		CSS -> Bootstrap;
 	HTTPS -> LetsEncrypt;
 	HTTPS -> OpenSSL;
+		OpenSSL -> "Self-Hosted CA at home written in bash";
 	DPI -> IPv6;
 	DPI -> MitM;
 	DPI -> QOE -> RTT;
@@ -202,6 +220,7 @@ digraph G {
 	Editors -> Clion;
 	Editors -> Vim;
 	VCS -> Git;
+		Git -> Forgejo;
 	PHP -> Behat;
 	Troubleshooting -> Strace;
 	Troubleshooting -> Tcpdump;
@@ -235,4 +254,6 @@ digraph G {
 	Virtualization -> LXC;
 	Virtualization -> OpenVZ;
 	Virtualization -> Docker -> "Docker-compose";
+	Deployment -> Gitlab;
+	Deployment -> Kubernetes;
 }
