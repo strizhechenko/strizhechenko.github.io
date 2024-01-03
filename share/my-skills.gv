@@ -32,6 +32,7 @@ digraph G {
 	Documentation -> "Release notes for humans";
 	Documentation -> Graphviz;
 	Documentation -> Obsidian;
+	Documentation -> Sphinx;
 	SCM -> Ansible;
 	Ansible -> Jinja;
 	Projects -> "Tandem University (Q/A)" -> Testing;
@@ -81,14 +82,15 @@ digraph G {
 	Python -> cProfile;
 	Python -> Pylint;
 	Python -> Ipython;
-	Python -> Multithreading -> QDNS;
+	Python -> Multithreading -> QDNS -> "Distributed DNS Resolver" -> DPI;
 	Python -> Multiprocessing -> "Carbon Satellite";
 	Python -> Tweepy;
 	Python -> Pymorphy2;
-	Python -> "Peewee";
+	Python -> ORM -> "Peewee" -> "peewee-async";
 	Python -> "STOMP"
 	Python -> asyncio -> aiohttp;
-	Python -> Pydantic;
+	Python -> Validation -> Pydantic;
+	    Validation -> Marshmallow;
 	"API Parsing" -> Twitter;
 	"API Parsing" -> "duma.gov";
 	"API Parsing" -> "Vk.com";
@@ -132,6 +134,8 @@ digraph G {
 	Profiling -> gprof;
 	Databases -> InfluxDB;
 	Databases -> Postgres;
+	Databases -> CDC;
+	    Postgres -> "Explain/Analyze";
 		Postgres -> Performance;
 			Performance -> "linearizing workload into small chunks";
 			Performance -> MemoryUsage;
@@ -166,8 +170,8 @@ digraph G {
 	"Linux network stack peformance" -> scaling;
 	Netfilter -> Conntrack;
 	Netfilter -> "Custom Modules";
-	Networks -> Nat;
-	Networks -> IPv6;
+	Networks -> Routing -> IPv6;
+	    Routing -> NAT;
 	Networks -> TCP;
 	Networks -> UDP;
 	Networks -> Vendors;
@@ -182,6 +186,7 @@ digraph G {
 
 	Networks -> Vlan -> QinQ;
 	Networks -> Mirroring;
+	Networks -> Bridging -> STP;
 	Networks -> ISP;
 	Monitoring -> Zabbix;
 	Monitoring -> Alerting;
@@ -199,6 +204,8 @@ digraph G {
 		CSS -> MetroUI;
 		CSS -> Bootstrap;
 	HTTPS -> LetsEncrypt;
+	Encryption -> OpenSSL;
+	Encryption -> GPG;
 	HTTPS -> OpenSSL;
 		OpenSSL -> "Self-Hosted CA at home written in bash";
 	DPI -> IPv6;
@@ -221,6 +228,7 @@ digraph G {
 	Editors -> Vim;
 	VCS -> Git;
 		Git -> Forgejo;
+		Git -> LFS;
 	PHP -> Behat;
 	Troubleshooting -> Strace;
 	Troubleshooting -> Tcpdump;

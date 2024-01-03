@@ -18,6 +18,8 @@ digraph G {
     "Electropunk / Anhalt EBM" -> "Kropp";
     "Electropunk / Anhalt EBM" -> "EM:KO";
     "Electropunk / Anhalt EBM" -> "Jaeger 90";
+    "Electropunk / Anhalt EBM" -> "Strong Product";
+    "Electropunk / Anhalt EBM" -> "Wulfband";
 
     "Neue Deutsche Welle" [fontsize=26];
      "Neue Deutsche Welle" -> "Malaria";
@@ -35,25 +37,30 @@ digraph G {
      "EBM" -> "Escalator";
      "EBM" -> "Noise Unit";
      "EBM" -> "Klinik";
+     "EBM" -> "Spetsnaz";
+     "EBM" -> "Qual";
 
     "Minimal synth / Coldwave" [fontsize=26];
     "Minimal synth / Coldwave" -> "Blackie";
     "Minimal synth / Coldwave" -> "Kap Bambino";
+    "Minimal synth / Coldwave" -> "Linea Aspera";
+
+    "Synthpop / Electronic" -> "Complex Numbers";
+    "Synthpop / Electronic" -> "Электрослабость";
+    "Synthpop / Electronic" -> "Аудиопреступление";
 
     "Retrowave / Synthwave" [fontsize=26];
     "Retrowave / Synthwave" -> "NightStop";
     "Retrowave / Synthwave" -> "Lazerhawk";
     "Retrowave / Synthwave" -> "Cluster Buster";
     "Retrowave / Synthwave" -> "Suicide Forest";
+    "Retrowave / Synthwave" -> "Tokyo Rose";
     "Retrowave / Synthwave" -> "Random soundcloud";
 
     "Italo disco" [fontsize=26];
     "Italo disco" -> "Scotch";
     "Italo disco" -> "Fred Ventura";
     "Italo disco" -> "Love";
-
-    "Stoner / Punk / Garage" [fontsize=26];
-    "Stoner / Punk / Garage" -> "Рандомные местные концерты";
 
     "Industrial / Experimental / Avantgarde" [fontsize=26];
     "Industrial / Experimental / Avantgarde" -> "Nurse With Wound";
@@ -63,6 +70,7 @@ digraph G {
 
     "Chiptune" [fontsize=26];
     "Chiptune" -> "Random soundcloud";
+    "Chiptune" -> "Welle:Erdball";
 
     "Различный русский трэшачок" [fontsize=26];
     "Различный русский трэшачок" -> "Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна";
@@ -70,4 +78,9 @@ digraph G {
     "Различный русский трэшачок" -> "Ансамбль христа спасителя";
     "Различный русский трэшачок" -> "Armour Breaker";
     "Различный русский трэшачок" -> "Барто";
+    "Различный русский трэшачок" -> "Птицу Емъ";
+    "Различный русский трэшачок" -> "4 позиции бруно";
+    "Различный русский трэшачок" -> "Шыша";
+    "Различный русский трэшачок" -> "ILWT";
+    "Различный русский трэшачок" -> "Электрослабость";
 }
