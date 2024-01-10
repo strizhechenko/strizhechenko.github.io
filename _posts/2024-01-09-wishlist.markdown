@@ -18,7 +18,8 @@ title: Что дарить?
 - **Кресло** - [Samurai Metta 3.04](https://market.yandex.ru/product--kreslo-ofisnoe-metta-samurai-black-edition-sverkhprochnaia-setka-reguliruemoe-chernoe-532483/904616089) - 1 x ~30000р.
 - **Клавиатура** - [Red Square Keyrox TKL Classic Pro II RSQ-20026](https://www.dns-shop.ru/product/b9c6b03d2e4fed20/klaviatura-provodnaa-red-square-keyrox-tkl-classic-pro-ii-rsq-20026/)
 - **Тихая беспроводная мышь** - A4Tech G10-810FS.
-- **Запчасти для реплики компа** - список в [статье](/2023/05/11/pc-build-fail.html)
+- **Запчасти для реплики компа** - список в [статье](/2023/05/11/pc-build-fail.html).
+- **NVMe побыстрее** [Patriot Viper VP4300 M.2 2280 PCI-E 4.0 2Tb](https://market.yandex.ru/product--tverdotelnyi-nakopitel-patriot-memory-viper-2-tb-m-2-vp4300-2tbm28h/1787780971) - 1 x ~20000р.
 
 ## Файлопомойка для диджитал ~~номада~~ скопидома
 Ничего. Нельзя. Удалять.
@@ -36,6 +37,7 @@ title: Что дарить?
 	- У ноутбука есть 1 x HDMI + 1 x USB-C по которому можно выдавать DisplayPort.
 - 65W / 20V **зарядное устройство для ноута** чтобы я мог ходить в модное лофт пространство без отвала спины. Разъём либо Type-C (плюс - если меняю ноут/работу, от зарядника будет какая-то польза), либо [Lenovo 11 x 5 мм](https://market.yandex.ru/product--blok-pitaniia-zariadka-dlia-noutbuka-lenovo-20v-3-25a-65w-priamougolnyi-razem-kvadratnaia/19686274) (плюс - свободные Type-C порты, минус - прибит гвоздями к Lenovo). Форм фактор именно компактный квадрат *без* Power Brick. ~1500р.
 - Кстати, наверное буду строить ещё одно хранилище для архива видеонаблюдения. Хочется наиболее компактный корпус для 6 HDD x 3.5', mITX и внутреннего блока питания.
+- Электрическая кофемолка с жерновами для регулировки помола, в идеале с таймером, перемалывающая ~20-25г кофе меньше чем за 30 секунд.
 
 ### Чайные принадлежности
 - **Гайвань**. Тут сложно. Больше 3000 рублей за неё даже в подарок жалко. Хочется глиняную, но с плотно прилегающей крышкой. Шершавая у меня и так есть и за неё максимум дал бы 500р. Керамика, стекло и фарфор - это не то, там часто начинается вкусовщина. Никаких рисунков и узоров не надо, нужна просто хорошая нейтральная вещь.
@@ -44,6 +46,7 @@ title: Что дарить?
 
 ## Ништяки
 - **Кофе без кофеина** в зёрнах [от Tasty Coffee](https://shop.tastycoffee.ru/coffee/espresso-decaf). Давно хочу слезть с кофеиновой иглы, но утренняя рутина с завариванием уже вошла в привычку. ~2500р.
+- **Ванильный экстракт** без сахара и спирта. Давно хочу слезть с иглы сахарных сиропов для кофе. Пробовал натуральные ванильные стручки, не особо впечатлился.
 - **Пак нарзана** <= 12 стеклянных бутылок с доставкой на этаж. Лучшая минералка на свете, я ещё не утомился. ~1000р.
 - **Сушёное манго** в банке от Jes's 500г в [Biofam](https://biofam.ru/zdorovoepitanie/orehi-i-suhofrukty/sushenoe-mango-jess-500-g) - хз что там на озоне и маркете в пакетах, но в банке оно риальни сочни мжвячни. ~550р.
 
@@ -77,4 +80,4 @@ title: Что дарить?
 
 ## Прочее
 
-- [Рюкзак](https://market.yandex.ru/product--riukzak-xiaomi-travel-business-multifunctional-backpack-2/836355028)
+- **Рюкзак** Xiaomi Travel Business Multifunctional Backpack [~ 5000р](https://market.yandex.ru/product--riukzak-xiaomi-travel-business-multifunctional-backpack-2/836355028) - 
