@@ -1,4 +1,9 @@
 digraph G {
+
+    "80s" [fontsize=26];
+      "80s" -> "New Beat";
+      "80s" -> "Neue Deutsche Welle";
+      
     "New Beat" [fontsize=26];
     "New Beat" -> "X-Commando";
     "New Beat" -> "Amnesia";
@@ -11,6 +16,7 @@ digraph G {
     "Acid House" -> "Jarvic 7";
     "Acid House" -> "Mike Dred";
     "Acid House" -> "RaTaXeS SA FreeSysTeM";
+    "Acid House" -> "New Beat";
 
     "Electropunk / Anhalt EBM" [fontsize=26];
     "Electropunk / Anhalt EBM" -> "Container 90";
@@ -39,15 +45,22 @@ digraph G {
      "EBM" -> "Klinik";
      "EBM" -> "Spetsnaz";
      "EBM" -> "Qual";
+     "EBM" -> "Electropunk / Anhalt EBM";
 
     "Minimal synth / Coldwave" [fontsize=26];
     "Minimal synth / Coldwave" -> "Blackie";
     "Minimal synth / Coldwave" -> "Kap Bambino";
     "Minimal synth / Coldwave" -> "Linea Aspera";
 
+    "Synthpop / Electronic" [fontsize=26];
     "Synthpop / Electronic" -> "Complex Numbers";
     "Synthpop / Electronic" -> "Электрослабость";
     "Synthpop / Electronic" -> "Аудиопреступление";
+	"Synthpop / Electronic" -> "Minimal synth / Coldwave";
+	"Synthpop / Electronic" -> "Italo disco";
+	"Synthpop / Electronic" -> "Neue Deutsche Welle";
+	"Synthpop / Electronic" -> "Chiptune";
+	"Synthpop / Electronic" -> "Retrowave / Synthwave";
 
     "Retrowave / Synthwave" [fontsize=26];
     "Retrowave / Synthwave" -> "NightStop";
@@ -55,7 +68,7 @@ digraph G {
     "Retrowave / Synthwave" -> "Cluster Buster";
     "Retrowave / Synthwave" -> "Suicide Forest";
     "Retrowave / Synthwave" -> "Tokyo Rose";
-    "Retrowave / Synthwave" -> "Random soundcloud";
+    "Retrowave / Synthwave" -> "Christine";
 
     "Italo disco" [fontsize=26];
     "Italo disco" -> "Scotch";
@@ -67,20 +80,28 @@ digraph G {
     "Industrial / Experimental / Avantgarde" -> "Coil";
     "Industrial / Experimental / Avantgarde" -> "Clock DVA";
     "Industrial / Experimental / Avantgarde" -> "Felix Kubin";
+    "Industrial / Experimental / Avantgarde" -> "EBM";
 
     "Chiptune" [fontsize=26];
-    "Chiptune" -> "Random soundcloud";
     "Chiptune" -> "Welle:Erdball";
+    "Chiptune" -> "Gothsicles";
 
-    "Различный русский трэшачок" [fontsize=26];
-    "Различный русский трэшачок" -> "Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна";
-    "Различный русский трэшачок" -> "Влажные ватрушки";
-    "Различный русский трэшачок" -> "Ансамбль христа спасителя";
-    "Различный русский трэшачок" -> "Armour Breaker";
-    "Различный русский трэшачок" -> "Барто";
-    "Различный русский трэшачок" -> "Птицу Емъ";
-    "Различный русский трэшачок" -> "4 позиции бруно";
-    "Различный русский трэшачок" -> "Шыша";
-    "Различный русский трэшачок" -> "ILWT";
-    "Различный русский трэшачок" -> "Электрослабость";
+    "Russian" [fontsize=26];
+    "Russian" -> "Кобыла и трупоглазые жабы искали цезию нашли поздно утром свистящего хна";
+    "Russian" -> "Влажные ватрушки";
+    "Russian" -> "Ансамбль христа спасителя";
+    "Russian" -> "Armour Breaker";
+    "Russian" -> "Барто";
+    "Russian" -> "Шыша";
+    "Russian" -> "Электрослабость";
+    "Russian" -> "Hip Hop"
+    "Russian" -> "4 позиции бруно";
+       "4 позиции бруно" -> "Птицу Емъ";
+       "4 позиции бруно" -> "Порез на собаке";
+
+    "Hip Hop" [fontsize=26];
+    "Hip Hop" -> "ILWT";
+    "Hip Hop" -> "Птицу Емъ";
+    "Hip Hop" -> "Порез на собаке";
+
 }
