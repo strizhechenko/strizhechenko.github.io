@@ -10,13 +10,14 @@ title: Что дарить?
 - **Точка доступа** Mikrotik cAP AC RBcAPGi-5acD2nD (не XL (некрасивый) и не Lite (медленный)). ~ 1..2 x 12000 рублей.
 
 ## Другие вещи для дачи
+- **1 квадратный метр дизайн-проекта** - 2800 рублей. Всего надо около 75м, с остальным я справлюсь сам.
 - **Краска для стен** [Flugger Flutex Pro 5](https://www.flugger-ekb.ru/products/flutex-pro-5). В зависимости от цвета нужен разный объём:
   - IN-712 (neutral gray 3) - хочу держать в квартире 0.75л для мелкого ремонта - ~2100р.
   - IN-702 (eggshell) - буду использовать для покраски стен, так что 2.8 (5700р) и 9.1л (16800р) приветствуются. Но я её и в квартире использовал, так что сойдёт и 0.75л.
 - **Светильники в кабинет** - [Yeelight Crystal Pendant Lamp (YLDL01YL)](https://market.yandex.ru/product--potolochnyi-svetilnik-yeelight-smart-meteorite-led-yldl01yl/1787654357) 2 x ~6500р.
 - **4k монитор** - [BenQ EW2780U](https://market.yandex.ru/product--27-monitor-benq-ew2780u-3840x2160-60-gts-ips/662032002) - 1 x 44000р.
 - **Кресло** - [Samurai Metta 3.04](https://market.yandex.ru/product--kreslo-ofisnoe-metta-samurai-black-edition-sverkhprochnaia-setka-reguliruemoe-chernoe-532483/904616089) - 1 x ~30000р.
-- **Клавиатура** - [Red Square Keyrox TKL Classic Pro II RSQ-20026](https://www.dns-shop.ru/product/b9c6b03d2e4fed20/klaviatura-provodnaa-red-square-keyrox-tkl-classic-pro-ii-rsq-20026/)
+- **Клавиатура** - [Red Square Keyrox TKL Classic Pro II RSQ-20026](https://www.dns-shop.ru/product/b9c6b03d2e4fed20/klaviatura-provodnaa-red-square-keyrox-tkl-classic-pro-ii-rsq-20026/) - 1 x ~6000р.
 - **Тихая беспроводная мышь** - [A4Tech G10-810FS](https://www.dns-shop.ru/product/19e720e4cafc3332/mys-besprovodnaa-a4tech-g10-810fs-cernyj/) - 1 x ~2200р.
 - **Запчасти для реплики компа** - список в [статье](/2023/05/11/pc-build-fail.html).
 - **NVMe побыстрее** [Patriot Viper VP4300 M.2 2280 PCI-E 4.0 2Tb](https://market.yandex.ru/product--tverdotelnyi-nakopitel-patriot-memory-viper-2-tb-m-2-vp4300-2tbm28h/1787780971) - 1 x ~20000р.
