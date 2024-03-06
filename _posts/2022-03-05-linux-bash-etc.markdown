@@ -622,6 +622,12 @@ avg_width              | 61
 n_distinct             | 1343
 ```
 
+### Получить команду которой был создан существующий индекс
+
+``` sql
+SELECT pg_get_indexdef('indexname'::regclass);
+```
+
 ## Python
 
 ### Поиск утечек памяти в python
