@@ -546,7 +546,7 @@ openssl s_client -connect example.com:443 < /dev/null | openssl x509 -noout -tex
 		2. `openssl crl -inform DER -text -noout -in COMODORSADomainValidationSecureServerCA.crl | grep -A 1 YOUR_CERT_SERIAL_NUMBER_WITHOUT_SPACES`
     3. OCSP: http://ocsp.comodoca.com
 
-## Python, SQL, Postgres
+## SQL, Postgres
 
 ### Транспонирование вывода в PostgreSQL
 
@@ -594,6 +594,35 @@ FROM (SELECT c.reltuples,
 ``` sql
 SELECT pg_size_pretty(sum(pg_column_size('column_name'))) FROM table_name;
 ```
+
+### Статистика по таблице, индексу и колонке
+
+Число записей в таблице:
+
+``` sql
+SELECT reltuples FROM pg_class WHERE relname = 'tablename';
+```
+
+Размер (и другие параметры) индекса:
+
+``` sql
+\di+ indexname
+```
+
+и по колонке с ним связанной:
+
+``` sql
+SELECT * FROM pg_stats WHERE tablename = 'tablename' AND attname = 'columnname' \gx
+```
+
+из особо интересного в выхлопе:
+
+```
+avg_width              | 61
+n_distinct             | 1343
+```
+
+## Python
 
 ### Поиск утечек памяти в python
 
