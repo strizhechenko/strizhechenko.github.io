@@ -7,13 +7,13 @@ title: Что дарить?
 ## Сетевые железки на дачу
 Собираюсь делать ремонт на даче и надо строить и там сетевую инфраструктуру.
 - ~~**Управляемый PoE-свитч**~~. TP-LINK TL-SG2210P 8 ports+2 SFP Switch Ethernet 10/100/1000M (POE) - эту модель я по крайней мере протестировал ~15000 рублей (хера цены взлетели, я по акции за 8.5к выхватывал). Update - купил TL-SG2218P (16 х 1000M PoE-портов, 150Вт PoE бюджета + 2 х SFP) за 28к, буду отправлять по 4-12мбит/сек от каждой из 7 видеокамер в отдельные гигабитные порты. До чего же я хорош в экономии бюджета, а.
-- **Точка доступа** Mikrotik cAP AC RBcAPGi-5acD2nD (не XL (некрасивый) и не Lite (медленный)). ~ 1..2 x 12000 рублей.
+- ~~**Точка доступа** Mikrotik cAP AC RBcAPGi-5acD2nD (не XL (некрасивый) и не Lite (медленный)).~~ ~ 1..2 x 12000 рублей.
 
 ## Другие вещи для дачи
 - ~~**1 квадратный метр дизайн-проекта**~~ - 2800 рублей. Всего надо около 75м, с остальным я справлюсь сам.
-- **Краска для стен** [Flugger Flutex Pro 5](https://www.flugger-ekb.ru/products/flutex-pro-5). В зависимости от цвета нужен разный объём:
-  - IN-712 (neutral gray 3) - хочу держать в квартире 0.75л для мелкого ремонта - ~2100р.
-  - IN-702 (eggshell) - буду использовать для покраски стен, так что 2.8 (5700р) и 9.1л (16800р) приветствуются. Но я её и в квартире использовал, так что сойдёт и 0.75л.
+- ~~**Краска для стен** [Flugger Flutex Pro 5](https://www.flugger-ekb.ru/products/flutex-pro-5). В зависимости от цвета нужен разный объём:~~
+  - ~~IN-712 (neutral gray 3) - хочу держать в квартире 0.75л для мелкого ремонта - ~2100р.~~
+  - ~~IN-702 (eggshell) - буду использовать для покраски стен, так что 2.8 (5700р) и 9.1л (16800р) приветствуются. Но я её и в квартире использовал, так что сойдёт и 0.75л.~~
 - **Светильники в кабинет** - [Yeelight Crystal Pendant Lamp (YLDL01YL)](https://market.yandex.ru/product--potolochnyi-svetilnik-yeelight-smart-meteorite-led-yldl01yl/1787654357) 2 x ~6500р.
 - **4k монитор** - [BenQ EW2780U](https://market.yandex.ru/product--27-monitor-benq-ew2780u-3840x2160-60-gts-ips/662032002) - 1 x 44000р.
 - **Кресло** - [Samurai Metta 3.04](https://market.yandex.ru/product--kreslo-ofisnoe-metta-samurai-black-edition-sverkhprochnaia-setka-reguliruemoe-chernoe-532483/904616089) - 1 x ~30000р.
@@ -24,7 +24,7 @@ title: Что дарить?
 
 ## Файлопомойка для диджитал ~~номада~~ скопидома
 Ничего. Нельзя. Удалять.
-- **Вторая плашка оперативки**. Тупо чтобы заткнуть зияющую пустоту внутри (и заодно иметь немного больший кэш файловой системы). `Kingston SO-DIMM DDR4 4Gb 2400MHz pc-19200 KVR24S17S6/4` ~2700р.
+- ~~**Вторая плашка оперативки**. Тупо чтобы заткнуть зияющую пустоту внутри (и заодно иметь немного больший кэш файловой системы). `Kingston SO-DIMM DDR4 4Gb 2400MHz pc-19200 KVR24S17S6/4`~~ ~2700р.
 - **Жёсткие диски в домашнюю файлопомойку**. Где покупать - где больше гарантия продавца, 1 год - норма, 3 года - хорошо. Вообще тут на самом деле с вариациями:
 	- Подходящая замена уже имеющимся - HDD на 2.5 дюйма на 2Тб про запас на случай выхода из строя уже используемых в NAS. `Toshiba L200 HDWL120UZSVA`. ~8400р.
 	- Апгрейд по объёму - 2 х HDD на 2.5 дюйма на 4 ТБ. `Seagate BarraCuda ST4000LM024` ~ 2 x 12800р.
@@ -64,7 +64,7 @@ title: Что дарить?
 
 - Die Krupps – Volle Kraft Voraus! [ ~3500р](https://vnlstore.ru/catalog/electronic_hip_hop/16060/)
 - Liaisons Dangereuses – Liaisons Dangereuses [~ 3500р](https://vnlstore.ru/catalog/electronic_hip_hop/16308/)
-- Mike Mareen - Dance Control [~ 8800р](https://vnlstore.ru/catalog/disco_synth-pop_newwave/12595/) господи, 8к, но усищи и Love Spy того стоят, но сам я точно не куплю.
+- ~~Mike Mareen - Dance Control [~ 8800р](https://vnlstore.ru/catalog/disco_synth-pop_newwave/12595/) господи, 8к, но усищи и Love Spy того стоят, но сам я точно не куплю.~~ Upd: купил
 - Laibach - Macbeth [~ 3200р](https://vnlstore.ru/catalog/electronic_hip_hop/16327/)
 - Kraftwerk - Trans Europa Express [~ 4200р](https://vnlstore.ru/catalog/electronic_hip_hop/15080/)
 - Yello - You Gotta Say Yes To Another Excess [~ 3200](https://vnlstore.ru/catalog/disco_synth-pop_newwave/15475/)
