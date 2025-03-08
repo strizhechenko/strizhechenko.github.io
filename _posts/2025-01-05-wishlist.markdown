@@ -6,13 +6,7 @@ title: Что дарить?
 ## Вещи для дачи
 
 - **Светильники в кабинет** - [Yeelight Crystal Pendant Lamp (YLDL01YL)](https://market.yandex.ru/product--potolochnyi-svetilnik-yeelight-smart-meteorite-led-yldl01yl/1787654357) 2 x ~6500р.
-- **Видеокарта** - [GV-N406TWF2OC-16GD](https://market.yandex.ru/product--videokarta-gigabyte-gv-n406twf2oc-16gd-geforce-rtx-4060-ti-16gb-windforce-oc/21770650) - ~60000р. 14b нейронки, все дела.
-- **4k монитор** - [BenQ EW2780U](https://market.yandex.ru/product--27-monitor-benq-ew2780u-3840x2160-60-gts-ips/662032002) - 1 x 44000р. Требования - 3840x2160, 60Гц+, IPS-матрица, 2x5Вт встроенные динамики, входы и DisplayPort и HDMI.
 - **Кресло** - [Samurai Metta 3.04](https://market.yandex.ru/product--kreslo-ofisnoe-metta-samurai-black-edition-sverkhprochnaia-setka-reguliruemoe-chernoe-532483/904616089) - 1 x ~30000р. Возможно что-то поприкольнее, типа Metta Yoga.
-- **Клавиатура** - [Red Square Keyrox TKL Classic Pro II RSQ-20026](https://www.dns-shop.ru/product/b9c6b03d2e4fed20/klaviatura-provodnaa-red-square-keyrox-tkl-classic-pro-ii-rsq-20026/) - 1 x ~6000р.
-- **Тихая беспроводная мышь** - [A4Tech G10-810FS](https://www.dns-shop.ru/product/19e720e4cafc3332/mys-besprovodnaa-a4tech-g10-810fs-cernyj/) - 1 x ~2200р.
-- **Запчасти для реплики компа** - список в [статье](/2023/05/11/pc-build-fail.html).
-- **NVMe побыстрее** [Patriot Viper VP4300 M.2 2280 PCI-E 4.0 2Tb](https://market.yandex.ru/product--tverdotelnyi-nakopitel-patriot-memory-viper-2-tb-m-2-vp4300-2tbm28h/1787780971) - 1 x ~20000р.
 - **Лампочки**. [Navigator 8Вт](https://market.yandex.ru/product--lampa-navigator-71-363-nll-gx53-8-230-4k-8-vt-tabletka-dnevnoi-svet-4000k-upakovka-10-sht/1934400561). Именно эти (выверены люмены, температура, пульсация итд). Нужно около 55, мне сойдёт любое количество.
 - **Светильники**. [Navigator 71 277 NGX-R1-001-GX53 (белый, max 13вт)](https://market.yandex.ru/product--svetilnik-71-277-ngx-r1-001-gx53-belyi-kod-71277-navigator-10sht-v-upak/1413718656). Тоже около 50 шт надо.
 - **Влагозащищённые светильники**. [ЭРА 95 CH, GX53](https://market.yandex.ru/product--kl94-wh/1780682773?sku=101880420471) нужно 4шт
@@ -21,7 +15,15 @@ title: Что дарить?
 - Кронштейн для настенного хранения велосипеда
 - **[Дешманский стеллаж из леруа](https://ekaterinburg.lemanapro.ru/product/stellazh-metallicheskiy-70x140x30-sm-ocinkovannaya-stal-nagruzka-na-polku-30-kg-cvet-seryy-89376256/)**. Два уже есть. 2000р.
 - Помочь собрать серверный шкаф. Бесплатно. Долго. Сложно. Ценно.
+## Запчасти для ~~реплики~~ апгрейда компа - список в [статье](/2023/05/11/pc-build-fail.html)
 
+- **Процессор** - [AMD Ryzen 5700X](https://www.dns-shop.ru/product/96054164afeaed20/processor-amd-ryzen-7-5700x-oem/) - ~14699р. Я *чутка* прогадал с Ryzen 5700G и теперь хочу променять 400MHz базовой частоты на поддержку PCI-E 4.0 и +16мб L3-кэша. По идее это будет хорошим фундаментом для апгрейда видеокарты. В игрульках вроде все треды процессора загружены на 22-25%. Ну, будут на 30% загружены, ничего страшного, зато прогрузка текстур будет проходить куда быстрее. Возможно и число токенов в секунду в ollama станет больше.
+- **Кулер** - [ID-COOLING FROZN A400 BLACK](https://www.dns-shop.ru/product/3301ec7c9e2eed20/kuler-dla-processora-id-cooling-frozn-a400-black/) - ~2700р. Вроде место в системнике есть. Потенциально можно и проц помощнее воткнуть, но у меня слабый блок питания - 500Вт. А если уж и его апгрейдить, выйдет ну прям совсем дорого.
+- **Видеокарта** - Gigabyte Geforce RTX 4060Ti 16gb - [GV-N406TWF2OC-16GD](https://market.yandex.ru/product--videokarta-gigabyte-gv-n406twf2oc-16gd-geforce-rtx-4060-ti-16gb-windforce-oc/21770650) - ~60000р. 14b нейронки, все дела.
+- **NVMe побыстрее** [Patriot Viper VP4300 M.2 2280 PCI-E 4.0 2Tb](https://market.yandex.ru/product--tverdotelnyi-nakopitel-patriot-memory-viper-2-tb-m-2-vp4300-2tbm28h/1787780971) - 1 x ~20000р.
+- **Клавиатура** - [Red Square Keyrox TKL Classic Pro II RSQ-20026](https://www.dns-shop.ru/product/b9c6b03d2e4fed20/klaviatura-provodnaa-red-square-keyrox-tkl-classic-pro-ii-rsq-20026/) - 1 x ~6000р.
+- **Тихая беспроводная мышь** - [A4Tech G10-810FS](https://www.dns-shop.ru/product/19e720e4cafc3332/mys-besprovodnaa-a4tech-g10-810fs-cernyj/) - 1 x ~2200р.
+- **4k монитор** - [BenQ EW2780U](https://market.yandex.ru/product--27-monitor-benq-ew2780u-3840x2160-60-gts-ips/662032002) - 1 x 44000р. Требования - 3840x2160, 60Гц+, IPS-матрица, 2x5Вт встроенные динамики, входы и DisplayPort и HDMI.
 ## Файлопомойка для диджитал ~~номада~~ скопидома
 
 Ничего. Нельзя. Удалять.
