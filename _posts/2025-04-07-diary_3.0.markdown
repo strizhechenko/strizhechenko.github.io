@@ -95,7 +95,7 @@ title: Дневник 3.0
 sudo systemctl stop ollama
 sudo rmmod nvidia_uvm
 sudo modprobe nvidia_uvm
-sudo systemctl start ollama~
+sudo systemctl start ollama
 ```
 
 Но вводить пароль посреди процесса синхронизации (в худшем случае) бесит. Вводить при каждой синхронизации заметок - тоже. Что-нибудь придумаю, но потом.
