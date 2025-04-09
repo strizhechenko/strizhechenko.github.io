@@ -36,6 +36,7 @@
    - документация в plantuml, sphinx, openrpc;
    - структурированные логи в ELK;
    - мониторинг с grafana и prometheus, и сбор метрик и запросы на PromQL.
+- **На уровне хобби**: ollama, mistral, vosk. Балуюсь с [распознаванием речи в текст](/2025/04/07/diary_3.0.html) и пост-обработкой полученных заметок нейронками.
 - **В недавнем прошлом**: Aiogram, Selenium, Oracle.
 - **В прошлом**: Openresty, Flask + SQLAlchemy + Alembic + Postgres + uWSGI + Celery, bootstrap, JWT, OpenVZ, IMAP.
 - **В давнем прошлом**: bash, C, сети, реалтайм анализ трафика, файрволы, iptables, netflow, wireshark, статистика, хранение и агрегация данных, linux kernel, сетевой стек, сборка ПО и автоматизация работы с git, CentOS, XML, sax, nginx, защита от L3, L4 и L7 DDoS, [DNS-сервера](https://strizhechenko.github.io/2016/11/03/fakezone.html) (named, unbound), SQLite, PostgreSQL, прогнозирование производительности сетевого оборудования.
