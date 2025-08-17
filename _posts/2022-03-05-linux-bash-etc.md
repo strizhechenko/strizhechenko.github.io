@@ -487,6 +487,21 @@ strace -f -s 100 -e trace=execve ./test.sh 2>&1 | grep -o "execve.*" | sort
 
 ## Libvirt, виртуализация, образы дисков VM
 
+### Установка через virt-install
+
+``` shell
+sudo virt-install \
+ -n $NAME \
+ -c $ISO \
+ -r 512 \
+ --vcpus=2 \
+ --os-type=linux \
+ --os-variant=generic24 \
+ --network bridge=br0,model='e1000' \
+ --network bridge=br1,model='e1000' \
+ --disk path=$POOL$NAME.img,size=${SIZE:-12},format='qcow2',cache='writeback'
+```
+
 ### Конвертирование QCOW2 в VirtualBox
 
 ``` shell
