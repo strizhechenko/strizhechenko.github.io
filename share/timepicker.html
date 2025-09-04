@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор времени</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+        }
+        #status {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            vertical-align: middle;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+        }
+        th {
+            background-color: #e0e0e0;
+            height: 50px;
+        }
+        .time-cell {
+            background-color: #fff;
+        }
+        .time-cell:hover {
+            background-color: #f0f0f0;
+        }
+        .selected-first {
+            background-color: #add8e6; /* Голубой */
+        }
+        .selected-second {
+            background-color: #ffcccc; /* Светло-красный */
+        }
+        .intersection {
+            background-color: #90ee90; /* Светло-зеленый */
+        }
+        .priority::after {
+            content: attr(data-priority);
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 0.7em;
+            color: #000;
+        }
+        .controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #link-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #generated-link {
+            width: 80%;
+            padding: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Выбор времени встречи</h1>
+    <div id="status">Ваш выбор</div>
+    
+    <div class="controls">
+        <button id="copy-link">Сгенерировать и скопировать ссылку</button>
+    </div>
+
+    <div id="grid-container"></div>
+
+    <div id="link-container">
+        <input type="text" id="generated-link" readonly>
+    </div>
+
+    <script>
+        // Глобальные переменные
+        const gridContainer = document.getElementById('grid-container');
+        const statusDiv = document.getElementById('status');
+        const copyLinkBtn = document.getElementById('copy-link');
+        const generatedLinkInput = document.getElementById('generated-link');
+
+        let firstParticipantSlots = []; // Массив выбранных слотов первого участника
+        let secondParticipantSlots = []; // Массив выбранных слотов второго участника
+        let currentSelection = []; // Текущий выбор пользователя
+        let iteration = 0;
+        let startDate;
+
+        // Инициализация
+        function init() {
+            parseUrl();
+            renderGrid();
+            updateStatus();
+            setupEventListeners();
+        }
+
+        // Парсинг URL
+        function parseUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const slots1Param = urlParams.get('slots1');
+            const slots2Param = urlParams.get('slots2');
+            iteration = parseInt(urlParams.get('i')) || 0;
+
+            startDate = new Date();
+            startDate.setHours(0, 0, 0, 0);
+
+            if (slots1Param) {
+                firstParticipantSlots = slots1Param.split(',').filter(slot => slot);
+            }
+            if (slots2Param) {
+                secondParticipantSlots = slots2Param.split(',').filter(slot => slot);
+            }
+
+            // Определяем текущий выбор в зависимости от итерации
+            if (iteration % 2 === 0) {
+                currentSelection = firstParticipantSlots;
+            } else {
+                currentSelection = secondParticipantSlots;
+            }
+        }
+
+        // Рендер сетки
+        function renderGrid() {
+            const table = document.createElement('table');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            // Создание заголовков дней
+            const headerRow = document.createElement('tr');
+            const emptyHeader = document.createElement('th');
+            headerRow.appendChild(emptyHeader);
+
+            const dates = [];
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+                dates.push(date);
+
+                const th = document.createElement('th');
+                const dayNames = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+                const dayName = dayNames[date.getDay()];
+                const dateStr = `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth() + 1).padStart(2, '0')}`;
+                th.textContent = `${dayName}\n${dateStr}`;
+                headerRow.appendChild(th);
+            }
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            // Создание строк времени
+            for (let hour = 0; hour < 24; hour++) {
+                const row = document.createElement('tr');
+                
+                // Заголовок часа
+                const timeHeader = document.createElement('td');
+                timeHeader.textContent = `${hour}:00`;
+                row.appendChild(timeHeader);
+
+                // Ячейки для каждого дня
+                for (let dayIndex = 0; dayIndex < 7; dayIndex++) {
+                    const date = dates[dayIndex];
+                    const slotId = `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}-${String(hour).padStart(2, '0')}`;
+                    
+                    const cell = document.createElement('td');
+                    cell.classList.add('time-cell');
+                    cell.dataset.slot = slotId;
+
+                    // Определение класса ячейки в зависимости от итерации
+                    const inFirst = firstParticipantSlots.includes(slotId);
+                    const inSecond = secondParticipantSlots.includes(slotId);
+                    const inCurrent = currentSelection.includes(slotId);
+                    
+                    if (inFirst && inSecond) {
+                        cell.classList.add('intersection');
+                    } else if (inFirst) {
+                        cell.classList.add('selected-first');
+                        const priorityIndex = firstParticipantSlots.indexOf(slotId) + 1;
+                        cell.classList.add('priority');
+                        cell.setAttribute('data-priority', priorityIndex);
+                    } else if (inSecond) {
+                        cell.classList.add('selected-second');
+                        const priorityIndex = secondParticipantSlots.indexOf(slotId) + 1;
+                        cell.classList.add('priority');
+                        cell.setAttribute('data-priority', priorityIndex);
+                    }
+
+                    // Для текущего выбора добавляем возможность выбора (если не финальная итерация)
+                    if (iteration < 2) {
+                        if (inCurrent) {
+                            cell.classList.add('priority');
+                            const priorityIndex = currentSelection.indexOf(slotId) + 1;
+                            cell.setAttribute('data-priority', priorityIndex);
+                        }
+                    } else {
+                        // Блокировка выбора на финальной итерации
+                        cell.style.pointerEvents = 'none';
+                    }
+
+                    row.appendChild(cell);
+                }
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            gridContainer.innerHTML = '';
+            gridContainer.appendChild(table);
+        }
+
+        // Обновление статуса
+        function updateStatus() {
+            if (iteration === 0) {
+                statusDiv.textContent = 'Выбор первого участника';
+            } else if (iteration === 1) {
+                statusDiv.textContent = 'Выбор второго участника';
+            } else if (iteration === 2) {
+                statusDiv.textContent = 'Финальный результат';
+            } else {
+                statusDiv.textContent = iteration % 2 === 0 ? 
+                    'Выбор первого участника' : 
+                    'Выбор второго участника';
+            }
+        }
+
+        // Установка обработчиков событий
+        function setupEventListeners() {
+            // Обработчик клика по ячейке
+            gridContainer.onclick = (e) => {
+                if (iteration >= 2) return; // Блокировка на финальной итерации
+                
+                const cell = e.target.closest('.time-cell');
+                if (!cell) return;
+                
+                const slotId = cell.dataset.slot;
+                
+                const index = currentSelection.indexOf(slotId);
+                if (index === -1) {
+                    // Добавление слота
+                    currentSelection.push(slotId);
+                    updateCellVisual(cell, slotId);
+                } else {
+                    // Удаление слота
+                    currentSelection.splice(index, 1);
+                    updateCellVisual(cell, slotId);
+                }
+                
+                // Обновление приоритетов
+                updatePriorities();
+            };
+
+            // Копирование ссылки
+            copyLinkBtn.onclick = () => {
+                const nextIteration = iteration + 1;
+                
+                // Обновляем массивы в зависимости от текущей итерации
+                if (iteration % 2 === 0) {
+                    firstParticipantSlots = [...currentSelection];
+                } else {
+                    secondParticipantSlots = [...currentSelection];
+                }
+                
+                const slots1Param = firstParticipantSlots.join(',');
+                const slots2Param = secondParticipantSlots.join(',');
+                
+                let url = `${window.location.pathname}?slots1=${slots1Param}&slots2=${slots2Param}&i=${nextIteration}`;
+                
+                // Для локальных файлов
+                if (window.location.protocol === 'file:') {
+                    url = `file://${url}`;
+                } else {
+                    url = `${window.location.origin}${url}`;
+                }
+                
+                generatedLinkInput.value = url;
+                
+                // Копирование в буфер обмена
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(url).catch(() => {
+                        // Fallback для старых браузеров
+                        fallbackCopyTextToClipboard(url);
+                    });
+                } else {
+                    fallbackCopyTextToClipboard(url);
+                }
+            };
+        }
+
+        // Fallback для копирования текста
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            // Избегаем прокрутки страницы
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            textArea.style.opacity = "0";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (!successful) {
+                    console.error('Не удалось скопировать текст');
+                }
+            } catch (err) {
+                console.error('Ошибка при копировании текста: ', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Обновление визуального отображения ячейки
+        function updateCellVisual(cell, slotId) {
+            // Очищаем все классы и атрибуты
+            cell.className = 'time-cell';
+            cell.removeAttribute('data-priority');
+            
+            const inFirst = firstParticipantSlots.includes(slotId);
+            const inSecond = secondParticipantSlots.includes(slotId);
+            const inCurrent = currentSelection.includes(slotId);
+            
+            // После обновления currentSelection пересчитываем
+            const newInFirst = firstParticipantSlots.includes(slotId);
+            const newInSecond = secondParticipantSlots.includes(slotId);
+            const newInCurrent = currentSelection.includes(slotId);
+            
+            if (newInFirst && newInSecond) {
+                cell.classList.add('intersection');
+            } else if (newInFirst) {
+                cell.classList.add('selected-first');
+            } else if (newInSecond) {
+                cell.classList.add('selected-second');
+            }
+            
+            if (newInCurrent && iteration < 2) {
+                cell.classList.add('priority');
+                const priorityIndex = currentSelection.indexOf(slotId) + 1;
+                cell.setAttribute('data-priority', priorityIndex);
+            }
+        }
+
+        // Обновление приоритетов
+        function updatePriorities() {
+            const cells = document.querySelectorAll('.time-cell');
+            cells.forEach(cell => {
+                const slotId = cell.dataset.slot;
+                const index = currentSelection.indexOf(slotId);
+                if (index !== -1) {
+                    cell.classList.add('priority');
+                    cell.setAttribute('data-priority', index + 1);
+                }
+            });
+        }
+
+        // Инициализация при загрузке страницы
+        window.onload = init;
+    </script>
+</body>
+</html>
